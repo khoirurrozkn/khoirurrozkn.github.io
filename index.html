@@ -23,6 +23,85 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body>
-    
+    <style>
+        html {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            perspective: 1px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .section1, .section2 {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .section1 {
+            background: url("./img/bg-hero-landing-page-ai-brush-removebg-2.webp") bottom center;
+            background-size: cover;
+        }
+
+        .section1::before {
+            content:"";
+            width:100%;
+            height: 100%;
+            position: absolute;
+            z-index: 30;
+            background: url("./img/bg-hero-landing-page-ai-brush-removebg-3.webp") center center;
+            background-size: cover;
+            transform: translateZ(-0.4px) scale(1.405);
+        }
+
+        .section1::after {
+            content:"";
+            width:100%;
+            height: 100%;
+            position: absolute;
+            z-index: 30;
+            background: url("./img/bg-hero-landing-page-compressed.avif");
+            background-size: cover;
+            transform: translateZ(-1px) scale(2);
+        }
+
+
+        @media (max-width: 820px) {
+            .section1 {
+                background-position: 65%!important;
+            }
+            
+            .section1::before {
+                background-position: 25% !important;
+            }
+
+            .section1::after {
+                background-position: 25%!important;
+            }
+        }
+    </style>
+    <div class="section1 text-white">
+        <div class="absolute w-full h-full bg-black bg-opacity-[10%] xl:bg-opacity-[25%]">
+        </div>
+
+    </div>
+      <div class="section2 relative">
+        <div class="h-[100vh] bg-red-500">
+            
+        </div>
+        <div class="h-[100vh] bg-green-500">
+
+        </div>
+      </div>
+
+      <script>
+      </script>
 </body>
 </html>
