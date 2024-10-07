@@ -25,14 +25,12 @@
 <body>
     <style>
         html {
-            height: 100vh;
             overflow: hidden;
         }
 
         body {
             width: 100vw;
             height: 100vh;
-            margin: 0;
             perspective: 1px;
             overflow-x: hidden;
             overflow-y: scroll;
@@ -55,7 +53,6 @@
             width:100%;
             height: 100%;
             position: absolute;
-            z-index: 30;
             background: url("./img/bg-hero-landing-page-ai-brush-removebg-3.webp") center center;
             background-size: cover;
             transform: translateZ(-0.4px) scale(1.405);
@@ -66,12 +63,10 @@
             width:100%;
             height: 100%;
             position: absolute;
-            z-index: 30;
             background: url("./img/bg-hero-landing-page-compressed.avif");
             background-size: cover;
             transform: translateZ(-1px) scale(2);
         }
-
 
         @media (max-width: 820px) {
             .section1 {
@@ -86,22 +81,97 @@
                 background-position: 25%!important;
             }
         }
+
+        #navbar, #sticky-navbar {
+            transition: all 0.2s ease-out;
+        }
+
+        #navbar.show, #sticky-navbar.show {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        #sticky-navbar-menu, #navbar-menu {
+            transition: all 0.2s ease-out;
+            opacity: 0;
+            transform: translateY(2%);
+        }
+
+        #sticky-navbar-menu.show, #navbar-menu.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
-    <div class="section1 text-white">
-        <div class="absolute w-full h-full bg-black bg-opacity-[10%] xl:bg-opacity-[25%]">
-        </div>
+     <div class="section section1 text-white">
+        <div class="absolute w-full h-full bg-gradient-to-b from-transparent to-[#0c12079c] xl:bg-opacity-[25%]"></div>
 
+        <div class="absolute w-full flex items-center justify-between px-[5%] pt-[15px] xl:pt-[30px]">
+            <p>&copy; Khoirurrozkn</p>
+            <nav class="hidden xl:block">
+                <a href="/" class="me-[40px]">Halaman utama</a>
+                <a href="about/id" class="me-[40px]">Tentang saya</a>
+                <a href="portofolio/id" class="me-[40px]">Portofolio</a>
+                <a href="contact/id">Kontak</a>
+            </nav>
+
+            <div class="relative xl:hidden">
+                <p id="navbar" class="bg-gray-200 text-black py-[10px] px-[25px] rounded-[30px] shadow-lg">● menu</p>    
+                <div id="navbar-menu" class="absolute bg-gray-200 shadow-lg w-[90vw] right-0 pt-[40px] pb-[25px] px-[25px] rounded-[30px] rounded-tr-[0]">
+                    <p class="title-nav relative text-gray-600 font-bold text-[14px] border-t-[2px] border-gray-500 py-[5px]">Halaman yang tersedia</p>
+                    <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
+                    <a href="about/id" class="text-gray-700 ms-[18px] block py-[8px]">Tentang saya</a>
+                    <a href="portofolio/id" class="text-gray-700 ms-[18px] block py-[8px]">Portofolio</a>
+                    <a href="contact/id" class="text-gray-700 ms-[18px] block py-[8px]">Kontak</a>
+
+                    <p class="title-nav relative text-gray-600 font-bold text-[14px] border-t-[2px] border-gray-500 mt-[20px] py-[5px]">Bahasa yang tersedia</p>
+                    <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
+                    <a href="/en" class="text-gray-700 ms-[18px] block py-[8px]">English</a>
+                </div>
+            </div>
+        </div>
     </div>
-      <div class="section2 relative">
-        <div class="h-[100vh] bg-red-500">
-            
-        </div>
-        <div class="h-[100vh] bg-green-500">
 
-        </div>
-      </div>
+    <div class="section section2 relative bg-[#0C1207]">
+        <div class="bg-gray-200 h-[500vh] rounded-t-[50px] px-[5%]">
+            <div class="z-30 sticky top-0 flex justify-end">
+                <div class="relative">
+                    <p id="sticky-navbar" class="text-white inline-block bg-[#141414] pointer cursor-pointer mt-5 py-[10px] px-[25px] rounded-[30px] shadow-lg select-none">● menu</p>
+                    <div id="sticky-navbar-menu" class="absolute bg-[#141414] shadow-lg w-[90vw] xl:w-[30vw] right-0 pt-[40px] pb-[25px] px-[25px] rounded-[30px] rounded-tr-[0]">
+                        <p class="title-nav relative text-gray-400 font-[500] text-[14px] border-t-[2px] border-gray-500 py-[5px]">Halaman yang tersedia</p>
+                        <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
+                        <a href="about/id" class="text-gray-200 ms-[18px] block py-[8px]">Tentang saya</a>
+                        <a href="portofolio/id" class="text-gray-200 ms-[18px] block py-[8px]">Portofolio</a>
+                        <a href="contact/id" class="text-gray-200 ms-[18px] block py-[8px]">Kontak</a>
 
-      <script>
-      </script>
+                        <p class="title-nav relative text-gray-400 font-[500] text-[14px] border-t-[2px] border-gray-500 mt-[20px] py-[5px]">Bahasa yang tersedia</p>
+                        <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
+                        <a href="/en" class="text-gray-200 ms-[18px] block py-[8px]">English</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>Khoirur</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleMenu = (navObject, menuObject) => {
+                const isMenuOpen = navObject.textContent.includes('menu');
+                menuObject.classList.toggle('show', isMenuOpen);
+                navObject.classList.toggle('show', isMenuOpen);
+                navObject.textContent = isMenuOpen ? '● tutup' : '● menu';
+            };
+
+            document.getElementById('sticky-navbar').addEventListener("click", function() {
+                toggleMenu(this, document.getElementById('sticky-navbar-menu'));
+            });
+
+            document.getElementById('navbar').addEventListener("click", function() {
+                toggleMenu(this, document.getElementById('navbar-menu'));
+            });
+        });
+    </script>
 </body>
 </html>
