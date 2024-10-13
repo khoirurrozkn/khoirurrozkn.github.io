@@ -2,3 +2,26 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer utilities {
+    * {
+        font-family: "Manrope", sans-serif;
+    }
+
+    @media (min-width: 820px) {
+        *{
+            @apply text-[18px];
+        }
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-0;
+    }
+    
+    ::-moz-scrollbar {
+        @apply w-0;
+    }
+
+    body {
+        @apply bg-gray-100;
+    }
+}

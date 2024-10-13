@@ -3,26 +3,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Khoirur Rozikin - Software Developer</title>
+    <title>Moch Khoirur Rozikin - Software Developer</title>
     
     <!-- Description -->
-    <meta name="description" content="Kenali lebih dekat Moch Khoirur Rozikin, seorang software developer yang berfokus pada pengembangan solusi digital dan aplikasi modern.">
-    <meta name="keywords" content="Tentang Saya, Software Developer, Pengembangan Aplikasi, Solusi Digital, Teknologi Modern, JavaScript, HTML, CSS, React.js">
+    <meta name="description" content="Selamat datang di situs resmi Moch Khoirur Rozikin, seorang software developer yang berfokus pada pengembangan solusi digital dan aplikasi modern. Temukan portofolio, tentang saya, dan cara menghubungi saya.">
+    <meta name="keywords" content="Software Developer, Portofolio, Pengembangan Aplikasi, Solusi Digital, Teknologi Modern, JavaScript, HTML, CSS, React.js">
     <meta name="author" content="Moch Khoirur Rozikin">
     
     <!-- SEO -->
     <link rel="canonical" href="https://khoirurrozkn.github.io/">
     
     <!-- Metadata Open Graph -->
-    <meta property="og:title" content="Tentang Moch Khoirur Rozikin - Software Developer">
-    <meta property="og:description" content="Kenali lebih dekat Moch Khoirur Rozikin, seorang software developer yang ahli dalam membangun solusi digital dan aplikasi modern.">
+    <meta property="og:title" content="Khoirur Rozikin - Software Developer">
+    <meta property="og:description" content="Selamat datang! Temukan lebih banyak tentang Moch Khoirur Rozikin, software developer yang menciptakan solusi digital inovatif.">
     <meta property="og:url" content="https://khoirurrozkn.github.io/">
     <meta property="og:type" content="website">
-    
+        
     <!-- CSS -->
     <link rel="stylesheet" href="./output.css">
+
+    <!-- Preconnect to optimize font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload the font to prevent render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Poppins:wght@400&display=swap" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;400&family=Poppins:wght@400;300&display=swap" rel="stylesheet">
+    </noscript>
+
 </head>
-<body>
-    Masih dalam pengembangan V.6
+<body class="">
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            height: 100vh;
+            perspective: 1px;
+            overflow: hidden;
+            /* overflow-x: hidden;
+            overflow-y: scroll; */
+        }
+
+        body.show {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .title {
+            font-family: "Poppins", sans-serif;       
+        }
+
+        .section1 {
+            min-height: 100vh;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .section1 {
+            background: url("./img/bg-hero-landing-page-ai-brush-removebg-2.webp") bottom center;
+            background-size: cover;
+        }
+
+        /* .section1::before {
+            content:"";
+            width:100%;
+            height: 100%;
+            position: absolute;
+            background: url("./img/bg-hero-landing-page-ai-brush-removebg-3.webp") center center;
+            background-size: cover;
+            transform: translateZ(-0.4px) scale(1.405);
+        } */
+
+        .section1::after {
+            content:"";
+            width:100%;
+            height: 100%;
+            position: absolute;
+            background: url("./img/bg-hero-landing-page-compressed.webp");
+            background-size: cover;
+            transform: translateZ(-1px) scale(2);
+        }
+
+        @media (max-width: 820px) {
+            .section1 {
+                background-position: 60% !important;
+            }
+            
+            /* .section1::before {
+                background-position: 45% !important;
+            } */
+
+            .section1::after {
+                background-position: 21% !important;
+            }
+        }
+
+        #navbar, #sticky-navbar {
+            transition: all 0.2s ease-out;
+        }
+
+        #navbar.show, #sticky-navbar.show {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        #sticky-navbar-menu, #navbar-menu {
+            transition: all 0.2s ease-out;
+            opacity: 0;
+            transform: translateY(2%);
+        }
+
+        #sticky-navbar-menu.show, #navbar-menu.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes spin-slow {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+
+        @keyframes arrow-animate {
+            0% {
+                transform: rotate(-20deg);
+            }
+            50% {
+                transform: rotate(70deg);
+
+            }
+            100% {
+                transform: rotate(-20deg);
+            }
+        }
+
+        .arrow {
+            animation: arrow-animate 3s infinite;
+        }
+
+        .radius-bottom-left {
+            border-bottom-left-radius: 15px;
+        }
+
+        .radius-top-left {
+            border-top-left-radius: 15px;
+        }
+
+        .marquee {
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .marquee h1 {
+                line-height: 50px;
+                text-align: center;
+                -moz-transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+                -moz-animation: scroll-left 2s linear infinite;
+                -webkit-animation: scroll-left 2s linear infinite;
+                animation: scroll-left 40s linear infinite;
+            }
+            
+            @-moz-keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(0%);
+                }
+                50% {
+                    -moz-transform: translateX(-63%);
+                }
+                100% {
+                    -moz-transform: translateX(0%);
+                }
+            }
+            
+            @-webkit-keyframes scroll-left {
+                0% {
+                    -webkit-transform: translateX(0%);
+                }
+                50% {
+                    -webkit-transform: translateX(-63%);
+                }
+                100% {
+                    -webkit-transform: translateX(0%);
+                }
+            }
+            
+            @keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(0%);
+                    -webkit-transform: translateX(0%);
+                    transform: translateX(0%);
+                }
+                50% {
+                    -moz-transform: translateX(-63%);
+                    -webkit-transform: translateX(-63%);
+                    transform: translateX(-63%);
+                }
+                100% {
+                    -moz-transform: translateX(0%);
+                    -webkit-transform: translateX(0%);
+                    transform: translateX(0%);
+                }
+            }
+
+            .section2::before{
+                content: "";
+                transition: margin-top 0.5s ease-in-out, 
+                    border-top-left-radius 0.5s ease-in 0.3s, 
+                    border-top-right-radius 0.5s ease-in 0.3s;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                border-top-left-radius: 0%;
+                border-top-right-radius: 0%;
+                margin-top: 0px;
+                width: 100vw;
+                left: 0;
+                background-color: inherit;
+            }
+
+            .section2.show::before {
+                margin-top: -50px;
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+            }
+
+            .top::after{
+                content: "";
+                height: 100px;
+                position: absolute;
+                z-index: 15;
+                bottom: 0;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                margin-bottom: -40px;
+                width: 100vw;
+                left: 0;
+                background-color: inherit;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.025);
+            }
+
+            .box-preloader-1 {
+                animation: box-preloader 0.5s ease-in forwards;
+                animation-delay: 1s;
+            }
+            .box-preloader-2 {
+                animation: box-preloader 0.5s ease-in forwards;
+                animation-delay: 1.2s;
+            }
+            .box-preloader-3 {
+                animation: box-preloader 0.5s ease-in forwards;
+                animation-delay: 1.4s;
+            }
+            @keyframes box-preloader {
+                0% {
+                    transform: translateY(0);
+                }
+                100% {
+                    transform: translateY(-100%);
+                }
+            }
+
+            @media (max-width: 820px) {
+                @keyframes box-preloader {
+                    0% {
+                        transform: translateY(0) !important;
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateY(0) !important;
+                        transform: translateX(100%);
+                    }
+                }
+            }
+
+            .info-porto::before {
+                content: "";
+                width: 100vw;
+                background-color: #141414;
+                height: 0.7px;
+                position: absolute;
+                left: -4%;
+                top: 50%;
+                transform: translateX(-100%) translateY(-50%);
+            }
+
+            .blog::after{
+                content: "";
+                height: 100px;
+                position: absolute;
+                top: 0;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                margin-top: -40px;
+                width: 100vw;
+                left: 0;
+                background-color: #f3f4f6;
+                box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.025);
+            }
+
+
+    </style>
+
+        <div id="box-preloader-1" class="fixed flex border-b xl:border-b-[0] border-gray-500 xl:border-r justify-center items-center box-preloader-1 bg-[#101010] top-0 z-30 left-0 w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
+            <p class="text-[30px] title text-white">Moch</p>
+        </div>
+        <div id="box-preloader-2" class="fixed flex border-b xl:border-b-[0] border-gray-500 xl:border-r justify-center items-center box-preloader-2 bg-[#101010]  top-[33.333333333333336%] xl:top-0 z-30 left-0 xl:left-[33.333333333333336%] w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
+            <p class="text-[30px] title text-white">Khoirur</p>
+        </div>
+        <div id="box-preloader-3" class="fixed flex justify-center items-center box-preloader-3 bg-[#101010] top-[66.66666666666667%] xl:top-0 z-30 left-0 xl:left-[66.66666666666667%] w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
+            <p class="text-[30px] title text-white">Rozikin</p>
+        </div>
+
+     <div class="section1 text-white">
+        <div class="wrap-hero absolute bg-gradient-to-br from-[#000000cc] to-[#00000066] w-full h-full px-[3%] pt-[30px] xl:pt-[30px]">
+
+            <div class="flex items-center justify-between">
+                <p class="xl:text-[16px]">&copy; Khoirurrozkn</p>
+                <nav class="hidden xl:block">
+                    <a href="/" class="me-[40px] text-[16px]">● <span class="ms-[5px] text-[16px]">Halaman utama</span></a>
+                    <a href="about" class="me-[40px] text-[16px]">Tentang saya</a>
+                    <a href="portofolio" class="me-[40px] text-[16px]">Portofolio</a>
+                    <a href="contact" class="text-[16px]">Kontak</a>
+                </nav>
+    
+                <div class="relative xl:hidden">
+                    <p id="navbar" class="bg-gray-100 text-black py-[11px] px-[25px] rounded-[25px] shadow-lg">● menu</p>    
+                    <div id="navbar-menu" class="absolute bg-gray-100 shadow-lg w-[94vw] right-0 pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
+                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-500 py-[5px]">Halaman</p>
+                        <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
+                        <a href="about" class="text-gray-700 ms-[18px] block py-[8px]">Tentang saya</a>
+                        <a href="portofolio" class="text-gray-700 ms-[18px] block py-[8px]">Portofolio</a>
+                        <a href="contact" class="text-gray-700 ms-[18px] block py-[8px]">Kontak</a>
+    
+                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-500 mt-[20px] py-[5px]">Bahasa</p>
+                        <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
+                        <a href="/en" class="text-gray-700 ms-[18px] block py-[8px]">English</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <h1 class="text-[30px] title xl:text-[70px] leading-[115%] xl:w-[1000px] mt-[60px] xl:mt-[14vh]">
+                Pengembang Software dengan Semangat Eksplorasi
+            </h1> -->
+            <!-- <p class="mt-[15px] pe-[0%] xl:pe-[75%]">
+                Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
+            </p> -->
+        </div>
+    </div>
+
+    
+    <div id="section2" class="section2 relative z-30 bg-white">
+
+        <!-- Navbar -->
+        <div class="z-30 sticky top-0 flex justify-end px-[3%]">
+            <div class="relative">
+                <p id="sticky-navbar" class="text-white inline-block bg-[#141414] pointer cursor-pointer my-[30px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">● menu</p>
+                <div id="sticky-navbar-menu" class="absolute bg-[#141414] shadow-lg w-[94vw] xl:w-[30vw] right-0 mt-[-30px] pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
+                    <p class="title-nav relative text-gray-400  text-[14px] border-b-[0.5px] border-gray-500 py-[5px]">Halaman / Page</p>
+                    <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
+                    <a href="about" class="text-gray-200 ms-[18px] block py-[8px]">Tentang saya</a>
+                    <a href="portofolio" class="text-gray-200 ms-[18px] block py-[8px]">Portofolio</a>
+                    <a href="contact" class="text-gray-200 ms-[18px] block py-[8px]">Kontak</a>
+
+                    <p class="title-nav relative text-gray-400  text-[14px] border-b-[0.5px] border-gray-500 mt-[20px] py-[5px]">Bahasa / Language</p>
+                    <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
+                    <a href="/en" class="text-gray-200 ms-[18px] block py-[8px]">English</a>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar -->
+
+        <svg width="40" height="40" class="hidden xl:block absolute top-0 mt-[111px] arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path fill="black" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
+        </svg>  
+        <svg width="25" height="25" class="absolute top-0 mt-[38px] ms-[10%] xl:hidden arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path fill="black" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
+        </svg>  
+
+        <!-- top -->
+        <div class="top relative px-[3%] bg-inherit xl:pt-[80px] pb-[40px]">
+            <h1 class="text-[30px] title leading-[115%]">
+                Pengembang Software dengan Semangat Eksplorasi
+            </h1>
+
+            <!-- <div class="mt-[30px] relative border border-black"> -->
+                    <!-- <div translate="no" class="radius-bottom-left text-[14px] text-gray-600 px-[30px] py-[5px] bg-white absolute top-0 right-0">
+                        Code & Hike
+                    </div> -->
+
+                    <!-- <img class="object-cover rounded-[15px] aspect-[4/3]" src="./img/bg-hero-landing-page-compressed.webp" alt="T">
+                    <img class="object-cover rounded-[15px] rounded-tl-[0] border-l-[0] w-[50%] border-[7px] border-white aspect-[3/4]" src="./img/bg-hero-landing-page-compressed.webp" alt="T"> -->
+
+                    <!-- <div class="marquee mt-[60px]">
+                        <p class="text-[30px] flex w-[400vw] text-center">
+                            PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO
+                        </p>
+                    </div> -->
+            <!-- </div> -->
+            <p class="mt-[30px] pt-[30px] border-t-[0.8px] border-black">
+                Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
+            </p>
+            <div class="flex justify-center relative z-20">
+                <p class="text-white mx-auto inline-block bg-[#141414] pointer cursor-pointer mt-[40px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                    ● Tentang saya
+                </p>
+            </div>
+
+            <!-- <div class="bg-red-500 h-[40px] absolute bottom-0 rounded-b-[1000%] mb-[-20px] w-[110vw] left-[-5%]"></div> -->
+        </div>
+        <!-- top -->
+
+        <div class="px-[3%] relative z-10 pt-[110px] pb-[20px] bg-gray-100">
+            <h1 class="text-[30px] title leading-[115%]">
+                Inovasi tumbuh di setiap proyek yang saya ciptakan
+            </h1>
+
+            <div class="mt-[20px] flex gap-x-3">
+                <div class="bg-[#141414] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">    
+                    <svg width="23px" height="23px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 15.6C4 15.0399 4 14.7599 4.10899 14.546C4.20487 14.3578 4.35785 14.2049 4.54601 14.109C4.75992 14 5.03995 14 5.6 14H8.4C8.96005 14 9.24008 14 9.45399 14.109C9.64215 14.2049 9.79513 14.3578 9.89101 14.546C10 14.7599 10 15.0399 10 15.6V18.4C10 18.9601 10 19.2401 9.89101 19.454C9.79513 19.6422 9.64215 19.7951 9.45399 19.891C9.24008 20 8.96005 20 8.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V15.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="border-[0.8px] border-[#141414] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">
+                    <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="flex justify-end overflow-hidden">
+                <p class="info-porto text-end mt-[40px] text-gray-600 text-[14px] relative">
+                    Tap untuk lihat detail
+                </p>
+            </div>
+    
+            <div class="mt-[20px] flex flex-wrap gap-y-[10px] justify-between">
+                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/12520831/file/original-4e12fdbde7d477a41040260ade7453f6.png?resize=640x480&vertical=center" alt="T">
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Produk</p>
+            </div>
+            <div class="mt-[40px] flex flex-wrap gap-y-[10px] justify-between">
+                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/13933070/file/original-1735c44299464246eab29111da23b9ec.jpg?crop=0x0-3201x2401&resize=640x480&vertical=center" alt="T">
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web App</p>
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Manajemen</p>
+            </div>
+            <div class="mt-[40px] flex flex-wrap gap-y-[10px] justify-between">
+                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/8727461/file/original-61f4377cbe36e19ebdccddf101bebea1.png?resize=640x480&vertical=center" alt="T">
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
+                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Komersial</p>
+            </div>
+    
+            <div class="flex justify-center relative z-10">
+                <p class="text-white inline-block bg-[#141414] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                    ● Lihat semua porto
+                </p>
+            </div>
+        </div>
+
+        <div class="blog relative bg-white pt-[130px] px-[3%] pb-[80px]">
+            <h1 class="text-[30px] title leading-[115%]">
+                Berbagi cerita dan wawasan terbaru di setiap artikel
+            </h1>
+            <p class="mt-[10px]">
+                Ayo baca artikel terbaru dan temukan tips praktis yang bisa kamu gunakan.            
+            </p>
+
+            <div class="flex justify-end overflow-hidden">
+                <p class="text-end mt-[40px] text-gray-600 text-[14px] relative">
+                    Tap untuk menuju blog tersebut
+                </p>
+            </div>
+            
+            <div class="mt-[10px]">
+                <a href="" class="border-t-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
+                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
+                </a>
+                <a href="" class="border-t-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
+                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
+                </a>
+                <a href="" class="border-y-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
+                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
+                </a>
+            </div>
+            
+            <div class="flex justify-center relative z-10">
+                <p class="text-white inline-block bg-[#141414] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                    ● Lihat semua blog
+                </p>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="footer bg-[#141414] text-white">
+        <div class="marquee pt-[10px]">
+            <h1 class="text-[30px] title flex w-[310vw] text-center">
+                CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● 
+            </h1>
+        </div>
+
+        <div class="px-[3%]">
+            <div class="flex items-center justify-center gap-[3%] mt-[80px]">
+                <img class="w-[60px] aspect-square rounded-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9ua2V5fGVufDB8fDB8fHww" alt="T">
+                <h1 class="text-[30px] title leading-[115%]">
+                    Siap untuk Berkolaborasi
+                </h1>
+            </div>
+    
+            <div class="flex flex-wrap justify-between items-center relative z-10 mt-[30px]">
+                <svg width="25" height="25" class="xl:hidden arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path fill="white" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
+                </svg>  
+                <p class="text-black inline-block bg-white pointer cursor-pointer py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                    ● Ayo, sampaikan pesanmu!
+                </p>
+
+                <p class="text-gray-100 text-[14px] mt-[60px]">Di dukung oleh</p>
+                <div class="flex justify-between gap-4 border-t-[0.6px] pt-[20px] mt-[20px]">
+                    <div class="bg-green-600 rounded-full p-[10px] w-[25%]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-2.5 -2 24 24"><g fill="currentColor"><path d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.63 5.63 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75z"/><circle cx="14.375" cy="1.875" r="1.875"/></g></svg>
+                    </div>
+                    <div class="w-[25%]">
+                        <img class="rounded-full" src="https://play-lh.googleusercontent.com/8sJqMHOZzNFUBzHGNzTm_F6p-BqTEF5y5h3yWuSAT5pkv5Cx8pmbDtYosLxUiQpU8d0" alt="T">
+                    </div>
+                    <div class="w-[25%]">
+                        <img class="rounded-full" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPyENag1IhgT1u1fBlzMIku8PBTxSZ-PAjefVJRoSVmXVkxjInpz_lIAquruNjQGkKmA4&usqp=CAU" alt="T">
+                    </div>
+
+                </div>
+
+                <div class="w-full mt-[60px]">
+                    <p class="border-b-[0.6px] text-gray-100 text-[14px] pb-[20px] mb-[20px]">Kontak & Sosial media</p>
+                    <div class="grid grid-cols-3 gap-4">
+                        <a href="/">● Whatsapp</a>
+                        <a href="/">● Email</a>
+                        <a href="/">● Instagram</a>
+                        <a href="/">● Twitter</a>
+                        <a href="/">● Facebook</a>
+                        <a href="/">● Github</a>
+                    </div>
+                    <p class="text-center border-t-[0.6px] text-gray-200 text-[14px] py-[20px] mt-[80px]">&copy; Khoirurrozkn, 2024</p>
+                </div>
+            </div>
+    
+        </div>
+
+
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+                const preloader1 = document.getElementById('box-preloader-1');
+                const preloader2 = document.getElementById('box-preloader-2');
+                const preloader3 = document.getElementById('box-preloader-3');
+                
+                setTimeout(() => {
+                    preloader1.style.animationPlayState = 'running';
+                }, 1000);
+
+                setTimeout(() => {
+                    preloader2.style.animationPlayState = 'running';
+                }, 1200);
+
+                setTimeout(() => {
+                    preloader3.style.animationPlayState = 'running';
+                    document.body.classList.add('show')
+                }, 1400);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleMenu = (navObject, menuObject) => {
+                const isMenuOpen = navObject.textContent.includes('menu');
+                menuObject.classList.toggle('show', isMenuOpen);
+                navObject.classList.toggle('show', isMenuOpen);
+                navObject.textContent = isMenuOpen ? '● tutup' : '● menu';
+            };
+
+            document.getElementById('sticky-navbar').addEventListener("click", function() {
+                toggleMenu(this, document.getElementById('sticky-navbar-menu'));
+            });
+
+            document.getElementById('navbar').addEventListener("click", function() {
+                toggleMenu(this, document.getElementById('navbar-menu'));
+            });
+
+            const section2 = document.getElementById('section2');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            }, {
+                threshold: 0
+            });
+
+            observer.observe(section2);
+        });
+    </script>
 </body>
 </html>
