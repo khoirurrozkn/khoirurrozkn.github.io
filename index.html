@@ -21,18 +21,10 @@
         
     <!-- CSS -->
     <link rel="stylesheet" href="./output.css">
-
-    <!-- Preconnect to optimize font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Preload the font to prevent render-blocking -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Poppins:wght@400&display=swap" as="style" onload="this.rel='stylesheet'">
-
-    <!-- Fallback for users with JavaScript disabled -->
-    <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;400&family=Poppins:wght@400;300&display=swap" rel="stylesheet">
-    </noscript>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;400&family=Poppins:wght@400;300&display=swap" rel="stylesheet"></noscript>
 
 </head>
 <body class="">
@@ -104,7 +96,7 @@
         }
 
         #navbar, #sticky-navbar {
-            transition: all 0.2s ease-out;
+            transition: all 0.7s ease-out;
         }
 
         #navbar.show, #sticky-navbar.show {
@@ -113,14 +105,14 @@
         }
 
         #sticky-navbar-menu, #navbar-menu {
-            transition: all 0.2s ease-out;
+            transition: all 0.5s ease-in-out;
             opacity: 0;
-            transform: translateY(2%);
+            transform: translateX(110%) scale(0.5);
         }
 
         #sticky-navbar-menu.show, #navbar-menu.show{
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0) scale(1);
         }
 
         @keyframes spin-slow {
@@ -221,79 +213,101 @@
 
             .section2::before{
                 content: "";
-                transition: margin-top 0.5s ease-in-out, 
-                    border-top-left-radius 0.5s ease-in 0.3s, 
-                    border-top-right-radius 0.5s ease-in 0.3s;
+                transition: transform 0.5s ease-in-out,
+                    border-radius 0.5s ease-in-out 0.3s;
                 height: 100px;
                 position: absolute;
                 top: 0;
-                border-top-left-radius: 0%;
-                border-top-right-radius: 0%;
-                margin-top: 0px;
-                width: 100vw;
-                left: 0;
+                width: 105vw;
+                left: -2%;
                 background-color: inherit;
             }
 
             .section2.show::before {
-                margin-top: -50px;
+                transform: translateY(-60px);
                 border-top-left-radius: 100%;
                 border-top-right-radius: 100%;
             }
 
-            .top::after{
+            .remove-show, 
+            .remove-show::before, 
+            .remove-show::after, 
+            .remove-show .box-transition {
+                transition: none !important;
+            }
+
+            .porto::after{
                 content: "";
+                transition: transform 0.5s ease-in-out 0.2s, 
+                    border-radius 0.5s ease-in-out 0.6s;
                 height: 100px;
                 position: absolute;
                 z-index: 15;
-                bottom: 0;
-                border-bottom-left-radius: 100%;
-                border-bottom-right-radius: 100%;
-                margin-bottom: -40px;
+                top: 0;
+                transform: translateY(-90px);
                 width: 100vw;
                 left: 0;
-                background-color: inherit;
+                background-color: white;
                 box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.025);
             }
 
-            .box-preloader-1 {
-                animation: box-preloader 0.5s ease-in forwards;
+            .porto.show::after {
+                transform: translateY(-60px);
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+            }
+
+            .swap-porto::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-bottom-left-radius: 0%;
+                background-color: #101010;
+                transition: all 1s ease-in-out 1s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 25px;
+                font-family: "Poppins", sans-serif;       
+            }
+
+            .swap-porto-1::before {
+                content: "Produk";
+            }
+            .swap-porto-2::before {
+                content: "Manajemen";
+
+            }
+            .swap-porto-3::before {
+                content: "Komersial";
+            }
+
+            .swap-porto.show::before {
+                transform: translateX(100%) translateY(-100%);
+                border-bottom-left-radius: 100%;
+            }
+
+            .box-preloader {
+                animation: box-preloader 1s ease-in-out forwards;
                 animation-delay: 1s;
-            }
-            .box-preloader-2 {
-                animation: box-preloader 0.5s ease-in forwards;
-                animation-delay: 1.2s;
-            }
-            .box-preloader-3 {
-                animation: box-preloader 0.5s ease-in forwards;
-                animation-delay: 1.4s;
             }
             @keyframes box-preloader {
                 0% {
-                    transform: translateY(0);
+                    transform: translateY(0) translateX(0);
                 }
                 100% {
-                    transform: translateY(-100%);
-                }
-            }
-
-            @media (max-width: 820px) {
-                @keyframes box-preloader {
-                    0% {
-                        transform: translateY(0) !important;
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateY(0) !important;
-                        transform: translateX(100%);
-                    }
+                    transform: translateY(-100%) translateX(100%);
+                    border-radius: 100%;
+                    scale: 0.8;
                 }
             }
 
             .info-porto::before {
                 content: "";
                 width: 100vw;
-                background-color: #141414;
+                background-color: #101010;
                 height: 0.7px;
                 position: absolute;
                 left: -4%;
@@ -315,17 +329,28 @@
                 box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.025);
             }
 
+            .swap-blog::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #101010;
+                transition: all 1s ease-in-out 1s;
+            }
+
+            .swap-blog.show::before{
+                transform: translatey(100%);   
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;       
+            }
+
 
     </style>
 
-        <div id="box-preloader-1" class="fixed flex border-b xl:border-b-[0] border-gray-500 xl:border-r justify-center items-center box-preloader-1 bg-[#101010] top-0 z-30 left-0 w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
-            <p class="text-[30px] title text-white">Moch</p>
-        </div>
-        <div id="box-preloader-2" class="fixed flex border-b xl:border-b-[0] border-gray-500 xl:border-r justify-center items-center box-preloader-2 bg-[#101010]  top-[33.333333333333336%] xl:top-0 z-30 left-0 xl:left-[33.333333333333336%] w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
-            <p class="text-[30px] title text-white">Khoirur</p>
-        </div>
-        <div id="box-preloader-3" class="fixed flex justify-center items-center box-preloader-3 bg-[#101010] top-[66.66666666666667%] xl:top-0 z-30 left-0 xl:left-[66.66666666666667%] w-[100vw] xl:w-[33.333333333333336%] h-[33.333333333333336%] xl:h-[100vh]">
-            <p class="text-[30px] title text-white">Rozikin</p>
+        <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+            <p class="text-[30px] title text-white mb-[15vh]">Khoirurrozkn</p>
         </div>
 
      <div class="section1 text-white">
@@ -343,25 +368,18 @@
                 <div class="relative xl:hidden">
                     <p id="navbar" class="bg-gray-100 text-black py-[11px] px-[25px] rounded-[25px] shadow-lg">● menu</p>    
                     <div id="navbar-menu" class="absolute bg-gray-100 shadow-lg w-[94vw] right-0 pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
-                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-500 py-[5px]">Halaman</p>
+                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-700 mb-[7px] pb-[15px]">Halaman</p>
                         <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
                         <a href="about" class="text-gray-700 ms-[18px] block py-[8px]">Tentang saya</a>
                         <a href="portofolio" class="text-gray-700 ms-[18px] block py-[8px]">Portofolio</a>
                         <a href="contact" class="text-gray-700 ms-[18px] block py-[8px]">Kontak</a>
     
-                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-500 mt-[20px] py-[5px]">Bahasa</p>
+                        <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-700 mt-[30px] mb-[7px] pb-[15px]">Bahasa</p>
                         <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
                         <a href="/en" class="text-gray-700 ms-[18px] block py-[8px]">English</a>
                     </div>
                 </div>
             </div>
-
-            <!-- <h1 class="text-[30px] title xl:text-[70px] leading-[115%] xl:w-[1000px] mt-[60px] xl:mt-[14vh]">
-                Pengembang Software dengan Semangat Eksplorasi
-            </h1> -->
-            <!-- <p class="mt-[15px] pe-[0%] xl:pe-[75%]">
-                Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
-            </p> -->
         </div>
     </div>
 
@@ -371,15 +389,15 @@
         <!-- Navbar -->
         <div class="z-30 sticky top-0 flex justify-end px-[3%]">
             <div class="relative">
-                <p id="sticky-navbar" class="text-white inline-block bg-[#141414] pointer cursor-pointer my-[30px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">● menu</p>
-                <div id="sticky-navbar-menu" class="absolute bg-[#141414] shadow-lg w-[94vw] xl:w-[30vw] right-0 mt-[-30px] pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
-                    <p class="title-nav relative text-gray-400  text-[14px] border-b-[0.5px] border-gray-500 py-[5px]">Halaman / Page</p>
+                <p id="sticky-navbar" class="text-white inline-block bg-[#101010] pointer cursor-pointer my-[30px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">● menu</p>
+                <div id="sticky-navbar-menu" class="absolute bg-[#101010] shadow-lg w-[94vw] xl:w-[30vw] right-0 mt-[-30px] pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
+                    <p class="title-nav relative text-gray-400 text-[14px] border-b-[0.5px] border-gray-200 mb-[7px] pb-[15px]">Halaman / Page</p>
                     <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
                     <a href="about" class="text-gray-200 ms-[18px] block py-[8px]">Tentang saya</a>
                     <a href="portofolio" class="text-gray-200 ms-[18px] block py-[8px]">Portofolio</a>
                     <a href="contact" class="text-gray-200 ms-[18px] block py-[8px]">Kontak</a>
 
-                    <p class="title-nav relative text-gray-400  text-[14px] border-b-[0.5px] border-gray-500 mt-[20px] py-[5px]">Bahasa / Language</p>
+                    <p class="title-nav relative text-gray-400 text-[14px] border-b-[0.5px] border-gray-200 mt-[30px] mb-[7px] pb-[15px]">Bahasa / Language</p>
                     <a href="/" class="text-white block py-[8px]">● <span class="ms-[5px]">Indonesia</span></a>
                     <a href="/en" class="text-gray-200 ms-[18px] block py-[8px]">English</a>
                 </div>
@@ -400,40 +418,25 @@
                 Pengembang Software dengan Semangat Eksplorasi
             </h1>
 
-            <!-- <div class="mt-[30px] relative border border-black"> -->
-                    <!-- <div translate="no" class="radius-bottom-left text-[14px] text-gray-600 px-[30px] py-[5px] bg-white absolute top-0 right-0">
-                        Code & Hike
-                    </div> -->
-
-                    <!-- <img class="object-cover rounded-[15px] aspect-[4/3]" src="./img/bg-hero-landing-page-compressed.webp" alt="T">
-                    <img class="object-cover rounded-[15px] rounded-tl-[0] border-l-[0] w-[50%] border-[7px] border-white aspect-[3/4]" src="./img/bg-hero-landing-page-compressed.webp" alt="T"> -->
-
-                    <!-- <div class="marquee mt-[60px]">
-                        <p class="text-[30px] flex w-[400vw] text-center">
-                            PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO ● PORTO
-                        </p>
-                    </div> -->
-            <!-- </div> -->
             <p class="mt-[30px] pt-[30px] border-t-[0.8px] border-black">
                 Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
             </p>
             <div class="flex justify-center relative z-20">
-                <p class="text-white mx-auto inline-block bg-[#141414] pointer cursor-pointer mt-[40px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                <p class="text-white mx-auto inline-block bg-[#101010] pointer cursor-pointer mt-[40px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Tentang saya
                 </p>
             </div>
 
-            <!-- <div class="bg-red-500 h-[40px] absolute bottom-0 rounded-b-[1000%] mb-[-20px] w-[110vw] left-[-5%]"></div> -->
         </div>
         <!-- top -->
 
-        <div class="px-[3%] relative z-10 pt-[110px] pb-[20px] bg-gray-100">
+        <div id="porto" class="porto px-[3%] relative z-10 pt-[110px] pb-[20px] bg-gray-100">
             <h1 class="text-[30px] title leading-[115%]">
                 Inovasi tumbuh di setiap proyek yang saya ciptakan
             </h1>
 
             <div class="mt-[20px] flex gap-x-3">
-                <div class="bg-[#141414] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">    
+                <div class="bg-[#101010] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">    
                     <svg width="23px" height="23px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -441,7 +444,7 @@
                         <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="border-[0.8px] border-[#141414] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">
+                <div class="border-[0.8px] border-[#101010] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">
                     <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -449,29 +452,28 @@
             </div>
 
             <div class="flex justify-end overflow-hidden">
-                <p class="info-porto text-end mt-[40px] text-gray-600 text-[14px] relative">
+                <p class="info-porto text-end mt-[40px] text-gray-800 text-[14px] relative">
                     Tap untuk lihat detail
                 </p>
             </div>
     
-            <div class="mt-[20px] flex flex-wrap gap-y-[10px] justify-between">
-                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/12520831/file/original-4e12fdbde7d477a41040260ade7453f6.png?resize=640x480&vertical=center" alt="T">
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Produk</p>
+            <div id="swap-porto-1" class="swap-porto-1 shadow-lg swap-porto mt-[25px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
+                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
+                <!-- <p class="flex items-center"><span class="me-[5px] text-[12px] text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
+                <p class="flex items-center"><span class="me-[5px] text-[12px] text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Produk</p> -->
             </div>
-            <div class="mt-[40px] flex flex-wrap gap-y-[10px] justify-between">
-                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/13933070/file/original-1735c44299464246eab29111da23b9ec.jpg?crop=0x0-3201x2401&resize=640x480&vertical=center" alt="T">
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web App</p>
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Manajemen</p>
+            <div id="swap-porto-2" class="swap-porto-2 shadow-lg swap-porto mt-[30px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
+                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
+
+
             </div>
-            <div class="mt-[40px] flex flex-wrap gap-y-[10px] justify-between">
-                <img class="object-cover rounded-[15px] w-full bg-gray-300 aspect-[4/3]" loading="lazy" src="https://cdn.dribbble.com/userupload/8727461/file/original-61f4377cbe36e19ebdccddf101bebea1.png?resize=640x480&vertical=center" alt="T">
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
-                <p class="flex items-center"><span class="me-[5px] text-[12px] font-bold text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Komersial</p>
+            <div id="swap-porto-3" class="swap-porto-3 shadow-lg swap-porto mt-[30px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
+                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
+
             </div>
     
             <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#141414] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[50px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Lihat semua porto
                 </p>
             </div>
@@ -485,29 +487,33 @@
                 Ayo baca artikel terbaru dan temukan tips praktis yang bisa kamu gunakan.            
             </p>
 
-            <div class="flex justify-end overflow-hidden">
-                <p class="text-end mt-[40px] text-gray-600 text-[14px] relative">
+            <div class="flex justify-between items-end mt-[50px]">
+                <svg width="25" height="25" class=" ms-[10%] xl:hidden arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path fill="black" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
+                </svg>  
+                <p class="text-gray-800 text-[14px]">
                     Tap untuk menuju blog tersebut
                 </p>
             </div>
             
-            <div class="mt-[10px]">
-                <a href="" class="border-t-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
-                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+            <div class="mt-[30px]">
+                <a href="" id="swap-blog-1" class="swap-blog rounded-t-[15px] overflow-hidden border-t-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
+                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
                     <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
                 </a>
-                <a href="" class="border-t-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
-                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+                <a href="" id="swap-blog-2" class="swap-blog overflow-hidden border-t-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
+                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
                     <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
                 </a>
-                <a href="" class="border-y-[0.8px] border-black flex items-center gap-x-[10px] py-[30px] ps-[2%]">
-                    <img class="h-[40px]" loading="lazy" src="./img/hiking.png" alt="T">
+                <a href="" id="swap-blog-3" class="swap-blog rounded-b-[15px] overflow-hidden border-y-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
+                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
                     <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
                 </a>
             </div>
             
+            
             <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#141414] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Lihat semua blog
                 </p>
             </div>
@@ -516,9 +522,9 @@
 
     </div>
 
-    <div class="footer bg-[#141414] text-white">
+    <div class="footer bg-[#101010] text-white">
         <div class="marquee pt-[10px]">
-            <h1 class="text-[30px] title flex w-[310vw] text-center">
+            <h1 class="text-[30px] flex w-[310vw] text-center">
                 CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● 
             </h1>
         </div>
@@ -538,35 +544,34 @@
                 <p class="text-black inline-block bg-white pointer cursor-pointer py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Ayo, sampaikan pesanmu!
                 </p>
+            </div>
 
-                <p class="text-gray-100 text-[14px] mt-[60px]">Di dukung oleh</p>
-                <div class="flex justify-between gap-4 border-t-[0.6px] pt-[20px] mt-[20px]">
-                    <div class="bg-green-600 rounded-full p-[10px] w-[25%]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-2.5 -2 24 24"><g fill="currentColor"><path d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.63 5.63 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75z"/><circle cx="14.375" cy="1.875" r="1.875"/></g></svg>
-                    </div>
-                    <div class="w-[25%]">
-                        <img class="rounded-full" src="https://play-lh.googleusercontent.com/8sJqMHOZzNFUBzHGNzTm_F6p-BqTEF5y5h3yWuSAT5pkv5Cx8pmbDtYosLxUiQpU8d0" alt="T">
-                    </div>
-                    <div class="w-[25%]">
-                        <img class="rounded-full" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPyENag1IhgT1u1fBlzMIku8PBTxSZ-PAjefVJRoSVmXVkxjInpz_lIAquruNjQGkKmA4&usqp=CAU" alt="T">
-                    </div>
-
+            <p class="text-gray-100 text-[14px] mt-[60px]">Di dukung oleh</p>
+            <div class="flex gap-4 border-t-[0.6px] pt-[20px] mt-[20px]">
+                <div class="bg-green-600 rounded-full p-[10px] w-[20%]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-2.5 -2 24 24"><g fill="currentColor"><path d="M16.25 16.25v-10h-10v-.625c0-1.034.841-1.875 1.875-1.875H10V0H8.125A5.63 5.63 0 0 0 2.5 5.625v.625H0V10h2.5v6.25H0V20h8.75v-3.75h-2.5V10h6.285v6.25H10V20h8.75v-3.75z"/><circle cx="14.375" cy="1.875" r="1.875"/></g></svg>
                 </div>
+                <div class="w-[20%]">
+                    <img class="rounded-full" src="https://play-lh.googleusercontent.com/8sJqMHOZzNFUBzHGNzTm_F6p-BqTEF5y5h3yWuSAT5pkv5Cx8pmbDtYosLxUiQpU8d0" alt="T">
+                </div>
+                <div class="w-[20%]">
+                    <img class="rounded-full" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPyENag1IhgT1u1fBlzMIku8PBTxSZ-PAjefVJRoSVmXVkxjInpz_lIAquruNjQGkKmA4&usqp=CAU" alt="T">
+                </div>
+            </div>
 
-                <div class="w-full mt-[60px]">
-                    <p class="border-b-[0.6px] text-gray-100 text-[14px] pb-[20px] mb-[20px]">Kontak & Sosial media</p>
-                    <div class="grid grid-cols-3 gap-4">
-                        <a href="/">● Whatsapp</a>
-                        <a href="/">● Email</a>
-                        <a href="/">● Instagram</a>
-                        <a href="/">● Twitter</a>
-                        <a href="/">● Facebook</a>
-                        <a href="/">● Github</a>
-                    </div>
-                    <p class="text-center border-t-[0.6px] text-gray-200 text-[14px] py-[20px] mt-[80px]">&copy; Khoirurrozkn, 2024</p>
+            <div class="w-full mt-[60px]">
+                <p class="border-b-[0.6px] text-gray-100 text-[14px] pb-[20px] mb-[20px]">Kontak & Sosial media</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <a href="/">● Whatsapp</a>
+                    <a href="/">● Email</a>
+                    <a href="/">● Instagram</a>
+                    <a href="/">● Twitter</a>
+                    <a href="/">● Facebook</a>
+                    <a href="/">● Github</a>
                 </div>
             </div>
     
+            <p class="text-center border-t-[0.6px] text-gray-200 text-[14px] py-[20px] mt-[80px]">&copy; Khoirurrozkn, 2024</p>
         </div>
 
 
@@ -574,22 +579,12 @@
 
     <script>
         window.addEventListener('load', () => {
-                const preloader1 = document.getElementById('box-preloader-1');
-                const preloader2 = document.getElementById('box-preloader-2');
-                const preloader3 = document.getElementById('box-preloader-3');
+                const preloader = document.getElementById('box-preloader');
                 
                 setTimeout(() => {
-                    preloader1.style.animationPlayState = 'running';
-                }, 1000);
-
-                setTimeout(() => {
-                    preloader2.style.animationPlayState = 'running';
-                }, 1200);
-
-                setTimeout(() => {
-                    preloader3.style.animationPlayState = 'running';
+                    preloader.style.animationPlayState = 'running';
                     document.body.classList.add('show')
-                }, 1400);
+                }, 1000);
         });
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -609,12 +604,21 @@
             });
 
             const section2 = document.getElementById('section2');
+            const porto = document.getElementById('porto');
+            const swapPorto1 = document.getElementById('swap-porto-1');
+            const swapPorto2 = document.getElementById('swap-porto-2');
+            const swapPorto3 = document.getElementById('swap-porto-3');
+            const swapBlog1 = document.getElementById('swap-blog-1');
+            const swapBlog2 = document.getElementById('swap-blog-2');
+            const swapBlog3 = document.getElementById('swap-blog-3');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
+                        entry.target.classList.remove('remove-show');
                     }else {
                         entry.target.classList.remove('show');
+                        entry.target.classList.add('remove-show');
                     }
                 });
             }, {
@@ -622,6 +626,13 @@
             });
 
             observer.observe(section2);
+            observer.observe(porto);
+            observer.observe(swapPorto1);
+            observer.observe(swapPorto2);
+            observer.observe(swapPorto3);
+            observer.observe(swapBlog1);
+            observer.observe(swapBlog2);
+            observer.observe(swapBlog3);
         });
     </script>
 </body>
