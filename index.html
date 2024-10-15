@@ -300,7 +300,7 @@
                 100% {
                     transform: translateY(-100%) translateX(100%);
                     border-radius: 100%;
-                    scale: 0.8;
+                    /* scale: 0.8; */
                 }
             }
 
@@ -312,6 +312,17 @@
                 position: absolute;
                 left: -4%;
                 top: 50%;
+                transform: translateX(-100%) translateY(-50%);
+            }
+
+            .info-blog::before {
+                content: "";
+                width: 100vw;
+                background-color: #101010;
+                height: 0.7px;
+                position: absolute;
+                left: -6%;
+                top: 55%;
                 transform: translateX(-100%) translateY(-50%);
             }
 
@@ -327,23 +338,6 @@
                 left: 0;
                 background-color: #f3f4f6;
                 box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.025);
-            }
-
-            .swap-blog::before{
-                content: "";
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: #101010;
-                transition: all 1s ease-in-out 1s;
-            }
-
-            .swap-blog.show::before{
-                transform: translatey(100%);   
-                border-top-left-radius: 100%;
-                border-top-right-radius: 100%;       
             }
 
 
@@ -366,7 +360,7 @@
                 </nav>
     
                 <div class="relative xl:hidden">
-                    <p id="navbar" class="bg-gray-100 text-black py-[11px] px-[25px] rounded-[25px] shadow-lg">● menu</p>    
+                    <p id="navbar" class="bg-gray-100 text-black py-[9px] px-[25px] rounded-[25px] shadow-lg">● menu</p>    
                     <div id="navbar-menu" class="absolute bg-gray-100 shadow-lg w-[94vw] right-0 pt-[40px] pb-[25px] px-[25px] rounded-[25px] rounded-tr-[0]">
                         <p class="title-nav relative text-gray-600 text-[14px] border-b-[0.5px] border-gray-700 mb-[7px] pb-[15px]">Halaman</p>
                         <a href="/" class="text-black block py-[8px]">● <span class="ms-[5px]">Utama</span></a>
@@ -422,7 +416,7 @@
                 Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
             </p>
             <div class="flex justify-center relative z-20">
-                <p class="text-white mx-auto inline-block bg-[#101010] pointer cursor-pointer mt-[40px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                <p class="text-white mx-auto inline-block bg-[#101010] pointer cursor-pointer mt-[40px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Tentang saya
                 </p>
             </div>
@@ -453,7 +447,7 @@
 
             <div class="flex justify-end overflow-hidden">
                 <p class="info-porto text-end mt-[40px] text-gray-800 text-[14px] relative">
-                    Tap untuk lihat detail
+                    Klik gambar untuk lihat detail
                 </p>
             </div>
     
@@ -473,7 +467,7 @@
             </div>
     
             <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[50px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
+                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[50px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
                     ● Lihat semua porto
                 </p>
             </div>
@@ -483,67 +477,62 @@
             <h1 class="text-[30px] title leading-[115%]">
                 Berbagi cerita dan wawasan terbaru di setiap artikel
             </h1>
-            <p class="mt-[10px]">
+            <p class="mt-[20px] pe-[30%]">
                 Ayo baca artikel terbaru dan temukan tips praktis yang bisa kamu gunakan.            
             </p>
+        
+            <div class="flex items-start justify-end mt-[40px] overflow-hidden">
+                <p class="text-gray-800 text-end text-[14px] me-[15px] relative info-blog">
+                    Geser kanan ke kiri
+                </p>
+            </div>
+        
+            <div class="snap-mandatory snap-x flex overflow-scroll gap-4 mt-[15px]">
+                <div class="snap-start w-[94vw] shrink-0">
+                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center"
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                         <p class="mt-[20px]">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
+                         </p>
+                </div>
+                <div class="snap-start w-[94vw] shrink-0">
+                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" 
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                         <p class="mt-[20px]">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
+                         </p>
+                </div>
+                <div class="snap-start w-[94vw] shrink-0">
+                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" 
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                         <p class="mt-[20px]">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
+                         </p>
+                </div>
+            </div>
 
-            <div class="flex justify-between items-end mt-[50px]">
-                <svg width="25" height="25" class=" ms-[10%] xl:hidden arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <path fill="black" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
-                </svg>  
-                <p class="text-gray-800 text-[14px]">
-                    Tap untuk menuju blog tersebut
-                </p>
-            </div>
-            
-            <div class="mt-[30px]">
-                <a href="" id="swap-blog-1" class="swap-blog rounded-t-[15px] overflow-hidden border-t-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
-                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
-                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
-                </a>
-                <a href="" id="swap-blog-2" class="swap-blog overflow-hidden border-t-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
-                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
-                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
-                </a>
-                <a href="" id="swap-blog-3" class="swap-blog rounded-b-[15px] overflow-hidden border-y-[0.8px] relative border-black flex items-center gap-x-[10px] py-[40px]">
-                    <img class="h-[30px] ms-[2%]" loading="lazy" src="./img/hiking.png" alt="T">
-                    <span class="line-clamp-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, consequatur!</span>
-                </a>
-            </div>
-            
-            
             <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[45px] py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
-                    ● Lihat semua blog
+                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[30px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
+                    ● Lihat semua porto
                 </p>
             </div>
-            
-        </div>
+        
 
     </div>
 
     <div class="footer bg-[#101010] text-white">
         <div class="marquee pt-[10px]">
             <h1 class="text-[30px] flex w-[310vw] text-center">
-                CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● 
+                CODE ● HIKE ● EAT ● SLEEP ● REPEAT ● CODE ● HIKE ● EAT ● SLEEP ● REPEAT
             </h1>
         </div>
 
         <div class="px-[3%]">
-            <div class="flex items-center justify-center gap-[3%] mt-[80px]">
+            <div class="flex items-center justify-center gap-[3%] mt-[60px]">
                 <img class="w-[60px] aspect-square rounded-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9ua2V5fGVufDB8fDB8fHww" alt="T">
                 <h1 class="text-[30px] title leading-[115%]">
                     Siap untuk Berkolaborasi
                 </h1>
-            </div>
-    
-            <div class="flex flex-wrap justify-between items-center relative z-10 mt-[30px]">
-                <svg width="25" height="25" class="xl:hidden arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <path fill="white" d="M30 15v13.59L1.71.29.29 1.71 28.59 30H16v2h15a1 1 0 0 0 1-1V15z" data-name="8-Arrow Down"/>
-                </svg>  
-                <p class="text-black inline-block bg-white pointer cursor-pointer py-[11px] px-[25px] rounded-[25px] shadow-lg select-none">
-                    ● Ayo, sampaikan pesanmu!
-                </p>
             </div>
 
             <p class="text-gray-100 text-[14px] mt-[60px]">Di dukung oleh</p>
@@ -571,7 +560,7 @@
                 </div>
             </div>
     
-            <p class="text-center border-t-[0.6px] text-gray-200 text-[14px] py-[20px] mt-[80px]">&copy; Khoirurrozkn, 2024</p>
+            <p class="text-gray-200 text-[14px] mt-[80px] py-[20px] border-t-[0.6px] text-center">&copy; Khoirurrozkn</p>
         </div>
 
 
@@ -608,9 +597,6 @@
             const swapPorto1 = document.getElementById('swap-porto-1');
             const swapPorto2 = document.getElementById('swap-porto-2');
             const swapPorto3 = document.getElementById('swap-porto-3');
-            const swapBlog1 = document.getElementById('swap-blog-1');
-            const swapBlog2 = document.getElementById('swap-blog-2');
-            const swapBlog3 = document.getElementById('swap-blog-3');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -630,9 +616,6 @@
             observer.observe(swapPorto1);
             observer.observe(swapPorto2);
             observer.observe(swapPorto3);
-            observer.observe(swapBlog1);
-            observer.observe(swapBlog2);
-            observer.observe(swapBlog3);
         });
     </script>
 </body>
