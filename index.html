@@ -36,9 +36,9 @@
         body {
             height: 100vh;
             perspective: 1px;
-            overflow: hidden;
-            /* overflow-x: hidden;
-            overflow-y: scroll; */
+            /* overflow: hidden; */
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         body.show {
@@ -47,7 +47,24 @@
         }
 
         .title {
-            font-family: "Poppins", sans-serif;       
+            font-family: "Poppins", sans-serif;  
+        }
+
+        .btn::before {
+            content: "";
+            width: 10px;
+            aspect-ratio: 1/1;
+            position: absolute;
+            left: 6%;
+            top: 20%;
+            border-radius: 100%;
+            background-color: rgb(91 33 182);
+            transition: transform 0.5s ease-out;
+            transform: translateX(100%) translateY(100%);
+        }
+
+        .btn:hover::before {
+            transform: scale(30) translateX(27%) translateY(25%);
         }
 
         .section1 {
@@ -238,55 +255,17 @@
 
             .porto::after{
                 content: "";
-                transition: transform 0.5s ease-in-out 0.2s, 
-                    border-radius 0.5s ease-in-out 0.6s;
                 height: 100px;
                 position: absolute;
                 z-index: 15;
                 top: 0;
-                transform: translateY(-90px);
                 width: 100vw;
                 left: 0;
-                background-color: white;
+                background-color: #D0C5FD; 
                 box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.025);
-            }
-
-            .porto.show::after {
-                transform: translateY(-60px);
+                transform: translateY(-50px);
                 border-bottom-left-radius: 100%;
                 border-bottom-right-radius: 100%;
-            }
-
-            .swap-porto::before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-bottom-left-radius: 0%;
-                background-color: #101010;
-                transition: all 1s ease-in-out 1s;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                font-size: 25px;
-                font-family: "Poppins", sans-serif;       
-            }
-
-            .swap-porto-1::before {
-                content: "Produk";
-            }
-            .swap-porto-2::before {
-                content: "Manajemen";
-
-            }
-            .swap-porto-3::before {
-                content: "Komersial";
-            }
-
-            .swap-porto.show::before {
-                transform: translateX(100%) translateY(-100%);
-                border-bottom-left-radius: 100%;
             }
 
             .box-preloader {
@@ -336,16 +315,16 @@
                 margin-top: -40px;
                 width: 100vw;
                 left: 0;
-                background-color: #f3f4f6;
+                background-color: #C1B4FA;
                 box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.025);
             }
 
 
     </style>
 
-        <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+        <!-- <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
             <p class="text-[30px] title text-white mb-[15vh]">Khoirurrozkn</p>
-        </div>
+        </div> -->
 
      <div class="section1 text-white">
         <div class="wrap-hero absolute bg-gradient-to-br from-[#000000cc] to-[#00000066] w-full h-full px-[3%] pt-[30px] xl:pt-[30px]">
@@ -407,7 +386,7 @@
         </svg>  
 
         <!-- top -->
-        <div class="top relative px-[3%] bg-inherit xl:pt-[80px] pb-[40px]">
+        <div class="top relative px-[3%] bg-gradient-to-b from-white to-violet-300 xl:pt-[80px] pb-[40px]">
             <h1 class="text-[30px] title leading-[115%]">
                 Pengembang Software dengan Semangat Eksplorasi
             </h1>
@@ -416,106 +395,104 @@
                 Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.
             </p>
             <div class="flex justify-center relative z-20">
-                <p class="text-white mx-auto inline-block bg-[#101010] pointer cursor-pointer mt-[40px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
-                    ● Tentang saya
-                </p>
+                <a class="btn overflow-hidden relative text-white mx-auto inline-block bg-[#101010] pointer cursor-pointer mt-[40px] py-[13px] ps-[35px] pe-[25px] rounded-[25px] shadow-lg select-none">
+                    <span class="relative">Tentang saya</span> 
+                </a>
             </div>
 
         </div>
         <!-- top -->
 
-        <div id="porto" class="porto px-[3%] relative z-10 pt-[110px] pb-[20px] bg-gray-100">
-            <h1 class="text-[30px] title leading-[115%]">
-                Inovasi tumbuh di setiap proyek yang saya ciptakan
-            </h1>
+        <div class="porto px-[3%] relative z-10 mt-[-10px] pt-[120px] pb-[20px] text-white bg-gradient-to-b from-[#101010] via-[#101010] to-violet-300">
+            <svg class="absolute right-[-30%] transform scale-x-[-1] rotate-[40deg] top-0 mt-[-75px] w-[200vw] h-[350px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2400 800"><defs><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="oooscillate-grad"><stop stop-color="rgb(196 181 253)" stop-opacity="1" offset="0%"></stop><stop stop-color="rgb(196 181 253)" stop-opacity="1" offset="100%"></stop></linearGradient></defs><g stroke-width="2" stroke="url(#oooscillate-grad)" fill="none" stroke-linecap="round"><path d="M 0 1272 Q 600 -100 1200 400 Q 1800 900 2400 1272" opacity="0.05"></path><path d="M 0 1248 Q 600 -100 1200 400 Q 1800 900 2400 1248" opacity="0.07"></path><path d="M 0 1224 Q 600 -100 1200 400 Q 1800 900 2400 1224" opacity="0.09"></path><path d="M 0 1200 Q 600 -100 1200 400 Q 1800 900 2400 1200" opacity="0.10"></path><path d="M 0 1176 Q 600 -100 1200 400 Q 1800 900 2400 1176" opacity="0.12"></path><path d="M 0 1152 Q 600 -100 1200 400 Q 1800 900 2400 1152" opacity="0.14"></path><path d="M 0 1128 Q 600 -100 1200 400 Q 1800 900 2400 1128" opacity="0.16"></path><path d="M 0 1104 Q 600 -100 1200 400 Q 1800 900 2400 1104" opacity="0.18"></path><path d="M 0 1080 Q 600 -100 1200 400 Q 1800 900 2400 1080" opacity="0.20"></path><path d="M 0 1056 Q 600 -100 1200 400 Q 1800 900 2400 1056" opacity="0.21"></path><path d="M 0 1032 Q 600 -100 1200 400 Q 1800 900 2400 1032" opacity="0.23"></path><path d="M 0 1008 Q 600 -100 1200 400 Q 1800 900 2400 1008" opacity="0.25"></path><path d="M 0 984 Q 600 -100 1200 400 Q 1800 900 2400 984" opacity="0.27"></path><path d="M 0 960 Q 600 -100 1200 400 Q 1800 900 2400 960" opacity="0.29"></path><path d="M 0 936 Q 600 -100 1200 400 Q 1800 900 2400 936" opacity="0.31"></path><path d="M 0 912 Q 600 -100 1200 400 Q 1800 900 2400 912" opacity="0.32"></path><path d="M 0 888 Q 600 -100 1200 400 Q 1800 900 2400 888" opacity="0.34"></path><path d="M 0 864 Q 600 -100 1200 400 Q 1800 900 2400 864" opacity="0.36"></path><path d="M 0 840 Q 600 -100 1200 400 Q 1800 900 2400 840" opacity="0.38"></path><path d="M 0 816 Q 600 -100 1200 400 Q 1800 900 2400 816" opacity="0.40"></path><path d="M 0 792 Q 600 -100 1200 400 Q 1800 900 2400 792" opacity="0.42"></path><path d="M 0 768 Q 600 -100 1200 400 Q 1800 900 2400 768" opacity="0.43"></path><path d="M 0 744 Q 600 -100 1200 400 Q 1800 900 2400 744" opacity="0.45"></path><path d="M 0 720 Q 600 -100 1200 400 Q 1800 900 2400 720" opacity="0.47"></path><path d="M 0 696 Q 600 -100 1200 400 Q 1800 900 2400 696" opacity="0.49"></path><path d="M 0 672 Q 600 -100 1200 400 Q 1800 900 2400 672" opacity="0.51"></path><path d="M 0 648 Q 600 -100 1200 400 Q 1800 900 2400 648" opacity="0.53"></path><path d="M 0 624 Q 600 -100 1200 400 Q 1800 900 2400 624" opacity="0.54"></path><path d="M 0 600 Q 600 -100 1200 400 Q 1800 900 2400 600" opacity="0.56"></path><path d="M 0 576 Q 600 -100 1200 400 Q 1800 900 2400 576" opacity="0.58"></path><path d="M 0 552 Q 600 -100 1200 400 Q 1800 900 2400 552" opacity="0.60"></path><path d="M 0 528 Q 600 -100 1200 400 Q 1800 900 2400 528" opacity="0.62"></path><path d="M 0 504 Q 600 -100 1200 400 Q 1800 900 2400 504" opacity="0.63"></path><path d="M 0 480 Q 600 -100 1200 400 Q 1800 900 2400 480" opacity="0.65"></path><path d="M 0 456 Q 600 -100 1200 400 Q 1800 900 2400 456" opacity="0.67"></path><path d="M 0 432 Q 600 -100 1200 400 Q 1800 900 2400 432" opacity="0.69"></path><path d="M 0 408 Q 600 -100 1200 400 Q 1800 900 2400 408" opacity="0.71"></path><path d="M 0 384 Q 600 -100 1200 400 Q 1800 900 2400 384" opacity="0.73"></path><path d="M 0 360 Q 600 -100 1200 400 Q 1800 900 2400 360" opacity="0.74"></path><path d="M 0 336 Q 600 -100 1200 400 Q 1800 900 2400 336" opacity="0.76"></path><path d="M 0 312 Q 600 -100 1200 400 Q 1800 900 2400 312" opacity="0.78"></path><path d="M 0 288 Q 600 -100 1200 400 Q 1800 900 2400 288" opacity="0.80"></path><path d="M 0 264 Q 600 -100 1200 400 Q 1800 900 2400 264" opacity="0.82"></path><path d="M 0 240 Q 600 -100 1200 400 Q 1800 900 2400 240" opacity="0.84"></path><path d="M 0 216 Q 600 -100 1200 400 Q 1800 900 2400 216" opacity="0.85"></path><path d="M 0 192 Q 600 -100 1200 400 Q 1800 900 2400 192" opacity="0.87"></path><path d="M 0 168 Q 600 -100 1200 400 Q 1800 900 2400 168" opacity="0.89"></path><path d="M 0 144 Q 600 -100 1200 400 Q 1800 900 2400 144" opacity="0.91"></path><path d="M 0 120 Q 600 -100 1200 400 Q 1800 900 2400 120" opacity="0.93"></path><path d="M 0 96 Q 600 -100 1200 400 Q 1800 900 2400 96" opacity="0.95"></path><path d="M 0 72 Q 600 -100 1200 400 Q 1800 900 2400 72" opacity="0.96"></path><path d="M 0 48 Q 600 -100 1200 400 Q 1800 900 2400 48" opacity="0.98"></path></g></svg>
 
-            <div class="mt-[20px] flex gap-x-3">
-                <div class="bg-[#101010] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">    
-                    <svg width="23px" height="23px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 15.6C4 15.0399 4 14.7599 4.10899 14.546C4.20487 14.3578 4.35785 14.2049 4.54601 14.109C4.75992 14 5.03995 14 5.6 14H8.4C8.96005 14 9.24008 14 9.45399 14.109C9.64215 14.2049 9.79513 14.3578 9.89101 14.546C10 14.7599 10 15.0399 10 15.6V18.4C10 18.9601 10 19.2401 9.89101 19.454C9.79513 19.6422 9.64215 19.7951 9.45399 19.891C9.24008 20 8.96005 20 8.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V15.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="border-[0.8px] border-[#101010] py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">
-                    <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+            <div class="relative z-10">
+                <h1 class="text-[30px] title leading-[115%]">
+                    Inovasi tumbuh di setiap proyek yang saya ciptakan
+                </h1>
+                <div class="mt-[20px] flex jus gap-x-3">
+                    <div class="bg-white py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">    
+                        <svg width="23px" height="23px" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 15.6C4 15.0399 4 14.7599 4.10899 14.546C4.20487 14.3578 4.35785 14.2049 4.54601 14.109C4.75992 14 5.03995 14 5.6 14H8.4C8.96005 14 9.24008 14 9.45399 14.109C9.64215 14.2049 9.79513 14.3578 9.89101 14.546C10 14.7599 10 15.0399 10 15.6V18.4C10 18.9601 10 19.2401 9.89101 19.454C9.79513 19.6422 9.64215 19.7951 9.45399 19.891C9.24008 20 8.96005 20 8.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V15.6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="border-[0.8px] border-white py-[11px] px-[25px] select-none rounded-[25px] shadow-lg">
+                        <svg width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex justify-end overflow-hidden">
-                <p class="info-porto text-end mt-[40px] text-gray-800 text-[14px] relative">
+            <div class="mt-[50px] flex justify-between overflow-hidden relative">
+                <div class="flex justify-center items-center" id="indicator">
+                    <span class="dot border bg-white rounded-full w-[10px] h-[10px] me-1"></span>
+                    <span class="dot border rounded-full w-[10px] h-[10px] mx-1"></span>
+                    <span class="dot border rounded-full w-[10px] h-[10px] mx-1"></span>
+                </div>
+                <p class="text-gray-100 text-[12px]">
                     Klik gambar untuk lihat detail
                 </p>
             </div>
-    
-            <div id="swap-porto-1" class="swap-porto-1 shadow-lg swap-porto mt-[25px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
-                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
-                <!-- <p class="flex items-center"><span class="me-[5px] text-[12px] text-white bg-gray-400 px-[5px] rounded-[5px]">tipe</span>Web</p>
-                <p class="flex items-center"><span class="me-[5px] text-[12px] text-white bg-gray-400 px-[5px] rounded-[5px]">2024</span>Produk</p> -->
-            </div>
-            <div id="swap-porto-2" class="swap-porto-2 shadow-lg swap-porto mt-[30px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
-                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
 
-
-            </div>
-            <div id="swap-porto-3" class="swap-porto-3 shadow-lg swap-porto mt-[30px] rounded-[15px] aspect-[3/2.2] bg-gray-300 relative overflow-hidden flex justify-center items-center">
-                <img class="object-cover bg-gray-300" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" alt="T">
-
+            <div class="snap-mandatory snap-x flex overflow-x-auto gap-4 mt-[20px] relative" id="slider">
+                <a href="" class="snap-start w-[94vw] shrink-0">
+                    <img alt="Slide 1" loading="lazy" src="https://cdn.dribbble.com/userupload/14761489/file/original-f4b42ae61efcce1ca27e2c572204e7fa.jpg?resize=1504x1128"
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                    <span class="flex justify-between mt-[10px]">
+                        <span>
+                            Website
+                        </span>
+                        <span>
+                            Produk
+                        </span>
+                    </span>
+                </a>
+                <div class="snap-start w-[94vw] shrink-0">
+                    <img alt="Slide 2" loading="lazy" src="https://cdn.dribbble.com/userupload/14761489/file/original-f4b42ae61efcce1ca27e2c572204e7fa.jpg?resize=1504x1128"
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                    <span class="flex justify-between mt-[10px]">
+                        <span>
+                            Website
+                        </span>
+                        <span>
+                            Produk
+                        </span>
+                    </span>
+                </div>
+                <div class="snap-start w-[94vw] shrink-0">
+                    <img alt="Slide 3" loading="lazy" src="https://cdn.dribbble.com/userupload/14761489/file/original-f4b42ae61efcce1ca27e2c572204e7fa.jpg?resize=1504x1128"
+                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
+                    <span class="flex justify-between mt-[10px]">
+                        <span>
+                            Website
+                        </span>
+                        <span>
+                            Produk
+                        </span>
+                    </span>
+                </div>
             </div>
     
             <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[50px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
-                    ● Lihat semua porto
-                </p>
+                <a class="btn relative overflow-hidden text-black inline-block bg-white pointer cursor-pointer mt-[35px] py-[11px] ps-[38px] pe-[25px] rounded-[25px] shadow-lg select-none">
+                    <span class="relative">Lihat semua proyek</span> 
+                </a>
             </div>
         </div>
 
-        <div class="blog relative bg-white pt-[130px] px-[3%] pb-[80px]">
+        <div class="blog relative bg-gradient-to-b from-white to-violet-300 pt-[130px] px-[3%] pb-[80px]">
             <h1 class="text-[30px] title leading-[115%]">
                 Berbagi cerita dan wawasan terbaru di setiap artikel
             </h1>
-            <p class="mt-[20px] pe-[30%]">
+            <p class="mt-[20px]">
                 Ayo baca artikel terbaru dan temukan tips praktis yang bisa kamu gunakan.            
             </p>
-        
-            <div class="flex items-start justify-end mt-[40px] overflow-hidden">
-                <p class="text-gray-800 text-end text-[14px] me-[15px] relative info-blog">
-                    Geser kanan ke kiri
-                </p>
-            </div>
-        
-            <div class="snap-mandatory snap-x flex overflow-scroll gap-4 mt-[15px]">
-                <div class="snap-start w-[94vw] shrink-0">
-                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center"
-                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
-                         <p class="mt-[20px]">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
-                         </p>
-                </div>
-                <div class="snap-start w-[94vw] shrink-0">
-                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" 
-                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
-                         <p class="mt-[20px]">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
-                         </p>
-                </div>
-                <div class="snap-start w-[94vw] shrink-0">
-                    <img alt="T" loading="lazy" src="https://cdn.dribbble.com/userupload/12778193/file/original-4375c44c39710b7b9e66b24647a34b9b.png?resize=640x480&vertical=center" 
-                         class="shadow-lg aspect-[3/2.2] bg-gray-300 object-cover rounded-[15px]"/>
-                         <p class="mt-[20px]">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, minus?
-                         </p>
-                </div>
-            </div>
-
-            <div class="flex justify-center relative z-10">
-                <p class="text-white inline-block bg-[#101010] pointer cursor-pointer mt-[30px] py-[13px] px-[25px] rounded-[25px] shadow-lg select-none">
-                    ● Lihat semua porto
-                </p>
-            </div>
+            
+            
         
 
     </div>
@@ -567,14 +544,14 @@
     </div>
 
     <script>
-        window.addEventListener('load', () => {
-                const preloader = document.getElementById('box-preloader');
+        // window.addEventListener('load', () => {
+        //         const preloader = document.getElementById('box-preloader');
                 
-                setTimeout(() => {
-                    preloader.style.animationPlayState = 'running';
-                    document.body.classList.add('show')
-                }, 1000);
-        });
+        //         setTimeout(() => {
+        //             preloader.style.animationPlayState = 'running';
+        //             document.body.classList.add('show')
+        //         }, 1000);
+        // });
 
         document.addEventListener("DOMContentLoaded", function () {
             const toggleMenu = (navObject, menuObject) => {
@@ -593,10 +570,6 @@
             });
 
             const section2 = document.getElementById('section2');
-            const porto = document.getElementById('porto');
-            const swapPorto1 = document.getElementById('swap-porto-1');
-            const swapPorto2 = document.getElementById('swap-porto-2');
-            const swapPorto3 = document.getElementById('swap-porto-3');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -612,11 +585,27 @@
             });
 
             observer.observe(section2);
-            observer.observe(porto);
-            observer.observe(swapPorto1);
-            observer.observe(swapPorto2);
-            observer.observe(swapPorto3);
         });
+
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        const slidesCount = dots.length;
+
+        function updateDots() {
+            const slideWidth = slider.clientWidth;
+            const scrollPosition = Math.round(slider.scrollLeft / slideWidth);
+            dots.forEach((dot, index) => {
+                if (index === scrollPosition) {
+                    dot.classList.add('bg-white');
+                } else {
+                    dot.classList.remove('bg-white');
+                }
+            });
+        }
+
+        updateDots();
+
+        slider.addEventListener('scroll', updateDots);
     </script>
 </body>
 </html>
