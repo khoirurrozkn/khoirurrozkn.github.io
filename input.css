@@ -2,9 +2,28 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+    font-family: 'title-font';
+    src: url('./grotesis/grotesis.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sub-title-font';
+    src: url('./ethena/Ethena-Emporium-Script-BF65449a61f134e.otf') format('truetype');
+}
+
 @layer utilities {
     * {
         font-family: "Manrope", sans-serif;
+    }
+
+    .title {
+        font-family: "title-font", "Poppins";
+    }
+
+    .sub-title {
+        font-family: "sub-title-font", "Poppins";
+
     }
 
     @media (min-width: 820px) {
