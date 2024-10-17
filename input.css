@@ -3,35 +3,16 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-    font-family: 'title-font';
-    src: url('./grotesis/grotesis.otf') format('truetype');
+    font-family: 'title';
+    src: url('./stainger/StaingerPersonalUse-z8M9G.otf');
 }
 
 @font-face {
-    font-family: 'sub-title-font';
-    src: url('./ethena/Ethena-Emporium-Script-BF65449a61f134e.otf') format('truetype');
+    font-family: 'text-background';
+    src: url('./muller/Muller-ExtraBold-DEMO.otf');
 }
 
 @layer utilities {
-    * {
-        font-family: "Manrope", sans-serif;
-    }
-
-    .title {
-        font-family: "title-font", "Poppins";
-    }
-
-    .sub-title {
-        font-family: "sub-title-font", "Poppins";
-
-    }
-
-    @media (min-width: 820px) {
-        *{
-            @apply text-[18px];
-        }
-    }
-
     ::-webkit-scrollbar {
         @apply w-0;
     }
@@ -40,7 +21,33 @@
         @apply w-0;
     }
 
-    body {
-        @apply bg-gray-100;
+    * {
+        font-family: "Manrope", sans-serif;
     }
+
+    .title {
+        font-family: "title", "sans-serif";
+    }
+
+    .text-background {
+        font-family: "text-background", "serif";
+        /* @apply text-[70px]; */
+    }
+
+    @media (min-width: 820px) {
+        *{
+            @apply text-[18px];
+        }
+    }
+
+    img {
+        @apply w-full object-cover;
+    }
+
+    .test {
+        @apply flex justify-center items-center title;
+    }
+
+
+
 }
