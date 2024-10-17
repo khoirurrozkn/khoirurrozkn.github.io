@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'title';
-    src: url('./aloevvera/Aloevera-Regular.otf');
+    src: url('./Aloevvera/Aloevera-Light.otf');
 }
 
 @font-face {
     font-family: 'text-background';
-    src: url('./aloevvera/Aloevera-ExtraBold.otf');
+    src: url('./Aloevvera/Aloevera-ExtraBold.otf');
 }
 
 @layer utilities {
@@ -26,14 +26,13 @@
     }
 
     .title {
-        font-family: "title", "Manrope";
+        font-family: "title", "sans-serif";
     }
 
     .text-background {
-        font-family: "text-background", "Manrope";
-        /* @apply text-[#081335]; */
-        -webkit-text-stroke: 0.5px #081335;
-        @apply text-transparent;
+        font-family: "text-background", "serif";
+        -webkit-text-stroke: 0.5px black;
+        color: transparent !important;
     }
 
     @media (min-width: 820px) {
@@ -43,7 +42,7 @@
     }
 
     img {
-        @apply object-cover;
+        @apply w-full object-cover;
     }
 
     .test {
