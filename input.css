@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'title';
-    src: url('./stainger/StaingerPersonalUse-z8M9G.otf');
+    src: url('./aloevvera/Aloevera-Regular.otf');
 }
 
 @font-face {
     font-family: 'text-background';
-    src: url('./muller/Muller-ExtraBold-DEMO.otf');
+    src: url('./aloevvera/Aloevera-ExtraBold.otf');
 }
 
 @layer utilities {
@@ -26,12 +26,14 @@
     }
 
     .title {
-        font-family: "title", "sans-serif";
+        font-family: "title", "Manrope";
     }
 
     .text-background {
-        font-family: "text-background", "serif";
-        /* @apply text-[70px]; */
+        font-family: "text-background", "Manrope";
+        /* @apply text-[#081335]; */
+        -webkit-text-stroke: 0.5px #081335;
+        @apply text-transparent;
     }
 
     @media (min-width: 820px) {
@@ -41,7 +43,7 @@
     }
 
     img {
-        @apply w-full object-cover;
+        @apply object-cover;
     }
 
     .test {
