@@ -59,51 +59,80 @@
             }
         }
 
+        .arrow {
+            animation: arrow-header 5s infinite;
+        }
+
+        @keyframes arrow-header {
+            0% {
+                transform: rotate(-230deg);
+            }
+            25% {
+                transform: rotate(-140deg);
+            }
+            50% {
+                transform: rotate(-50deg);
+            }
+            75% {
+                transform: rotate(-140deg);
+            }
+            100% {
+                transform: rotate(-230deg);
+            }
+        }
+
     </style>
 
-    <nav class="fixed flex justify-between items-center top-0 left-0 w-screen px-[3%] z-10 pt-[20px]">
+    <nav class="fixed flex justify-between items-center top-0 left-0 w-screen px-[4%] z-10 pt-[30px]">
         <a href="">Khoirurrozkn</a>
         <div class="hidden lg-block">
             <a href="">Utama</a>
             <a href="">Portofolio</a>
             <a href="">Kontak</a>
         </div>
-        <button>
-            Menu
+        <button class="">
+            ● Menu
         </button>
     </nav>
 
     <div class="mb-[-100vh]">
-        <section class="h-screen sticky top-0">
-            <p class="title text-[50px] leading-[115%] px-[3%]">Web / App Developer</p>
-            <div class="marquee sticky mt-[] border-4 border-red-500 overflow-hidden">
-                <h1 class="text-background flex text-[150px] w-[3000px] text-center">
-                    MOCH KHOIRUR ROZIKIN
-                </h1>
-            </div>
-            <div class="marquee sticky mt-[] border-4 border-red-500 overflow-hidden">
-                <h1 class="text-background flex text-[150px] w-[3000px] text-center">
-                    MOCH KHOIRUR ROZIKIN
-                </h1>
-            </div>
-            <div class="marquee sticky mt-[] border-4 border-red-500 overflow-hidden">
-                <h1 class="text-background flex text-[150px] w-[3000px] text-center">
-                    MOCH KHOIRUR ROZIKIN
-                </h1>
-            </div>
-            <div class="marquee sticky mt-[] border-4 border-red-500 overflow-hidden">
-                <h1 class="text-background flex text-[150px] w-[3000px] text-center">
-                    MOCH KHOIRUR ROZIKIN
-                </h1>
+        <section class="hero sticky bg-gradient-to-bl from-white to-[#dfdcd1] top-0 overflow-hidden">
+            <div class="relative h-screen pt-[120px]">
+
+                <div class="px-[4%]">
+                    <h1 class="title text-[50px] leading-[100%] border-b-[0.8px] border-black pb-[25px]" translate="no">Web App Developer</h1>
+
+                    <div class="flex items-center mt-[25px]">
+
+                        <svg class="ms-[3%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path fill="black" d="M31.71 1.71 30.29.29 2 28.59V16H0v15a1 1 0 0 0 1 1h16v-2H3.41z" data-name="6-Arrow Down"/>
+                        </svg>                                   
+                        <p class="ms-[25%] w-[220px]">Selamat datang! Ayo, scroll dan temukan banyak proyek menarik saya!</p>
+
+                    </div>
+
+                </div>
+
+                <div class="marquee absolute bottom-[25%]">
+                    <h1 class="text-background flex text-[150px] leading-[100%] w-[3000px] text-center">
+                        MOCH KHOIRUR ROZIKIN
+                    </h1>
+                </div>
+    
+                <p class="absolute z-20 font-bold bottom-[10%] left-[5%] text-[14px] border-t-[0.8px] border-black pt-[10px]">Since 2023</p>
+                <img class="absolute bottom-0 right-0 z-10 w-[32vh] z-10" src="./img/diriku.webp" alt="Moch Khoirur Rozikin">
             </div>
         </section>
         <div class="h-screen"></div>
     </div>
     
     <section class="relative z-[2]">
-        <div class="h-[200vh] bg-red-500">
-            <h2>Elevate life</h2>
-            <p>Stay ahead of your goals with real-time tracking and seamless connectivity. This smartwatch adapts to your lifestyle, keeping you in control of your health and productivity.</p>
+        <div class="min-h-screen pt-[50px] bg-white">
+            <div class="px-[4%]">
+                <h1 class="text-[50px] title leading-[105%]">Pengembang Software dengan Semangat Eksplorasi</h1>
+                <p class="mt-[15px] w-[80%]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
+                <img class="w-[40vw]" src="./img/diriku2.png" alt="">
+            </div>
         </div>
     </section>
     
