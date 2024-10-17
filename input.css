@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'title';
-    src: url('./Aloevvera/Aloevera-Light.otf');
+    src: url('./Aloevera/Aloevera-Light.otf');
 }
 
 @font-face {
     font-family: 'text-background';
-    src: url('./Aloevvera/Aloevera-ExtraBold.otf');
+    src: url('./Aloevera/Aloevera-ExtraBold.otf');
 }
 
 @layer utilities {
