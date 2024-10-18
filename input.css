@@ -4,12 +4,17 @@
 
 @font-face {
     font-family: 'title';
-    src: url('./Aloevera/Aloevera-Light.otf');
+    src: url('./Aloevera/Aloevera-Medium.otf');
 }
 
 @font-face {
-    font-family: 'text-background';
-    src: url('./Aloevera/Aloevera-ExtraBold.otf');
+    font-family: 'sub-title';
+    src: url('./Aloevera/Aloevera-Regular.otf');
+}
+
+@font-face {
+    font-family: 'body';
+    src: url('./Aloevera/Aloevera-Regular.otf');
 }
 
 @layer utilities {
@@ -22,17 +27,20 @@
     }
 
     * {
-        font-family: "Manrope", sans-serif;
+        font-family: "body", sans-serif;
     }
 
     .title {
-        font-family: "title", "sans-serif";
+        font-family: "title", "serif";
+    }
+
+    .sub-title {
+        font-family: "sub-title", "serif";
     }
 
     .text-background {
-        font-family: "text-background", "serif";
-        -webkit-text-stroke: 0.5px white;
-        color: transparent !important;
+        font-family: "sub-title", "serif";
+        color: white;
         mix-blend-mode: difference;
     }
 

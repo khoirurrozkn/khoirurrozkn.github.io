@@ -89,67 +89,100 @@
             }
         }
 
+        @keyframes spin-slow {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+
+        .navbar-btn {
+            transition: color 0.6s ease, background-color 0.5s ease, padding 0.7s ease, border-radius 1s ease;
+        }
+
+        .navbar-btn.show-button {
+            color: white !important;
+            background-color: #101010;
+            padding: 15px 25px;
+            border-radius: 25px;
+        }
+
+
     </style>
 
-    <nav class="fixed flex justify-between items-center top-0 left-0 w-screen px-[4%] z-10 pt-[25px]">
-        <a href="">Khoirurrozkn</a>
+    <nav class="fixed flex justify-end top-0 left-0 w-screen px-[4%] z-10 pt-[25px]">
         <div class="hidden lg-block">
             <a href="">Utama</a>
             <a href="">Portofolio</a>
             <a href="">Kontak</a>
         </div>
-        <button class="">
+        <button id="navbar-btn" class="navbar-btn">
             ● Menu
         </button>
     </nav>
     
-    <section class="relative z-[2] overflow-hidden">
-            <div id="hero" class="hero pt-[120px] bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%]">
-    
-                    <h1 class="title text-[60px] leading-[100%] pb-[25px]" translate="no">Web App Developer</h1>
-    
-                    <div class="flex items-center">
+    <section id="hero" class="relative z-[2] overflow-hidden">
+            <div id="hero" class="hero bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%]">
 
-                        <svg class="ms-[3%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <!-- logo sm -->
+                <p class="pt-[25px]">&copy; Khoirurrozkn</p>
+                <!-- logo sm -->
+
+                    <h1 class="title pt-[60px] text-[60px] leading-[90%] text-center" translate="no">
+                        Web App Developer
+                    </h1>
+                    <p class="mt-[15px] text-center">
+                        Selamat datang! Ayo, scroll dan temukan banyak proyek menarik.
+                    </p>
+    
+                    <div class="relative mt-[40px] flex justify-center items-end">
+                        <svg class="absolute left-[4%] top-[15%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path fill="black" d="M31.71 1.71 30.29.29 2 28.59V16H0v15a1 1 0 0 0 1 1h16v-2H3.41z" data-name="6-Arrow Down"/>
                         </svg>                                   
-                        <p class="ms-[25%] pt-[25px] w-[60%] border-t-[0.8px] border-black">Selamat datang! Ayo, scroll dan temukan banyak proyek menarik saya!</p>
-    
-                    </div>
-    
-    
-                    <div class="relative mt-[60px] flex justify-between items-end">
-                        <div class="marquee-moch-khoirur-rozikin absolute left-0 top-[10%]">
+                        <p class="absolute right-[3%] top-[15%] text-[14px]" translate="no">Since 2023</p>
+
+                        <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
                             <h1 class="text-background flex text-[150px] leading-[100%] w-[2800px] text-center">
-                                MOCH KHOIRUR ROZIKIN
+                                Moch Khoirur Rozikin
                             </h1>
                         </div>
-            
-                        <p class="mb-[40px] pt-[15px] text-[14px] border-t-[0.8px] border-black pt-[20px]" translate="no">Since 2023</p>
-                        <img class="relative w-[280px] me-[-50px] z-10" src="./img/diriku.webp" alt="Moch Khoirur Rozikin">
+                    
+                        <img class="w-[250px]" src="./img/diriku.webp" alt="Moch Khoirur Rozikin">
                     </div>
             </div>
 
 
-            <div class="px-[4%] bg-white pt-[80px] pb-[80px]">
-                <h1 class="text-[50px] title leading-[105%]">
+            <div class="px-[4%] bg-white pt-[80px] pb-[100px]">
+                <h1 id="trigger-for-navbar-btn" class="text-[40px] sub-title leading-[105%]">
                     Pengembang Software dengan Semangat Eksplorasi       
                     <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
                 </h1>
-                <p class="mt-[15px] pe-[15%] mb-[140px]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
-                <div class="relative flex justify-between items-end border-b-[0.8px] border-black pb-[40px]">
-                    <div class="absolute top-0 marquee-programming mt-[20px]">
-                        <h1 translate="no" class="text-background flex text-[150px] leading-[100%] text-center">
-                            PROGRAMMING
-                        </h1>
-                    </div>
+                <p class="mt-[15px] pe-[15%]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
+                <div class="relative flex justify-end mt-[60px]">
+                    <div>
+                        <svg id="btn-misi" class="absolute left-0 bottom-[10%] flex shadow-lg bg-gradient-to-l from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
+                            <defs>
+                                <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
+                            </defs>
+                            <text fill="black">
+                                <textPath class="text-[14px] title uppercase" href="#circlePath" startOffset="0%">
+                                    * Analisis * Inovasi * Solusi * Integrasi * Produksi * Efisien *
+                                </textPath>
+                            </text>
+                        </svg>
 
-                    <p>Koding</p>
-                        <img class="w-[65vw]" src="./img/diriku2.jpg" alt="Programming">
-                        <img class="w-[65vw] absolute top-0 right-0" src="./img/diriku2-removebg.png" alt="Programming">
+                        <p class="text-end text-[14px]">Programming</p>
+                        <img class="w-[230px] mt-[10px] shadow-lg" src="./img/diriku2.jpg" alt="Programming">
+                        <!-- <img class="absolute right-0 bottom-0 w-[230px] mt-[10px] shadow-lg" src="./img/diriku2-removebg.png" alt="Programming"> -->
+                    </div>
                 </div>
             </div>
-        <!-- </div> -->
 
     </section>
     
@@ -160,17 +193,9 @@
                 Your browser does not support the video tag.
             </video>
         
-            <h1 class="text-[50px] relative text-white title leading-[110%]">
-                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
-                1 Tahun Pengalaman
-            </h1>
-            <h1 class="text-[50px] relative text-white title leading-[110%] mt-[20px] border-y-[0.8px] py-[40px]">
-                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
-                Eksekusi Mulai 2023
-            </h1>
-            <h1 class="text-[50px] relative text-white title leading-[110%] mt-[20px]">
-                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
-                Belajar Sejak 2021
+            <h1 class="text-[30px] relative text-white sub-title leading-[110%]">
+                <svg class="w-[60px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                Menciptakan ekosistem digital yang optimal, menghubungkan UI yang intuitif dan pengolahan data yang cepat untuk mendukung pertumbuhan setiap merek.
             </h1>
         </section>
         
@@ -190,6 +215,39 @@
             <h1 class="text-white">FOOTER</h1>
         </footer>
     </div>    
+
+    <script>
+        const navbarBtn = document.getElementById('navbar-btn');
+        const triggerForNavbarBtn = document.getElementById('trigger-for-navbar-btn');
+        const triggerNav = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navbarBtn.classList.add('show-button');
+                }
+            });
+        }, {
+            threshold: 0
+        });
+        triggerNav.observe(triggerForNavbarBtn);
+
+
+
+        // const div3 = document.getElementById('div3');
+        // const observer = new IntersectionObserver((entries) => {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 entry.target.classList.add('show');
+        //                 entry.target.classList.remove('remove-show');
+        //             }else {
+        //                 entry.target.classList.remove('show');
+        //                 entry.target.classList.add('remove-show');
+        //             }
+        //         });
+        // }, {
+        //     threshold: 0
+        // });
+        // observer.observe(div3);
+    </script>
 
 </body>
 </html>
