@@ -35,26 +35,34 @@
             min-height: 100vh;
         }
 
-        .marquee h1 {
-            -moz-animation: scroll-left 2s linear infinite;
-            -webkit-animation: scroll-left 2s linear infinite;
-            animation: scroll-left 50s linear infinite;
+        .marquee-moch-khoirur-rozikin h1 {
+            animation: scroll-left-moch-khoirur-rozikin 40s linear infinite;
         }
             
-        @keyframes scroll-left {
+        @keyframes scroll-left-moch-khoirur-rozikin {
             0% {
-                -moz-transform: translateX(0px);
-                -webkit-transform: translateX(0px);
                 transform: translateX(0px);
             }
             50% {
-                -moz-transform: translateX(-1500px);
-                -webkit-transform: translateX(-1500px);
-                transform: translateX(-1500px);
+                transform: translateX(-1300px);
             }
             100% {
-                -moz-transform: translateX(0px);
-                -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+            }
+        }
+
+        .marquee-programming h1 {
+            animation: scroll-left-programming 25s linear infinite;
+        }
+            
+        @keyframes scroll-left-programming {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(-210vw);
+            }
+            100% {
                 transform: translateX(0px);
             }
         }
@@ -83,7 +91,7 @@
 
     </style>
 
-    <nav class="fixed flex justify-between items-center top-0 left-0 w-screen px-[4%] z-10 pt-[30px]">
+    <nav class="fixed flex justify-between items-center top-0 left-0 w-screen px-[4%] z-10 pt-[25px]">
         <a href="">Khoirurrozkn</a>
         <div class="hidden lg-block">
             <a href="">Utama</a>
@@ -94,54 +102,79 @@
             ● Menu
         </button>
     </nav>
-
-    <div class="mb-[-100vh]">
-        <section class="hero sticky bg-gradient-to-bl from-white to-[#dfdcd1] top-0 overflow-hidden">
-            <div class="relative h-screen pt-[120px]">
-
-                <div class="px-[4%]">
-                    <h1 class="title text-[50px] leading-[100%] border-b-[0.8px] border-black pb-[25px]" translate="no">Web App Developer</h1>
-
-                    <div class="flex items-center mt-[25px]">
+    
+    <section class="relative z-[2] overflow-hidden">
+            <div id="hero" class="hero pt-[120px] bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%]">
+    
+                    <h1 class="title text-[60px] leading-[100%] pb-[25px]" translate="no">Web App Developer</h1>
+    
+                    <div class="flex items-center">
 
                         <svg class="ms-[3%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path fill="black" d="M31.71 1.71 30.29.29 2 28.59V16H0v15a1 1 0 0 0 1 1h16v-2H3.41z" data-name="6-Arrow Down"/>
                         </svg>                                   
-                        <p class="ms-[25%] w-[220px]">Selamat datang! Ayo, scroll dan temukan banyak proyek menarik saya!</p>
+                        <p class="ms-[25%] pt-[25px] w-[60%] border-t-[0.8px] border-black">Selamat datang! Ayo, scroll dan temukan banyak proyek menarik saya!</p>
+    
+                    </div>
+    
+    
+                    <div class="relative mt-[60px] flex justify-between items-end">
+                        <div class="marquee-moch-khoirur-rozikin absolute left-0 top-[10%]">
+                            <h1 class="text-background flex text-[150px] leading-[100%] w-[2800px] text-center">
+                                MOCH KHOIRUR ROZIKIN
+                            </h1>
+                        </div>
+            
+                        <p class="mb-[40px] pt-[15px] text-[14px] border-t-[0.8px] border-black pt-[20px]" translate="no">Since 2023</p>
+                        <img class="relative w-[280px] me-[-50px] z-10" src="./img/diriku.webp" alt="Moch Khoirur Rozikin">
+                    </div>
+            </div>
 
+
+            <div class="px-[4%] bg-white pt-[80px] pb-[80px]">
+                <h1 class="text-[50px] title leading-[105%]">
+                    Pengembang Software dengan Semangat Eksplorasi       
+                    <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                </h1>
+                <p class="mt-[15px] pe-[15%] mb-[140px]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
+                <div class="relative flex justify-between items-end border-b-[0.8px] border-black pb-[40px]">
+                    <div class="absolute top-0 marquee-programming mt-[20px]">
+                        <h1 translate="no" class="text-background flex text-[150px] leading-[100%] text-center">
+                            PROGRAMMING
+                        </h1>
                     </div>
 
+                    <p>Koding</p>
+                        <img class="w-[65vw]" src="./img/diriku2.jpg" alt="Programming">
+                        <img class="w-[65vw] absolute top-0 right-0" src="./img/diriku2-removebg.png" alt="Programming">
                 </div>
-
-                <div class="marquee absolute bottom-[25%]">
-                    <h1 class="text-background flex text-[150px] leading-[100%] w-[3000px] text-center">
-                        MOCH KHOIRUR ROZIKIN
-                    </h1>
-                </div>
-
-    
-                <p class="absolute z-20 font-bold bottom-[10%] left-[5%] text-[14px] border-t-[0.8px] border-black pt-[10px]">Since 2023</p>
-                <img class="absolute bottom-0 right-0 z-10 w-[32vh] z-10" src="./img/diriku.webp" alt="Moch Khoirur Rozikin">
             </div>
-        </section>
-        <div class="h-screen"></div>
-    </div>
-    
-    <section class="relative z-[2]">
-        <div class="min-h-screen pt-[50px] bg-white">
-            <div class="px-[4%]">
-                <h1 class="text-[50px] title leading-[105%]">Pengembang Software dengan Semangat Eksplorasi</h1>
-                <p class="mt-[15px] w-[80%]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
-                <img class="w-[40vw]" src="./img/diriku2.png" alt="">
-            </div>
-        </div>
+        <!-- </div> -->
+
     </section>
     
     <div class="h-[300vh] my-[-100vh]">
-        <section class="sticky top-0 bg-purple-500">
-            <h2>Get Yours Today</h2>
-            <a class="button">Buy Now</a>
+        <section class="sticky top-0 h-screen grid content-center px-[4%] overflow-hidden">
+            <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover brightness-[30%]">
+                <source src="video/Ngodinggg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        
+            <h1 class="text-[50px] relative text-white title leading-[110%]">
+                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                1 Tahun Pengalaman
+            </h1>
+            <h1 class="text-[50px] relative text-white title leading-[110%] mt-[20px] border-y-[0.8px] py-[40px]">
+                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                Eksekusi Mulai 2023
+            </h1>
+            <h1 class="text-[50px] relative text-white title leading-[110%] mt-[20px]">
+                <svg class="w-[50px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                Belajar Sejak 2021
+            </h1>
         </section>
+        
+        
     </div>
     
     <section class="relative z-[2]">
@@ -157,5 +190,6 @@
             <h1 class="text-white">FOOTER</h1>
         </footer>
     </div>    
+
 </body>
 </html>
