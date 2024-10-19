@@ -30,11 +30,6 @@
 <body>
     <style>
 
-        section,
-        footer {
-            min-height: 100vh;
-        }
-
         .marquee-moch-khoirur-rozikin h1 {
             animation: scroll-left-moch-khoirur-rozikin 40s linear infinite;
         }
@@ -102,42 +97,49 @@
             animation: spin-slow 15s linear infinite;
         }
 
-        .navbar-btn {
-            transition: color 0.6s ease, background-color 0.5s ease, padding 0.7s ease, border-radius 1s ease;
-        }
-
-        .navbar-btn.show-button {
-            color: white !important;
+        .navbar-fixed::before {
+            content: "● Menu";
+            color: white;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            top: 0;
             background-color: #101010;
+            border-radius: 35px;
             padding: 15px 25px;
-            border-radius: 25px;
+            z-index: 100;
+            scale: 0;
+            transition: all 0.4s ease-out;
         }
 
+        .navbar-fixed.show-button::before {
+            scale: 1;
+            transform: translateY(15px) translateX(-13px);
+        }
 
     </style>
-
-    <nav class="fixed flex justify-end top-0 left-0 w-screen px-[4%] z-10 pt-[25px]">
-        <div class="hidden lg-block">
-            <a href="">Utama</a>
-            <a href="">Portofolio</a>
-            <a href="">Kontak</a>
-        </div>
-        <button id="navbar-btn" class="navbar-btn">
-            ● Menu
-        </button>
-    </nav>
     
-    <section id="hero" class="relative z-[2] overflow-hidden">
-            <div id="hero" class="hero bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%]">
+    <div class="relative z-[2] overflow-hidden">
+            <div class="bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%] text-center">
 
-                <!-- logo sm -->
-                <p class="pt-[25px]">&copy; Khoirurrozkn</p>
-                <!-- logo sm -->
+                <nav class="flex justify-between">
+                    <p id="trigger-for-hidden-navbar-fixed" class="mt-[25px]">&copy; Khoirurrozkn</p>
+                    <div class="hidden xl:block">
+                        <a href="">Utama</a>
+                        <a href="">Portofolio</a>
+                        <a href="">Kontak</a>
+                    </div>
+                    <button class="rounded-full bg-[#010101] text-white mt-[15px] py-[10px] px-[25px]">
+                        ● Menu
+                    </button>
+                </nav>
 
-                    <h1 class="title pt-[60px] text-[60px] leading-[90%] text-center" translate="no">
+                    <h1 class="pt-[60px] title text-[60px] leading-[90%]" translate="no">
                         Web App Developer
                     </h1>
-                    <p class="mt-[15px] text-center">
+                    <p id="trigger-for-hidden-navbar-fixed" class="mt-[15px]">
                         Selamat datang! Ayo, scroll dan temukan banyak proyek menarik.
                     </p>
     
@@ -148,7 +150,7 @@
                         <p class="absolute right-[3%] top-[15%] text-[14px]" translate="no">Since 2023</p>
 
                         <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
-                            <h1 class="text-background flex text-[150px] leading-[100%] w-[2800px] text-center">
+                            <h1 class="text-background flex text-[150px] leading-[100%] w-[2800px]">
                                 Moch Khoirur Rozikin
                             </h1>
                         </div>
@@ -159,35 +161,36 @@
 
 
             <div class="px-[4%] bg-white pt-[80px] pb-[100px]">
-                <h1 id="trigger-for-navbar-btn" class="text-[40px] sub-title leading-[105%]">
+                <h1 class="text-[40px] sub-title leading-[105%]">
                     Pengembang Software dengan Semangat Eksplorasi       
                     <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
                 </h1>
-                <p class="mt-[15px] pe-[15%]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
+                <p id="trigger-for-navbar-fixed" class="mt-[10px] pe-[15%]">Dedikasi tinggi buat coding, siap ngasih inovasi di setiap langkah.</p>
                 <div class="relative flex justify-end mt-[60px]">
-                    <div>
-                        <svg id="btn-misi" class="absolute left-0 bottom-[10%] flex shadow-lg bg-gradient-to-l from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
-                            <defs>
-                                <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
-                            </defs>
-                            <text fill="black">
-                                <textPath class="text-[14px] title uppercase" href="#circlePath" startOffset="0%">
-                                    * Analisis * Inovasi * Solusi * Integrasi * Produksi * Efisien *
-                                </textPath>
-                            </text>
-                        </svg>
 
+                    <svg id="btn-misi" class="absolute left-0 bottom-[10%] shadow-lg bg-gradient-to-l from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
+                        <defs>
+                            <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
+                        </defs>
+                        <text fill="black">
+                            <textPath class="text-[14px] title" href="#circlePath" startOffset="0%">
+                                * Analisis * Inovasi * Solusi * Integrasi * Efisien * -----------&gt
+                            </textPath>
+                        </text>
+                    </svg>
+
+                    <div>
                         <p class="text-end text-[14px]">Programming</p>
                         <img class="w-[230px] mt-[10px] shadow-lg" src="./img/diriku2.jpg" alt="Programming">
-                        <!-- <img class="absolute right-0 bottom-0 w-[230px] mt-[10px] shadow-lg" src="./img/diriku2-removebg.png" alt="Programming"> -->
                     </div>
+                    
                 </div>
             </div>
 
-    </section>
+    </div>
     
     <div class="h-[300vh] my-[-100vh]">
-        <section class="sticky top-0 h-screen grid content-center px-[4%] overflow-hidden">
+        <div class="sticky top-0 h-screen flex items-center px-[4%] overflow-hidden">
             <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover brightness-[30%]">
                 <source src="video/Ngodinggg.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -195,40 +198,115 @@
         
             <h1 class="text-[30px] relative text-white sub-title leading-[110%]">
                 <svg class="w-[60px]" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="white" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
-                Menciptakan ekosistem digital yang optimal, menghubungkan UI yang intuitif dan pengolahan data yang cepat untuk mendukung pertumbuhan setiap merek.
+                Menciptakan ekosistem digital yang optimal, menghubungkan tampilan yang intuitif dan pengolahan data yang cepat untuk mendukung pertumbuhan setiap merek.
             </h1>
-        </section>
+        </div>
         
         
     </div>
     
-    <section class="relative z-[2]">
-        <div class="h-[200vh] bg-yellow-500">
-            <h2>Style meets cutting-edge</h2>
-            <p>Engineered for performance, designed for elegance. A blend of luxury and innovation, this smartwatch keeps you on the pulse of both fashion and function.</p>
+    <div id="porto" class="relative z-10 bg-white pt-[80px] pb-[100px]">
+        <nav id="navbar-fixed" class="navbar-fixed"></nav>
+
+        <div class="px-[4%]">
+            <h1 class="text-[40px] sub-title pe-[5%] leading-[105%]">
+                Inovasi tumbuh di setiap proyek yang saya ciptakan
+                <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+            </h1>
+    
+            <div class="flex flex-wrap justify-between pe-[10%] mt-[10px]">
+                Tampilan yang bisa dipilih sesuai tipe, minimalis, bold, modern, fun, atau kustom sesuai dengan identitas brand, serta menyediakan akses / manipulasi data yang cepat dan efisien.
+            </div>
+    
+            <p class="text-end mt-[60px] text-[15px]">
+                Beberapa portofolio
+            </p>
         </div>
-    </section>
+
+        <div class="relative mt-[10px]">
+            <div class="absolute bottom-[5%] left-[4%] py-[15px] px-[30px] bg-white rounded-full">
+                <svg class="w-[16px]" fill="black" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M852.517 606.04C722.804 666.467 612.48 770.67 502.075 923.02c-15.746 21.725-16.38 34.927-.205 46.602 11.372 8.209 17.98 5.583 34.542-12.088 2.217-2.38 2.217-2.38 4.484-4.84 14.318-15.505 25.852-28.662 50.49-57.274 81.407-94.538 121.17-133.45 182.968-169.038 53.478-30.795 100.476 14.462 91.527 72.38-2.51 16.258-6.836 28.257-17.978 54.022-4.432 10.249-6.302 14.707-8.38 20.171-20.085 52.8-37.002 96.846-72.451 188.834l-1.696 4.4c-10.718 27.813-10.718 27.813-21.427 55.62-46.426 120.661-74.598 194.652-103.665 272.901l-1.705 4.587c-7.8 20.975-11.474 30.871-15.534 41.881-33.306 90.321-52.353 149.007-66.84 211.427-2.262 9.713-2.262 9.713-4.556 19.584-8.162 35.31-12.53 58.062-14.972 81.448-4.222 40.439-.827 73.553 11.881 101.382 14.38 31.493 45.278 54.021 80.532 59.138 58.727 8.525 115.393 7.92 163.927-3.123 27.314-6.21 54.338-14.34 80.853-24.306 76.773-28.866 150.735-73.905 222.371-133.442 62.681-52.236 121.988-115.875 184.165-194.965 5.42-6.849 5.42-6.849 10.823-13.686 18.78-23.947 27.981-39.501 31.416-55.93 3.736-17.836-11.342-35.912-23.394-29.864-5.956 2.989-12.187 9.176-21.68 21.15-6.791 8.714-10.483 13.37-14.178 17.555-14.745 16.695-30.315 33.783-47.184 51.837-27.812 29.752-56.07 58.865-97.055 100.308-20.874 21.107-47.126 39.56-75.351 53.435-45.176 22.197-85.929-5.782-81.034-55.857 3.229-33.058 11.238-67.234 23.212-100.275 26.157-72.22 47.544-130.604 94.86-259.27 20.52-55.803 29.38-79.91 40.446-110.086 32.81-89.425 59-161.415 83.919-230.875 30.784-85.803 48.175-149.762 56.227-215.81 6.08-49.817-7.78-97.46-39.389-130.216-35.047-36.312-84.896-53.039-146.979-52.305-68.692.817-148.82 23.261-222.548 57.608Zm470.186-592.224c-123.444-48.028-271.57 34.483-296.373 165.169-17.984 94.72 17.4 176.498 89.622 210.751 143.165 67.897 314.982-40.897 314.989-199.468.007-88.211-37.668-148.991-108.238-176.452Z"/>
+                </svg>
+            </div>
+            <img class="" loading="lazy" src="https://cdn.dribbble.com/userupload/16373483/file/original-eeb7c68ec8889a4adacac883538d964c.png?resize=1504x1128&vertical=center" alt="T">
+        </div>
+        <div class="relative mt-[10px]">
+            <div class="absolute bottom-[5%] left-[4%] py-[15px] px-[30px] bg-white rounded-full">
+                <svg class="w-[16px]" fill="black" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M852.517 606.04C722.804 666.467 612.48 770.67 502.075 923.02c-15.746 21.725-16.38 34.927-.205 46.602 11.372 8.209 17.98 5.583 34.542-12.088 2.217-2.38 2.217-2.38 4.484-4.84 14.318-15.505 25.852-28.662 50.49-57.274 81.407-94.538 121.17-133.45 182.968-169.038 53.478-30.795 100.476 14.462 91.527 72.38-2.51 16.258-6.836 28.257-17.978 54.022-4.432 10.249-6.302 14.707-8.38 20.171-20.085 52.8-37.002 96.846-72.451 188.834l-1.696 4.4c-10.718 27.813-10.718 27.813-21.427 55.62-46.426 120.661-74.598 194.652-103.665 272.901l-1.705 4.587c-7.8 20.975-11.474 30.871-15.534 41.881-33.306 90.321-52.353 149.007-66.84 211.427-2.262 9.713-2.262 9.713-4.556 19.584-8.162 35.31-12.53 58.062-14.972 81.448-4.222 40.439-.827 73.553 11.881 101.382 14.38 31.493 45.278 54.021 80.532 59.138 58.727 8.525 115.393 7.92 163.927-3.123 27.314-6.21 54.338-14.34 80.853-24.306 76.773-28.866 150.735-73.905 222.371-133.442 62.681-52.236 121.988-115.875 184.165-194.965 5.42-6.849 5.42-6.849 10.823-13.686 18.78-23.947 27.981-39.501 31.416-55.93 3.736-17.836-11.342-35.912-23.394-29.864-5.956 2.989-12.187 9.176-21.68 21.15-6.791 8.714-10.483 13.37-14.178 17.555-14.745 16.695-30.315 33.783-47.184 51.837-27.812 29.752-56.07 58.865-97.055 100.308-20.874 21.107-47.126 39.56-75.351 53.435-45.176 22.197-85.929-5.782-81.034-55.857 3.229-33.058 11.238-67.234 23.212-100.275 26.157-72.22 47.544-130.604 94.86-259.27 20.52-55.803 29.38-79.91 40.446-110.086 32.81-89.425 59-161.415 83.919-230.875 30.784-85.803 48.175-149.762 56.227-215.81 6.08-49.817-7.78-97.46-39.389-130.216-35.047-36.312-84.896-53.039-146.979-52.305-68.692.817-148.82 23.261-222.548 57.608Zm470.186-592.224c-123.444-48.028-271.57 34.483-296.373 165.169-17.984 94.72 17.4 176.498 89.622 210.751 143.165 67.897 314.982-40.897 314.989-199.468.007-88.211-37.668-148.991-108.238-176.452Z"/>
+                </svg>
+            </div>
+            <img class="" loading="lazy" src="https://cdn.dribbble.com/userupload/16960058/file/original-a146633934712f47d52ce975b0463aef.jpeg?resize=1504x1128" alt="T">
+        </div>
+        <div class="relative mt-[10px]">
+            <div class="absolute bottom-[5%] left-[4%] py-[15px] px-[30px] bg-white rounded-full">
+                <svg class="w-[16px]" fill="black" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M852.517 606.04C722.804 666.467 612.48 770.67 502.075 923.02c-15.746 21.725-16.38 34.927-.205 46.602 11.372 8.209 17.98 5.583 34.542-12.088 2.217-2.38 2.217-2.38 4.484-4.84 14.318-15.505 25.852-28.662 50.49-57.274 81.407-94.538 121.17-133.45 182.968-169.038 53.478-30.795 100.476 14.462 91.527 72.38-2.51 16.258-6.836 28.257-17.978 54.022-4.432 10.249-6.302 14.707-8.38 20.171-20.085 52.8-37.002 96.846-72.451 188.834l-1.696 4.4c-10.718 27.813-10.718 27.813-21.427 55.62-46.426 120.661-74.598 194.652-103.665 272.901l-1.705 4.587c-7.8 20.975-11.474 30.871-15.534 41.881-33.306 90.321-52.353 149.007-66.84 211.427-2.262 9.713-2.262 9.713-4.556 19.584-8.162 35.31-12.53 58.062-14.972 81.448-4.222 40.439-.827 73.553 11.881 101.382 14.38 31.493 45.278 54.021 80.532 59.138 58.727 8.525 115.393 7.92 163.927-3.123 27.314-6.21 54.338-14.34 80.853-24.306 76.773-28.866 150.735-73.905 222.371-133.442 62.681-52.236 121.988-115.875 184.165-194.965 5.42-6.849 5.42-6.849 10.823-13.686 18.78-23.947 27.981-39.501 31.416-55.93 3.736-17.836-11.342-35.912-23.394-29.864-5.956 2.989-12.187 9.176-21.68 21.15-6.791 8.714-10.483 13.37-14.178 17.555-14.745 16.695-30.315 33.783-47.184 51.837-27.812 29.752-56.07 58.865-97.055 100.308-20.874 21.107-47.126 39.56-75.351 53.435-45.176 22.197-85.929-5.782-81.034-55.857 3.229-33.058 11.238-67.234 23.212-100.275 26.157-72.22 47.544-130.604 94.86-259.27 20.52-55.803 29.38-79.91 40.446-110.086 32.81-89.425 59-161.415 83.919-230.875 30.784-85.803 48.175-149.762 56.227-215.81 6.08-49.817-7.78-97.46-39.389-130.216-35.047-36.312-84.896-53.039-146.979-52.305-68.692.817-148.82 23.261-222.548 57.608Zm470.186-592.224c-123.444-48.028-271.57 34.483-296.373 165.169-17.984 94.72 17.4 176.498 89.622 210.751 143.165 67.897 314.982-40.897 314.989-199.468.007-88.211-37.668-148.991-108.238-176.452Z"/>
+                </svg>
+            </div>
+            <img class="" loading="lazy" src="./img/pos-crop.png" alt="T">
+        </div>
+        <div class="relative mt-[10px]">
+            <div class="absolute bottom-[5%] left-[4%] py-[15px] px-[30px] bg-white rounded-full">
+                <svg class="w-[16px]" fill="black" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M852.517 606.04C722.804 666.467 612.48 770.67 502.075 923.02c-15.746 21.725-16.38 34.927-.205 46.602 11.372 8.209 17.98 5.583 34.542-12.088 2.217-2.38 2.217-2.38 4.484-4.84 14.318-15.505 25.852-28.662 50.49-57.274 81.407-94.538 121.17-133.45 182.968-169.038 53.478-30.795 100.476 14.462 91.527 72.38-2.51 16.258-6.836 28.257-17.978 54.022-4.432 10.249-6.302 14.707-8.38 20.171-20.085 52.8-37.002 96.846-72.451 188.834l-1.696 4.4c-10.718 27.813-10.718 27.813-21.427 55.62-46.426 120.661-74.598 194.652-103.665 272.901l-1.705 4.587c-7.8 20.975-11.474 30.871-15.534 41.881-33.306 90.321-52.353 149.007-66.84 211.427-2.262 9.713-2.262 9.713-4.556 19.584-8.162 35.31-12.53 58.062-14.972 81.448-4.222 40.439-.827 73.553 11.881 101.382 14.38 31.493 45.278 54.021 80.532 59.138 58.727 8.525 115.393 7.92 163.927-3.123 27.314-6.21 54.338-14.34 80.853-24.306 76.773-28.866 150.735-73.905 222.371-133.442 62.681-52.236 121.988-115.875 184.165-194.965 5.42-6.849 5.42-6.849 10.823-13.686 18.78-23.947 27.981-39.501 31.416-55.93 3.736-17.836-11.342-35.912-23.394-29.864-5.956 2.989-12.187 9.176-21.68 21.15-6.791 8.714-10.483 13.37-14.178 17.555-14.745 16.695-30.315 33.783-47.184 51.837-27.812 29.752-56.07 58.865-97.055 100.308-20.874 21.107-47.126 39.56-75.351 53.435-45.176 22.197-85.929-5.782-81.034-55.857 3.229-33.058 11.238-67.234 23.212-100.275 26.157-72.22 47.544-130.604 94.86-259.27 20.52-55.803 29.38-79.91 40.446-110.086 32.81-89.425 59-161.415 83.919-230.875 30.784-85.803 48.175-149.762 56.227-215.81 6.08-49.817-7.78-97.46-39.389-130.216-35.047-36.312-84.896-53.039-146.979-52.305-68.692.817-148.82 23.261-222.548 57.608Zm470.186-592.224c-123.444-48.028-271.57 34.483-296.373 165.169-17.984 94.72 17.4 176.498 89.622 210.751 143.165 67.897 314.982-40.897 314.989-199.468.007-88.211-37.668-148.991-108.238-176.452Z"/>
+                </svg>
+            </div>
+            <img class="" loading="lazy" src="https://cdn.dribbble.com/userupload/12877524/file/original-0344f4dfb12b0782c81b0f893451dadd.png?resize=1504x1128&vertical=center" alt="T">
+        </div>
+
+        <div class="flex justify-center mt-[60px]">
+            <button class="bg-[#010101] text-white px-[25px] py-[15px] rounded-full">● Lihat semua porto</button>
+        </div>
+        
+
+    </div>
     
     <div class="mt-[-100vh]">
         <div class="h-screen"></div>
-        <footer class="sticky bottom-0 bg-black">
-            <h1 class="text-white">FOOTER</h1>
-        </footer>
+
+        <div class="sticky bottom-0 bg-black">
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+            <h1 class="text-white text-[50px] text-center mt-[10px]">FOOTER</h1>
+        </div>
     </div>    
 
     <script>
-        const navbarBtn = document.getElementById('navbar-btn');
-        const triggerForNavbarBtn = document.getElementById('trigger-for-navbar-btn');
+        const navbarFixed = document.getElementById('navbar-fixed');
+        const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
         const triggerNav = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    navbarBtn.classList.add('show-button');
+                    navbarFixed.classList.add('show-button');
                 }
             });
         }, {
             threshold: 0
         });
-        triggerNav.observe(triggerForNavbarBtn);
+        triggerNav.observe(triggerForNavbarFixed);
+
+        const triggerForHiddenNavbarFixed = document.getElementById('trigger-for-hidden-navbar-fixed');
+        const triggerHiddenNav = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navbarFixed.classList.remove('show-button');
+                }
+            });
+        }, {
+            threshold: 0
+        });
+        triggerHiddenNav.observe(triggerForHiddenNavbarFixed);
+
+        navbarBtn.addEventListener('click', () => {
+            alert('awdoawd')
+        })
 
 
 
