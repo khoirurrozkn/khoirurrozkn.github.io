@@ -32,6 +32,21 @@
 <body>
     <style>
 
+            .box-preloader {
+                animation: box-preloader 1s ease-in-out forwards;
+                animation-delay: 1s;
+            }
+            @keyframes box-preloader {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                100% {
+                    transform: translateY(-100%) translateX(100%);
+                    border-radius: 100%;
+                    /* scale: 0.8; */
+                }
+            }
+
         .marquee-moch-khoirur-rozikin h1 {
             animation: scroll-left-moch-khoirur-rozikin 40s linear infinite;
         }
@@ -113,21 +128,77 @@
             padding: 15px 25px;
             z-index: 100;
             scale: 0;
-            transition: all 0.4s ease-out;
+            transition: all 0.5s cubic-bezier(1, 0, 0.4, 1);
         }
 
         .navbar-fixed.show-button::before {
+            transition: all 1s cubic-bezier(1, 0, 0.4, 1);
             scale: 1;
             transform: translateY(15px) translateX(-13px);
         }
 
+        .wrap-photo-1 {
+            transition: transform 1s cubic-bezier(1, 0, 0.4, 1);
+            transform: translateX(100%);
+        }
+
+        .wrap-photo-1.show {
+            transform: translateX(0%);
+        }
+
+        .text-landing-page {
+            transition: all 1s cubic-bezier(1, 0, 0.4, 1) 1s;
+            transform: translateY(20%);
+            opacity: 0;
+        }
+
+        .text-landing-page.show {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+        .service-1::before {
+            content: "";
+            transition: all 1.4s cubic-bezier(1, 0.2, 0.4, 1);
+            background-color: white;
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            transform: translateY(-1px);
+        }
+
+        .service-1.show::before {
+            transform: translateX(100%);
+        }
+
+        .service-2::before {
+            content: "";
+            transition: all 1.4s cubic-bezier(1, 0.2, 0.4, 1) 0.5s;
+            background-color: white;
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            transform: translateY(-1px);
+        }
+
+        .service-2.show::before {
+            transform: translateX(100%);
+        }
+
+
     </style>
+
+    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+        <p class="text-[35px] title text-white mb-[15vh]">Khoirurrozkn</p>
+    </div>
     
     <div class="relative z-[2] overflow-hidden">
             <div class="bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%] text-center">
 
                 <nav class="flex justify-between">
-                    <p id="trigger-for-hidden-navbar-fixed" class="mt-[25px]">&copy; Khoirurrozkn</p>
+                    <p class="mt-[25px]">&copy; Khoirurrozkn</p>
                     <div class="hidden xl:block">
                         <a href="">Utama</a>
                         <a href="">Portofolio</a>
@@ -138,12 +209,14 @@
                     </button>
                 </nav>
 
-                    <h1 class="pt-[60px] title text-[60px] leading-[90%]" translate="no">
-                        Web App Developer
-                    </h1>
-                    <p id="trigger-for-hidden-navbar-fixed" class="mt-[15px]">
-                        Selamat datang! Ayo, scroll dan temukan banyak proyek menarik.
-                    </p>
+                    <div id="text-landing-page" class="text-landing-page pt-[60px]">
+                        <h1 class="title text-[60px] leading-[90%]" translate="no">
+                            Web App Developer
+                        </h1>
+                        <p id="trigger-for-hidden-navbar-fixed" class="mt-[15px] px-[5%]">
+                            Selamat datang! Ayo, scroll dan temukan banyak proyek menarik.
+                        </p>
+                    </div>
     
                     <div class="relative mt-[40px] flex justify-center items-end">
                         <svg class="absolute left-[4%] top-[15%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -162,31 +235,48 @@
             </div>
 
 
-            <div class="px-[4%] bg-white pt-[80px] pb-[100px]">
-                <h1 class="text-[40px] sub-title leading-[105%]">
-                    Pengembang Software dengan Semangat Eksplorasi       
-                    <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
-                </h1>
-                <p id="trigger-for-navbar-fixed" class="mt-[10px] pe-[15%]">Dedikasi tinggi dalam koding, siap memberikan inovasi di setiap langkah.</p>
-                <div class="relative flex justify-end mt-[60px]">
+            <div class="bg-white pt-[80px] pb-[60px]">
+                <div class="px-[4%]">
+                    <h1 class="text-[40px] sub-title leading-[105%]">
+                        Pengembang Software dengan Semangat Eksplorasi       
+                        <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
+                    </h1>
+                    <p id="trigger-for-navbar-fixed" class="mt-[15px] ms-[20%] w-[70%]">Dedikasi tinggi dalam koding, siap memberikan inovasi di setiap langkah.</p>
+                </div>
 
-                    <svg id="btn-misi" class="absolute left-0 bottom-[10%] shadow-lg bg-gradient-to-l from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
-                        <defs>
-                            <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
-                        </defs>
-                        <text fill="black">
-                            <textPath class="text-[14px] title" href="#circlePath" startOffset="0%">
-                                * Analisis * Inovasi * Solusi * Integrasi * Efisien * -----------&gt
-                            </textPath>
-                        </text>
-                    </svg>
+                <div class="flex justify-end mt-[50px]">
 
-                    <div>
-                        <p class="text-end text-[14px]">Programming</p>
-                        <img class="w-[230px] mt-[10px] shadow-lg" src="./img/diriku2.jpg" alt="Programming">
+                    <div id="wrap-photo-1" class="wrap-photo-1 relative w-[90%] shadow-lg bg-[#101010] pt-[20px] rounded-bl-[75px] pb-[50px] flex flex-wrap justify-end">
+
+                        <svg id="btn-misi" class="absolute left-[3%] bottom-[3%] border-[15px] border-[#101010] bg-gradient-to-bl from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
+                            <defs>
+                                <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
+                            </defs>
+                            <text fill="black">
+                                <textPath class="text-[14px] title" href="#circlePath" startOffset="0%">
+                                    * Analisis * Inovasi * Solusi * Integrasi * Efisien * Kreasi
+                                </textPath>
+                            </text>
+                        </svg>
+
+                        <p class="text-[12px] me-[4vw] text-white">Backend Developer di <span class="text-red-500">OCBC NISP</span></p>
+                        <img class="w-[230px] h-[350px] mt-[10px]" src="./img/diriku2.jpg" alt="Programming">
+
                     </div>
                     
                 </div>
+
+                <div class="flex mt-[40px]">
+                    <div class="w-[50%] text-center">
+                        <p class="text-gray-600 text-[14px]">Programmer</p>
+                        <div id="counter" class="px-[4%] text-[25px] counter">1 bulan</div>
+                    </div>
+                    <div class="w-[50%] text-center">
+                        <p class="text-gray-600 text-[14px]">Freelance</p>
+                        <div id="counter-project" class="px-[4%] text-[25px] counter">5+ Proyek</div>
+                    </div>
+                </div>
+
             </div>
 
     </div>
@@ -216,11 +306,25 @@
                 <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
             </h1>
     
-            <div class="flex flex-wrap justify-between ms-[30%] mt-[15px]">
-                Tampilan yang bisa dipilih sesuai tipe, minimalis, bold, modern, fun, atau kustom sesuai dengan identitas brand, serta menyediakan akses / manipulasi data yang cepat dan efisien.
+            <div id="service-1" class="service-1 relative flex flex-wrap justify-between mt-[30px] pt-[20px] border-t border-gray-500">
+                <div class="w-[30%] text-[20px]">
+                    Tampilan
+                </div>
+                <div class="w-[60%]">
+                    minimalis, bold, modern, fun, atau kustom sesuai dengan identitas brand.
+                </div>
+            </div>
+
+            <div id="service-2" class="service-2 relative flex flex-wrap justify-between mt-[20px] pt-[20px] border-t border-gray-500">
+                <div class="w-[30%] text-[20px]">
+                    Sistem
+                </div>
+                <div class="w-[60%]">
+                    Akses / manipulasi data yang cepat dan efisien.
+                </div>
             </div>
     
-            <p class="text-end mt-[70px] text-gray-700 text-[15px]">
+            <p class="text-end mt-[70px] text-gray-700 text-[14px]">
                 Beberapa portofolio
             </p>
         </div>
@@ -292,52 +396,105 @@
     </div>    
 
     <script>
+
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('box-preloader');
+                
+            setTimeout(() => {
+                preloader.style.animationPlayState = 'running';
+                document.body.classList.add('show')
+            }, 1000);
+        });
+
         const navbarFixed = document.getElementById('navbar-fixed');
         const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
-        const triggerNav = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navbarFixed.classList.add('show-button');
-                }
-            });
-        }, {
-            threshold: 0
-        });
-        triggerNav.observe(triggerForNavbarFixed);
-
         const triggerForHiddenNavbarFixed = document.getElementById('trigger-for-hidden-navbar-fixed');
-        const triggerHiddenNav = new IntersectionObserver((entries) => {
+        const textLandingPage = document.getElementById('text-landing-page');
+        const wrapPhoto1 = document.getElementById('wrap-photo-1');
+        const counterElement = document.getElementById('counter');
+        const counterProjectElement = document.getElementById('counter-project');
+        const service1 = document.getElementById('service-1');
+        const service2 = document.getElementById('service-2');
+
+        function easeOutQuad(t) {
+            return t * (2 - t);
+        }
+
+        function animateCounterSmooth(start, end, duration, element, unit) {
+            let startTime = null;
+
+            function updateCounter(currentTime) {
+                if (!startTime) startTime = currentTime;
+
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                const easedProgress = easeOutQuad(progress);
+                const currentValue = Math.floor(start + (end - start) * easedProgress);
+
+                // Cek apakah elemen adalah counter bulan atau counter proyek
+                if (element === counterElement) {
+                    if (currentValue < 13) {
+                        element.textContent = `${currentValue} ${unit}`;
+                    } else {
+                        element.textContent = '1+ tahun';
+                    }
+                } else if (element === counterProjectElement) {
+                    if (currentValue < 6) {
+                        element.textContent = `${currentValue} ${unit}`;
+                    } else {
+                        element.textContent = '5+ Proyek';
+                    }
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    navbarFixed.classList.remove('show-button');
+                    entry.target.classList.add('show');
+
+                    if (entry.target === triggerForNavbarFixed) {
+                        navbarFixed.classList.add('show-button');
+                    }
+
+                    if (entry.target === triggerForHiddenNavbarFixed) {
+                        navbarFixed.classList.remove('show-button');
+                    }
+
+                    if (entry.target === counterElement) {
+                        animateCounterSmooth(1, 13, 2000, counterElement, 'bulan');
+                    }
+
+                    if (entry.target === counterProjectElement) {
+                        animateCounterSmooth(0, 6, 2000, counterProjectElement, 'Proyek');
+                    }
+                } else {
+                    entry.target.classList.remove('show');
                 }
             });
         }, {
             threshold: 0
         });
-        triggerHiddenNav.observe(triggerForHiddenNavbarFixed);
 
-        navbarBtn.addEventListener('click', () => {
-            alert('awdoawd')
-        })
+        observer.observe(triggerForNavbarFixed);
+        observer.observe(triggerForHiddenNavbarFixed);
+        observer.observe(textLandingPage);
+        observer.observe(wrapPhoto1);
+        observer.observe(counterElement);
+        observer.observe(counterProjectElement);
+        observer.observe(service1);
+        observer.observe(service2);
 
-
-
-        // const div3 = document.getElementById('div3');
-        // const observer = new IntersectionObserver((entries) => {
-        //         entries.forEach(entry => {
-        //             if (entry.isIntersecting) {
-        //                 entry.target.classList.add('show');
-        //                 entry.target.classList.remove('remove-show');
-        //             }else {
-        //                 entry.target.classList.remove('show');
-        //                 entry.target.classList.add('remove-show');
-        //             }
-        //         });
-        // }, {
-        //     threshold: 0
-        // });
-        // observer.observe(div3);
+        navbarFixed.addEventListener('click', () => {
+            
+        });
     </script>
 
 </body>
