@@ -31,9 +31,8 @@
 </head>
 <body>
     <style>
-
             .box-preloader {
-                animation: box-preloader 1s ease-in-out forwards;
+                animation: box-preloader 1s cubic-bezier(1, 0, 0.4, 1) forwards;
                 animation-delay: 1s;
             }
             @keyframes box-preloader {
@@ -297,7 +296,7 @@
         
     </div>
     
-    <div id="porto" class="relative z-10 bg-white pt-[80px] pb-[100px]">
+    <div id="porto" class="relative z-10 bg-white pt-[80px] pb-[100px] overflow-hidden">
         <nav id="navbar-fixed" class="navbar-fixed"></nav>
 
         <div class="px-[4%]">
@@ -475,8 +474,6 @@
                     if (entry.target === counterProjectElement) {
                         animateCounterSmooth(0, 6, 2000, counterProjectElement, 'Proyek');
                     }
-                } else {
-                    entry.target.classList.remove('show');
                 }
             });
         }, {
