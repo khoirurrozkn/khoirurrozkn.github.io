@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'body';
-    src: url('./PlainLightRegular/PlainLightRegular.ttf');
+    src: url('./PlainLightRegular.ttf');
 }
 
 @layer utilities {
