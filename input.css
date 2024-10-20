@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'sub-title';
-    src: url('./Aloevera/Aloevera-Regular.otf');
+    src: url('./PlainLightRegular/PlainLightRegular.ttf');
 }
 
 @font-face {
@@ -27,11 +27,11 @@
     }
 
     * {
-        font-family: "body", sans-serif;
+        font-family: "sub-title", sans-serif;
     }
 
     .title {
-        font-family: "title", "serif";
+        font-family: "sub-title", "serif";
     }
 
     .sub-title {
