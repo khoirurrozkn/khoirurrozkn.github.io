@@ -3,14 +3,15 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-    font-family: 'title';
-    src: url('./Helvetica.ttf');
+    font-family: body;
+    src: url('./neueHaasGroteskFont/NeueHaasDisplayLight.ttf');
 }
 
 @font-face {
-    font-family: 'body';
-    src: url('./PlainLightRegular.ttf');
+    font-family: title;
+    src: url('./neueHaasGroteskFont/NeueHaasDisplayLight.ttf');
 }
+
 
 @layer utilities {
     ::-webkit-scrollbar {
@@ -22,11 +23,22 @@
     }
 
     * {
-        font-family: "body", sans-serif;
+        font-family: body, sans-serif;
+        @apply tracking-[1.5px] text-[18px] text-black leading-[130%];
+    }
+    
+    h1 {
+        font-family: title, sans-serif;
+        @apply tracking-[2px] text-[65px] leading-[90%];
     }
 
-    .title {
-        font-family: "title", "serif";
+    h2 {
+        font-family: title, sans-serif;
+        @apply tracking-[1.6px] text-[40px] leading-[105%];
+    }
+
+    h3 {
+        @apply tracking-[1.6px] text-[25px] leading-[105%];
     }
 
     .text-background {
@@ -39,15 +51,6 @@
             @apply text-[18px];
         }
     }
-
-    img {
-        @apply w-full object-cover;
-    }
-
-    .test {
-        @apply flex justify-center items-center title;
-    }
-
 
 
 }
