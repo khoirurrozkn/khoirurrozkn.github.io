@@ -127,7 +127,7 @@
             padding: 15px 25px;
             z-index: 100;
             scale: 0;
-            transition: all 0.5s cubic-bezier(1, 0, 0.4, 1);
+            transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
         }
 
         .navbar-fixed.show-button::before {
@@ -160,34 +160,15 @@
             }
         }
         
-        .service-1::before {
-            content: "";
-            transition: all 1.4s cubic-bezier(1, 0.2, 0.4, 1);
-            background-color: white;
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            top: 0;
-            transform: translateY(-1px);
+        .service {
+            transform: translateY(20%);
+            opacity: 0;
+            transition: all 1s cubic-bezier(1, 0, 0.4, 1);
         }
 
-        .service-1.show::before {
-            transform: translateX(100%);
-        }
-
-        .service-2::before {
-            content: "";
-            transition: all 1.4s cubic-bezier(1, 0.2, 0.4, 1) 0.5s;
-            background-color: white;
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            top: 0;
-            transform: translateY(-1px);
-        }
-
-        .service-2.show::before {
-            transform: translateX(100%);
+        .service.show {
+            transform: translateY(0%);
+            opacity: 1;
         }
 
         .ngoding {
@@ -202,12 +183,17 @@
             background-size: cover;
         }
 
-
+        .diriku-2 {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url('./img/diriku2-blurred.webp');
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 
-    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+    <!-- <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
         <p class="text-[35px] title text-white mb-[15vh]">Khoirurrozkn</p>
     </div>
+     -->
     
     <div class="relative z-[2] overflow-hidden">
             <div class="bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%] text-center">
@@ -226,7 +212,7 @@
 
                     <div id="text-landing-page" class="text-landing-page pt-[60px]">
                         <h1 class="title text-[60px] leading-[90%]" translate="no">
-                            Web App Developer
+                            Software Developer
                         </h1>
                         <p id="trigger-for-hidden-navbar-fixed" class="mt-[15px] px-[5%]">
                             Welcome! Scroll down and discover many exciting projects.
@@ -237,7 +223,7 @@
                         <svg class="absolute left-[4%] top-[15%] arrow" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path fill="black" d="M31.71 1.71 30.29.29 2 28.59V16H0v15a1 1 0 0 0 1 1h16v-2H3.41z" data-name="6-Arrow Down"/>
                         </svg>                                   
-                        <p class="absolute right-[3%] top-[15%] text-[14px]">Since 2023</p>
+                        <p class="absolute right-[3%] top-[15%] text-[14px]">Since 1945</p>
 
                         <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
                             <h1 translate="no" class="text-background flex text-[150px] leading-[100%] w-[2800px]">
@@ -246,12 +232,11 @@
                         </div>
                     
                         <div class="diriku w-[250px] h-[400px]"></div>
-                        <!-- <img loading="eager" class="w-[250px] h-[400px]" src="./img/diriku-compress-3x.webp" alt="Moch Khoirur Rozikin"> -->
                     </div>
             </div>
 
 
-            <div class="bg-white pt-[80px] pb-[60px]">
+            <div class="bg-white py-[80px]">
                 <div class="px-[4%]">
                     <h1 class="text-[40px] sub-title leading-[105%]">
                         Software Developer with a Passion for Exploration     
@@ -262,38 +247,18 @@
                     </p>
                 </div>
 
-                <div class="flex justify-end mt-[50px]">
-
-                    <div id="wrap-photo-1" class="wrap-photo-1 relative w-[95%] shadow-lg bg-[#101010] pt-[20px] rounded-bl-[75px] pb-[50px] flex flex-wrap justify-end">
-
-                        <svg id="btn-misi" class="absolute left-[3%] bottom-[3%] border-[15px] border-[#101010] bg-gradient-to-bl from-white to-[#dfdcd1] w-[150px] rounded-full animate-spin-slow" viewBox="0 0 150 150">
-                            <defs>
-                                <path id="circlePath" d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
-                            </defs>
-                            <text fill="black">
-                                <textPath translate="no" class="text-[14px] title" href="#circlePath" startOffset="0%">
-                                    * Analysis * Innovation * Solution * Integration * Efficiency *
-                                </textPath>
-                            </text>
-                        </svg>
-
-                        <p class="text-[12px] me-[4vw] text-white w-full text-end">Backend Developer at <span class="text-red-500">OCBC NISP</span> </p>
-                        <div class="w-[300px] h-[350px] mt-[10px]">
-                            <img loading="eager" class="w-full h-full" src="./img/diriku2-compress-3x.webp" alt="Programming">
-                        </div>
-
-                    </div>
-                    
+                <div class="diriku-2 w-screen flex py-[5vh] px-[10vw] mt-[40px] shadow-lg">
+                    <img id="wrap-photo-1" class="wrap-photo-1 w-full aspect-[3/3.65]" src="./img/diriku2-compress-3x.webp" alt="T">
                 </div>
 
                 <div class="flex mt-[40px]">
                     <div class="w-[50%] text-center">
                         <p class="text-gray-600 text-[14px]">Experience</p>
-                        <div id="counter" class="px-[4%] text-[25px] counter">1+ Year</div>
+                        <div id="counter" class="px-[4%] text-[25px] counter">999+ Year</div>
                     </div>
                     <div class="w-[50%] text-center">
                         <p class="text-gray-600 text-[14px]">Projects</p>
-                        <div id="counter-project" class="px-[4%] text-[25px] counter">10+</div>
+                        <div id="counter-project" class="px-[4%] text-[25px] counter">999+</div>
                     </div>
                 </div>
 
@@ -326,21 +291,27 @@
                 <svg class="w-[55px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>          
             </h1>
     
-            <div id="service-1" class="service-1 relative flex flex-wrap justify-between mt-[30px] pt-[20px] border-t border-gray-500">
-                <div translate="no" class="w-[30%] text-[20px]">
-                    Display
+            <div id="service-1" class="service relative flex flex-wrap justify-between items-start mt-[20px] pt-[10px] ">
+                <div translate="no" class="w-[30%] text-[25px]">
+                    <p class="border-b-[0.8px] border-black pb-[15px]">Display</p>
                 </div>
                 <div class="w-[60%]">
-                    Providing themes that are minimalist, bold, modern, fun, or custom according to brand identity.                
+                    <p class="text-[14px] mt-[15px] mb-[10px] text-gray-800">
+                        React, Tailwind, Bootstrap
+                    </p>
+                    Offering minimalist, bold, modern, fun, or custom themes tailored to brand identity.
                 </div>
             </div>
 
-            <div id="service-2" class="service-2 relative flex flex-wrap justify-between mt-[20px] pt-[20px] border-t border-gray-500">
-                <div translate="no" class="w-[30%] text-[20px]">
-                    System
+            <div id="service-2" class="service relative flex flex-wrap justify-between mt-[20px] pt-[10px] ">
+                <div translate="no" class="w-[30%] text-[25px]">
+                    <p class="border-b-[0.8px] border-black pb-[15px]">System</p>
                 </div>
                 <div class="w-[60%]">
-                    Providing fast and efficient data access / manipulation.
+                    <p class="text-[14px] mt-[15px] mb-[10px] text-gray-800">
+                        Golang, Laravel, .Net Core
+                    </p>
+                    Offering fast and efficient data access and manipulation.
                 </div>
             </div>
     
@@ -351,41 +322,53 @@
     </div>
 
     <div>
-        <div class="sticky top-0 bg-[#090809] pt-[100px] text-white">
-            <div class="px-[4%]">
-                <h2 class="text-[40px]">Product</h2>
-                <p class="mt-[5px] mb-[35px] text-start">Showcasing the advantages and charm of the products visually and informatively to facilitate customers in exploring every detail.</p>
+        <div class="sticky top-0 bg-[#090809] pt-[13vh] text-white">
+            <div id="desc" class="desc px-[4%]">
+                <h2 class="text-[40px] leading-[105%]">Product Catalog</h2>
+                <p class="mt-[15px]">Showcasing the advantages and charm of the products visually and informatively to facilitate customers in exploring every detail.</p>
+                <p class="mt-[10px] text-[14px] text-gray-300 mb-[40px]">
+                    PT. Wakwau Indonesia - React, Bun, Mongo
+                </p>
                 <a href="/" class="bg-white text-black px-[25px] py-[15px] rounded-full">
                     ● More detailed
                 </a>
             </div>
             <img class="mt-[60px] w-full h-[300px]" loading="eager" src="./img/monkey.webp" alt="T">
         </div>
-        <div class="sticky top-0 bg-[#090809] pt-[100px] text-white">
-            <div class="px-[4%]">
-                <h2 class="text-[40px] sub-title leading-[105%]">Company Profile</h2>
-                <p class="mt-[10px] mb-[35px]">Introducing the identity and values of the company professionally, highlighting the vision, mission, and achievements to build trust with clients and partners.</p>
+        <div class="sticky top-0 bg-[#090809] pt-[13vh] text-white">
+            <div id="desc" class="desc px-[4%]">
+                <h2 class="text-[40px] leading-[105%]">Company Profile</h2>
+                <p class="mt-[15px]">Introducing the identity and values of the company professionally, highlighting the vision, mission, and achievements to build trust with clients and partners.</p>
+                <p class="mt-[10px] text-[14px] text-gray-300 mb-[40px]">
+                    PT. Wakwau Indonesia - React, Bun, Mongo
+                </p>
                 <a href="/" class="bg-white text-black px-[25px] py-[15px] rounded-full">
                     ● More detailed
                 </a>
             </div>
             <img class="mt-[60px] w-full h-[300px]" loading="eager" src="./img/monkey.webp" alt="T">
         </div>
-        <div class="sticky top-0 bg-[#090809] pt-[100px] text-white">
-            <div class="px-[4%]">
+        <div class="sticky top-0 bg-[#090809] pt-[13vh] text-white">
+            <div id="desc" class="desc px-[4%]">
                 <h2 class="text-[40px] leading-[105%]">Point Of Sale</h2>
-                <p class="mt-[15px] mb-[35px]">An efficient and user-friendly Point of Sale solution that helps businesses manage transactions quickly and accurately.</p>
-                <a href="/" class="relative z-10 bg-white text-black px-[25px] py-[15px] rounded-full">
+                <p class="mt-[15px]">An efficient and user-friendly Point of Sale solution that helps businesses manage transactions quickly and accurately.</p>
+                <p class="mt-[10px] text-[14px] text-gray-300 mb-[40px]">
+                    PT. Wakwau Indonesia - React, Bun, Mongo
+                </p>
+                <a href="/" class="bg-white text-black px-[25px] py-[15px] rounded-full">
                     ● More detailed
                 </a>
             </div>
             <img class="mt-[60px] w-full h-[300px]" loading="eager" src="./img/monkey.webp" alt="T">
         </div>
-        <div class="sticky top-0 bg-[#090809] pt-[100px] text-white">
-            <div class="px-[4%]">
+        <div class="sticky top-0 bg-[#090809] pt-[13vh] text-white">
+            <div id="desc" class="desc px-[4%]">
                 <h2 class="text-[40px] leading-[105%]">Management System</h2>
-                <p class="mt-[15px] mb-[35px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At recusandae a tenetur facere quos minus odit error necessitatibus.</p>
-                <a href="/" class="relative z-10 bg-white text-black px-[25px] py-[15px] rounded-full">
+                <p class="mt-[15px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At recusandae a tenetur facere quos minus odit error necessitatibus.</p>
+                <p class="mt-[10px] text-[14px] text-gray-300 mb-[40px]">
+                    PT. Wakwau Indonesia - React, Bun, Mongo
+                </p>
+                <a href="/" class="bg-white text-black px-[25px] py-[15px] rounded-full">
                     ● More detailed
                 </a>
             </div>
@@ -400,15 +383,15 @@
 
     <script>
 
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('box-preloader');
+        // window.addEventListener('load', () => {
+        //     const preloader = document.getElementById('box-preloader');
                 
-            document.body.classList.add('show')
+        //     document.body.classList.add('show')
 
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 2000);
-        });
+        //     setTimeout(() => {
+        //         preloader.style.display = 'none';
+        //     }, 2000);
+        // });
 
         const navbarFixed = document.getElementById('navbar-fixed');
         const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
@@ -418,6 +401,7 @@
         const counterProjectElement = document.getElementById('counter-project');
         const service1 = document.getElementById('service-1');
         const service2 = document.getElementById('service-2');
+        const service3 = document.getElementById('service-3');
 
         function easeOutQuad(t) {
             return t * (2 - t);
@@ -437,16 +421,16 @@
                 const currentValue = Math.floor(start + (end - start) * easedProgress);
 
                 if (element === counterElement) {
-                    if (currentValue < 13) {
+                    if (currentValue < 1000) {
                         element.textContent = `${currentValue} ${unit}`;
                     } else {
-                        element.textContent = '1+ Year';
+                        element.textContent = '999+ Year';
                     }
                 } else if (element === counterProjectElement) {
-                    if (currentValue < 6) {
+                    if (currentValue < 1000) {
                         element.textContent = `${currentValue} ${unit}`;
                     } else {
-                        element.textContent = '10+';
+                        element.textContent = '999+';
                     }
                 }
 
@@ -472,11 +456,11 @@
                     }
 
                     if (entry.target === counterElement) {
-                        animateCounterSmooth(1, 13, 2000, counterElement, 'Month');
+                        animateCounterSmooth(1, 1000, 2000, counterElement, 'Month');
                     }
 
                     if (entry.target === counterProjectElement) {
-                        animateCounterSmooth(0, 10, 2000, counterProjectElement, '+');
+                        animateCounterSmooth(0, 1000, 2000, counterProjectElement, '+');
                     }
 
                 }
@@ -492,6 +476,7 @@
         observer.observe(counterProjectElement);
         observer.observe(service1);
         observer.observe(service2);
+        observer.observe(service3);
 
         navbarFixed.addEventListener('click', () => {
             
