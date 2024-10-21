@@ -143,10 +143,10 @@
 
     </style>
 
-    <!-- <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
         <p class="text-[35px] text-white mb-[15vh]">Khoirurrozkn</p>
     </div>
-     -->
+    
     
     <div class="relative z-[2] overflow-hidden">
             <div class="bg-gradient-to-bl from-white to-[#dfdcd1] top-0 px-[4%] text-center">
@@ -330,15 +330,15 @@
     
     <script>
 
-        // window.addEventListener('load', () => {
-        //     const preloader = document.getElementById('box-preloader');
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('box-preloader');
                 
-        //     document.body.classList.add('show')
+            document.body.classList.add('show')
 
-        //     setTimeout(() => {
-        //         preloader.style.display = 'none';
-        //     }, 2000);
-        // });
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 2000);
+        });
 
         const navbarFixed = document.getElementById('navbar-fixed');
         const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
