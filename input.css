@@ -3,15 +3,9 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-    font-family: body;
-    src: url('./neueHaasGroteskFont/NeueHaasDisplayLight.ttf');
+    font-family: "nimbus-dv";
+    src: url('./fonnts.com-Nimbus_Sans_DV_Light.otf');
 }
-
-@font-face {
-    font-family: title;
-    src: url('./neueHaasGroteskFont/NeueHaasDisplayLight.ttf');
-}
-
 
 @layer utilities {
     ::-webkit-scrollbar {
@@ -23,23 +17,26 @@
     }
 
     * {
-        font-family: body, sans-serif;
-        @apply tracking-[1.5px] text-[18px] text-black leading-[130%];
+        font-family: "nimbus-dv", sans-serif;
+        @apply tracking-[0.8px] text-[18px] text-black leading-[130%];
     }
     
-    h1 {
-        font-family: title, sans-serif;
-        @apply tracking-[2px] text-[65px] leading-[90%];
+    h1, h1 font{
+        @apply text-[62px] leading-[90%];
     }
 
-    h2 {
-        font-family: title, sans-serif;
-        @apply tracking-[1.6px] text-[40px] leading-[105%];
+    h2, h2 font {
+        @apply text-[35px] leading-[110%];
     }
 
-    h3 {
-        @apply tracking-[1.6px] text-[25px] leading-[105%];
+    h3, h3 font {
+        @apply text-[25px] leading-[105%];
     }
+
+    .info, .info font {
+        @apply text-[15px];
+    } 
+
 
     .text-background {
         color: white;
