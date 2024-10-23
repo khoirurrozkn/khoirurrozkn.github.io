@@ -80,7 +80,7 @@
             justify-content: center;
             right: 0;
             top: 0;
-            background-color: #101010;
+            background-color: #161715;
             border-radius: 35px;
             padding: 15px 25px;
             z-index: 100;
@@ -93,15 +93,6 @@
             transition: all 1s cubic-bezier(1, 0, 0.4, 1);
             scale: 1;
             transform: translateY(15px) translateX(-13px);
-        }
-
-        .wrap-photo-1 {
-            transition: transform 1s cubic-bezier(1, 0, 0.4, 1);
-            transform: translateX(100%);
-        }
-
-        .wrap-photo-1.show {
-            transform: translateX(0%);
         }
 
         .text-landing-page {
@@ -122,7 +113,7 @@
         .service {
             transform: translateY(20%);
             opacity: 0;
-            transition: all 1.3s cubic-bezier(1, 0, 0.4, 1);
+            transition: transform 1.3s cubic-bezier(1, 0, 0.4, 1);
         }
 
         .service.show {
@@ -136,15 +127,52 @@
             background-size: cover;
         }
 
-        .wrap-diriku2 {
+        .wrap-photo-1 {
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url("./img/diriku2-blurred.webp");
             background-position: center;
             background-size: cover;
         }
 
+        .wrap-about::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+            /* background-color: #F7F7F7; */
+            transition: transform 1.5s ease-out; 
+        }   
+
+        .wrap-about.show::before {
+            transform: translatey(-100%);
+        }
+
+        .wrap-photo-1::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+            /* background-color: #F7F7F7; */
+            z-index: 10;
+            transition: transform 1s cubic-bezier(1, 0, 0.4, 1);
+        }   
+
+        .wrap-photo-1.show::before {
+            transform: translatex(100%);
+        }
+
+        .parallax {
+            transition: all 0.1s ease;
+        }
+
     </style>
 
-    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#101010] top-0 z-30 left-0 w-screen h-screen">
+    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#161715] top-0 z-30 left-0 w-screen h-screen">
         <p class="text-[35px] text-white mb-[15vh]">Khoirurrozkn</p>
     </div>
     
@@ -159,7 +187,7 @@
                         <a href="">Portofolio</a>
                         <a href="">Contact</a>
                     </div>
-                    <button translate="no" class="rounded-full bg-[#010101] text-white mt-[15px] text-[16px] py-[10px] px-[25px]">
+                    <button translate="no" class="rounded-full bg-[#161715] text-white mt-[15px] text-[16px] py-[10px] px-[25px]">
                         ● Menu
                     </button>
                 </nav>
@@ -173,10 +201,12 @@
                         </p>
                     </div>
     
-                    <div class="relative mt-[40px] flex justify-center items-end">        
-                        <svg class="absolute left-[4%] top-[15%] arrow animate-bounce w-[35px] aspect-square" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                            <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                        </svg>
+                    <div class="relative mt-[40px] flex justify-center items-end"> 
+                        <a href="#about" class="absolute left-[4%] top-[15%] arrow animate-bounce w-[30px] aspect-square">    
+                            <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+                                <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
+                            </svg>
+                        </a>   
                         <p class="absolute right-[3%] top-[15%] info">Since 2023</p>
 
                         <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
@@ -185,33 +215,43 @@
                             </h1>
                         </div>
                     
-                        <div class="diriku w-[250px] h-[400px]"></div>
+                        <div class="diriku w-[270px] h-[400px]"></div>
                     </div>
             </div>
 
-
-            <div class="bg-[#F7F7F7] py-[80px] px-[4%]">
-                    <h2 class="pe-[10%]">
-                        Software Dev with a Passion for Exploration
-                        <svg class="w-[45px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
+            <!-- bg-[#F7F7F7] abu abu -->
+            <div id="about" class="bg-white py-[80px] px-[4%]">
+                <div id="wrap-about" class="relative overflow-hidden wrap-about">
+                    <h2 class="pe-[5%]">
+                        A Software Developer with a Passion for Exploring New Ideas
+                        <svg class="w-[40px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
                     </h2>
-                    <p id="trigger-for-navbar-fixed" class="mt-[15px] ms-[8%] pe-[10%]">
-                        Dedicated to coding, constantly striving for excellence, and ready to bring innovation at every step.
+                    <p id="trigger-for-navbar-fixed" class="mt-[20px] ms-[5%] pe-[15%]">
+                        A dedicated developer focused on delivering innovative and efficient solutions through expertise in software development.                    
                     </p>
-
-                <div class="wrap-diriku2 mt-[60px] py-[40px] px-[20px] shadow-lg">
-                    <img id="wrap-photo-1" class="wrap-photo-1 w-full shadow-lg aspect-[3/3.65] object-cover" src="./img/diriku2-compress-3x.webp" alt="T">
                 </div>
 
-                <div class="flex mt-[30px]">
-                    <div class="w-[50%] text-center">
+
+                <div id="wrap-photo-1" class="wrap-photo-1 mt-[50px] py-[40px] px-[15px] shadow-lg relative">
+                    <div class="w-full aspect-[3/3.2] bg-gray-200 overflow-hidden relative">
+                        <img id="parallaxImage" class="parallax w-full h-[400px] object-cover absolute top-[-40%]" src="./img/diriku2-compress-3x.webp" alt="T">
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-[55px]">
+                    <div class="w-[50%]">
                         <p class="info">Experience</p>
-                        <h3 id="counter" class="counter mt-[10px]">1 Month</h3>
+                        <h3 id="counter" class="counter mt-[5px]">1 Month</h3>
+
+                        <p class="info mt-[20px]">Case</p>
+                        <h3 id="counter-project" class="counter mt-[5px]">0 Projects</h3>
                     </div>
-                    <div class="w-[50%] text-center">
-                        <p class="info">Projects</p>
-                        <h3 id="counter-project" class="counter mt-[10px]">0</h3>
-                    </div>
+                    <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[130px] h-[130px] rounded-full shadow-lg" href="/about-me">
+                        About me
+                        <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+                            <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
+                        </svg>
+                    </a>
                 </div>
 
             </div>
@@ -239,11 +279,20 @@
 
             <h2 class="pe-[10%]">
                 Innovation grows in every project I create
-                <svg class="w-[45px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
+                <svg class="w-[30px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
             </h2>
-            <p id="trigger-for-navbar-fixed" class="mt-[15px] ms-[8%] pe-[10%]">
+            <!-- <p id="trigger-for-navbar-fixed" class="mt-[15px] ms-[8%] pe-[10%]">
                 Innovation thrives through collaboration and creativity, driving the success of every project I undertake.            
-            </p>
+            </p> -->
+            <div translate="no" class="mt-[20px] gap-2 flex overflow-x-scroll">
+                <p class="px-[20px] py-[10px] bg-[#161715] text-white text-[15px] rounded-full">Bold</p>
+                <p class="px-[20px] py-[10px] bg-[#161715] text-white text-[15px] rounded-full">Minimalist</p>
+                <p class="px-[20px] py-[10px] bg-[#161715] text-white text-[15px] rounded-full">Fun</p>
+                <p class="px-[20px] py-[10px] bg-[#161715] text-white text-[15px] rounded-full">Custom</p>
+            </div>
+
+
+            <!-- <div class="h-[300vh] mt-[30px] bg-yellow-500"></div> -->
 
             <div id="service-1" class="service flex flex-wrap justify-center shadow-lg mt-[60px]">
                 <img class="w-[95%] aspect-[16/11] border-[10px] border-black rounded-t-[5px] object-cover" src="./img/moc-pc-compress.webp" alt="Laptop">
@@ -331,7 +380,7 @@
         </div>
     </div>
 
-    <div class="h-screen sticky top-0 bg-[#101010] flex justify-center items-center">
+    <div class="h-screen sticky top-0 bg-[#161715] flex justify-center items-center">
         <p class="text-[30px] text-white">Footer</p>
     </div>
     
@@ -350,11 +399,15 @@
         const navbarFixed = document.getElementById('navbar-fixed');
         const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
         const triggerForHiddenNavbarFixed = document.getElementById('trigger-for-hidden-navbar-fixed');
+        const wrapAbout = document.getElementById('wrap-about');
         const wrapPhoto1 = document.getElementById('wrap-photo-1');
         const counterElement = document.getElementById('counter');
         const counterProjectElement = document.getElementById('counter-project');
         const service1 = document.getElementById('service-1');
         const service2 = document.getElementById('service-2');
+
+        const parallaxImage = document.getElementById('parallaxImage');
+
 
         function easeOutQuad(t) {
             return t * (2 - t);
@@ -383,7 +436,7 @@
                     if (currentValue < 6) {
                         element.textContent = `${currentValue} ${unit}`;
                     } else {
-                        element.textContent = '5+';
+                        element.textContent = '5+ Projects';
                     }
                 }
 
@@ -404,6 +457,10 @@
                         navbarFixed.classList.add('show-button');
                     }
 
+                    if (entry.target === parallaxImage) {
+                        window.addEventListener('scroll', () => parallaxEffect(parallaxImage));
+                    }
+
                     if (entry.target === triggerForHiddenNavbarFixed) {
                         navbarFixed.classList.remove('show-button');
                     }
@@ -413,19 +470,33 @@
                     }
 
                     if (entry.target === counterProjectElement) {
-                        animateCounterSmooth(0, 6, 1000, counterProjectElement, '');
+                        animateCounterSmooth(0, 6, 1000, counterProjectElement, 'Projects');
                     }
 
                 }else {
-                    entry.target.classList.remove('show');
+                    // entry.target.classList.remove('show');
                 }
             });
         }, {
             threshold: 0
         });
 
+        observer.observe(parallaxImage);
+
+        function parallaxEffect(element) {
+            const scrollPosition = window.scrollY;
+            const imageOffset = element.offsetTop;
+
+            if (scrollPosition >= imageOffset - window.innerHeight) {
+                const move = (scrollPosition - imageOffset) * 0.07;
+                element.style.transform = `translateY(${move}px)`;
+            }
+        }
+
+
         observer.observe(triggerForNavbarFixed);
         observer.observe(triggerForHiddenNavbarFixed);
+        observer.observe(wrapAbout);
         observer.observe(wrapPhoto1);
         observer.observe(counterElement);
         observer.observe(counterProjectElement);

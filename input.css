@@ -18,7 +18,7 @@
 
     * {
         font-family: "nimbus-dv", sans-serif;
-        @apply tracking-[0.8px] text-[18px] text-black leading-[130%];
+        @apply tracking-[0.8px] text-[18px] leading-[130%];
     }
     
     h1, h1 font{
