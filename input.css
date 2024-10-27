@@ -18,26 +18,30 @@
 
     * {
         font-family: "nimbus-dv", sans-serif;
-        @apply tracking-[0.8px] text-[17px] leading-[130%];
+        @apply tracking-[0.8px];
+    }
+
+    p{
+        @apply text-[17px] leading-[130%];
     }
     
-    h1, h1 font{
+    h1{
         @apply text-[62px] leading-[90%];
     }
 
-    h2, h2 font {
+    h2{
         @apply text-[40px] leading-[110%];
     }
 
-    h3, h3 font {
+    h3{
         @apply text-[25px] leading-[105%];
     }
 
-    .info, .info font {
+    .info{
         @apply text-[15px];
     } 
 
-    .text-hero, .text-hero font {
+    .text-hero{
         @apply text-[19px];
     }
 

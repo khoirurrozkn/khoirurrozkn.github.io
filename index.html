@@ -167,7 +167,7 @@
             left: 0;
             top: 0;
             /* background-color: #F7F7F7; */
-            background-color: white;
+            background: linear-gradient(#FCFCFD, #F9FAFA);
             transition: transform 1.3s ease-out; 
         }   
 
@@ -175,19 +175,23 @@
             transform: translatey(-100%);
         }
 
-        .wrap-photo-1::before {
+        .wrap-photo::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 101%;
             left: 0;
             top: -1%;
-            background-color: #FEFDF7;
+            background: linear-gradient(#F4F4F6, #E9ECEE);
             z-index: 10;
             transition: transform 1s cubic-bezier(1, 0, 0.4, 1);
         }   
 
-        .wrap-photo-1.show::before {
+        .wrap-photo-porto::before {
+            background: linear-gradient(rgb(229 231 235), rgb(243 244 246)) !important;
+        }
+
+        .wrap-photo.show::before {
             transform: translatex(100%);
         }
 
@@ -244,10 +248,10 @@
 
                     <div id="text-landing-page" class="text-landing-page pt-[55px]">
                         <h1 translate="no">
-                            Software Developer
+                            <span class="text-violet-700">Software</span> Developer
                         </h1>
                         <p id="trigger-for-hidden-navbar-fixed" class="text-hero mt-[15px] px-[25px]">
-                            Empowering Your Brand for Greater Impact.         
+                            Empowering Your Brand for Greater Impact.        
                         </p>
                     </div>
     
@@ -255,7 +259,9 @@
                             <svg class="absolute left-[4%] top-[15%] arrow animate-bounce w-[30px] aspect-square" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
                                 <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
                             </svg>
-                        <p class="absolute right-[3%] top-[15%] info">Since 2023</p>
+                        <p class="absolute right-[3%] top-[15%] info">
+                            Since 2023
+                        </p>
 
                         <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
                             <h1 translate="no" class="text-background flex text-[150px] leading-[100%] w-[2800px]">
@@ -279,7 +285,7 @@
                 </p>
                 <div id="wrap-about" class="relative overflow-hidden wrap-about text-center">
                     <h2 class="px-[5%]">
-                        Energized by New Ideas and Concepts
+                        Energized by <span class="text-violet-700">New Ideas</span> and Concepts
                         <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
                     </h2>
                     <div class="flex justify-center mt-[20px]">
@@ -288,17 +294,17 @@
                         </p>
                     </div>
                 </div>
-                    <div id="wrap-photo-1" class="wrap-photo-1 w-full mt-[45px] aspect-[3/3.6] overflow-hidden relative bg-gray-200 shadow-lg">
-                        <img id="parallaxImage" class="parallax w-full h-[120%] object-cover absolute top-[-25%]" src="./img/diriku2-compress-3x.webp" alt="T">
+                    <div id="wrap-photo-1" class="wrap-photo w-full mt-[45px] aspect-[3/3.6] overflow-hidden relative bg-gray-200">
+                        <img id="parallaxImage" class="parallax w-full h-[120%] object-cover absolute top-[-25%] shadow-lg" src="./img/diriku2-compress-3x.webp" alt="T">
                     </div>
 
                 <div class="flex justify-between items-center mt-[50px]">
                     <div class="w-[50%]">
                         <p class="info">Experience</p>
-                        <h3 id="counter" class="counter mt-[14px]">1 Month</h3>
+                        <h3 id="counter" class="counter mt-[10px]">1 Month</h3>
 
                         <p class="info mt-[30px]">Case</p>
-                        <h3 id="counter-project" class="counter mt-[14px]">0 Projects</h3>
+                        <h3 id="counter-project" class="counter mt-[10px]">0 Projects</h3>
                     </div>
                     <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[130px] aspect-square rounded-full shadow-lg" href="/about-me">
                         About me
@@ -320,7 +326,7 @@
             </video>
 
             <h2 class="relative" style="color: white;">
-                Creating an optimal digital ecosystem, connecting intuitive displays and fast data processing to support the growth of every brand.
+                Creating an optimal digital ecosystem, connecting <span class="text-violet-400">intuitive displays and fast data processing</span> to support the growth of every brand.
             </h2>
         </div>
         
@@ -335,7 +341,7 @@
 
         <div class="flex justify-between items-end px-[4%] overflow-hidden">
             <h2 class="w-[60%]">
-                Some Projects
+                Some <span class="text-violet-700">Projects</span> 
                 <!-- <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>             -->
             </h2>
             <svg class="rotation w-[70px] aspect-square ms-[5px] inline" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet"><path d="M29.293 26.032c-.125-.507-1.486 1.719-1.102 2.051c.386.333 1.617.035 1.102-2.051" fill="black"></path><path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m-1.771 30.793c0 .554-1.046-.223-1.321.332c-.275.554-.439-1.938-.549-2.771c-.112-.83-.552 2.272-.937 2.161c-.388-.11-2.315-.222-2.7-.887c-.385-.664-.55-1.772 0-1.772c.552 0 2.589-1.939 3.085-2.771c.495-.831.991-1.054.771-2.105c-.219-1.053 1.127-2.245 1.103-1.385c-.057 1.884 1.267 1.385 1.762 2.881c.496 1.495-.825 2.549-.882 1.994c-.055-.554-.716-.332-2.037.389c-1.322.72.33.221.66 1.163c.331.942.716.554 1.873.886c1.155.333.552-.941.944-1.329c.395-.388.323 1.718.842 1.163c.518-.554 2.179.332 2.179.332c1.212.555 2.919.752 2.919.752c1.598.474 2.313 1.853 3.085 2.661c.771.81-.111 1.021-1.321 0c-1.212-1.019-1.267-.643-1.652-.152c-.387.489-1.212-.379-1.984-.047c-.77.333.331-1.218-.385-1.772s-2.478-1.053-2.422-.442c.055.608-1.379.275-2.425-.247c-1.048-.524-.608.411-.608.966m8.702 15.348c.772.11 1.016-.6 1.048 0c.04.792-.221 2.049-.717 1.883c-.495-.167-1.102-1.995-.331-1.883m11.566.827c-.661.273-.937.669-1.267 1.61c-.331.941-1.268 1.439-1.873.941c-.604-.498.33-1.385.937-1.48c.605-.096.826-1.179 1.597-1.898c.772-.721-.646-2.007 0-2.549c.331-.277.718.997 1.212.942c.497-.057 1.213.442.606.913c-.606.47-.551 1.247-1.212 1.521M42.272 8.39c.312-.558.448-1.422.503-2.238c.381.159.756.328 1.128.503c-1.06 1.739-2.171 2.699-1.631 1.735m-4.625-3.326c.33.749.33 3.657.33 5.235c0 1.58 2.396-.747 3.635-.83c1.238-.083-3.965 3.075-3.965 4.903s-2.149 1.828-3.471 2.742s-1.321 1.163-1.321 0s1.982-1.994 3.14-2.41c1.155-.415.742-3.573 1.11-4.487c.367-.913.136-6.07.542-5.153M33.92 35.177c.771-.166 1.762.22 1.598.664c-.166.443-.442.775 0 .996c.439.222 1.376 1.33 1.588.832c.209-.499-.078-3.043.559-2.492c.387.333 1.103 2.658 2.7 4.099c1.597 1.44 1.982 3.38 1.706 4.045c-.275.665-.991 1.551-1.101 2.825c-.111 1.274-1.708 1.44-2.369 1.219s-1.816.222-1.816-.332c0-.555-.111-1.274-.882-1.298s-1.267-.475-1.707-1.307c-.441-.831-3.03-.11-3.415.333c-.385.442-1.762.276-2.698.831c-.937.554-1.433-.61-1.157-1.718c.275-1.108-.991-2.271-.991-3.713c0-1.44 3.028-1.163 3.249-1.605c.222-.444.44-.666.991-1.274c.552-.61 1.047-1.22 1.826-.815c.779.406.544-.127.842-.736c.298-.612.304-.389 1.077-.554M32 4c1.239 0 2.457.089 3.654.245c-.061.432.156.732.588.653c.908-.166.908 1.33.578 3.241c-.331 1.912-1.652 3.822-2.808 3.906c-1.157.084-1.654 1.746-1.405 2.493c.248.748-.66 2.493-1.24 2.493c-.577 0-.494-1.412-.577-2.992c-.083-1.578-1.322-.831-2.478 0c-1.157.831 1.733.831 1.238 1.163c-.496.333-.413 1.081 0 2.161c.414 1.08-1.321 3.325-2.065 4.072c-.743.748-2.229 0-3.8.997c-1.569.997.909 3.241.743 3.906c-.164.666-1.487.499-2.726-.499c-1.239-.997-.661 1.247.247 2.494c.91 1.246.91 2.575 1.404 3.491c.497.915 3.471.913 4.792 1.578s4.873.166 4.873.166c1.57-.083-2.478 2.077-3.965 1.33c-1.486-.749-7.104-2.078-8.591-3.906c-1.487-1.828-3.47-6.731-2.313-5.153c1.155 1.579 3.552 4.156 3.221 3.491c-.33-.665-1.485-2.41-1.404-3.657c.083-1.246-.578-1.662-1.072-1.246c-.497.415-.331-1.413-.91-2.41c-.578-.997-2.478 1.247-3.799 1.604c-1.323.357-1.321 3.216-2.065 3.715c-.744.497-1.982-3.407-1.901-5.153c.083-1.745-.991.581-1.899-1.163c-.335-.645-.952-.947-1.597-1.075C11.229 10.517 20.855 4 32 4" fill="black"></path></svg>
@@ -345,7 +351,9 @@
     <div>
         <!-- <div class="sticky top-0 pt-[45px] bg-gradient-to-t from-white to-[#effff5] min-h-screen px-[4%]"> -->
         <div class="sticky top-0 pt-[45px] bg-gradient-to-t from-white to-gray-200 min-h-screen px-[4%]">
-            <img class="w-[80vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
+            <div id="wrap-photo-2" class="wrap-photo wrap-photo-porto relative overflow-hidden">
+                <img class="w-[80vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">                
+            </div>
             <div class="flex justify-between items-center mt-[35px]">
                 <h2 translate="no">
                     Arkhe
@@ -371,7 +379,9 @@
 
         <!-- <div class="sticky top-0 pt-[40px] bg-gradient-to-t from-white to-[#eaf4ff] min-h-screen px-[4%] mt-[25vh]"> -->
         <div class="sticky top-0 pt-[40px] bg-gradient-to-t from-white to-gray-200 min-h-screen px-[4%] mt-[25vh]">
-            <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
+            <div id="wrap-photo-3" class="wrap-photo wrap-photo-porto relative overflow-hidden">
+                <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
+            </div>
             <div class="flex justify-between items-center mt-[35px]">
                 <h2 translate="no">
                     Kopi Kopi
@@ -396,7 +406,9 @@
 
         <!-- <div class="sticky top-0 pt-[40px] pb-[20px] bg-gradient-to-t from-white to-[#eff1ff] min-h-screen px-[4%] mt-[30vh]"> -->
         <div class="sticky top-0 pt-[40px] pb-[20px] bg-gradient-to-t from-white to-gray-200 min-h-screen px-[4%] mt-[30vh]">
-            <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/7060356/file/original-936445555f328c80c798936d64243a93.png?resize=1200x4910&vertical=center" alt="Strategy">
+            <div id="wrap-photo-4" class="wrap-photo wrap-photo-porto relative overflow-hidden">
+                <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/7060356/file/original-936445555f328c80c798936d64243a93.png?resize=1200x4910&vertical=center" alt="Strategy">
+            </div>
             <div class="flex justify-between items-center mt-[35px]">
                 <h2 translate="no">
                     Arkhe
@@ -423,16 +435,16 @@
     <!-- <div class="bg-white"> -->
         <div class="mt-[-9vh] pb-[80px] bg-white relative overflow-hidden">
             <div class="flex gap-[10px] marquee-first-porto">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/14089995/file/original-7c8994505c6228ecb3212b79b2e15a34.png?resize=1504x1128" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/14438017/file/original-ded1ae989ac4b3192d42dcce3623e880.png?resize=1504x1128" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/9374150/file/original-30fdea0aba9b21af69542a667021564f.png?resize=1200x900&vertical=center" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/10095896/file/original-9d0571a4ae1f50de528268e4d7e4f446.png?resize=1504x1128&vertical=center" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/14089995/file/original-7c8994505c6228ecb3212b79b2e15a34.png?resize=1504x1128" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/14438017/file/original-ded1ae989ac4b3192d42dcce3623e880.png?resize=1504x1128" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/9374150/file/original-30fdea0aba9b21af69542a667021564f.png?resize=1200x900&vertical=center" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/10095896/file/original-9d0571a4ae1f50de528268e4d7e4f446.png?resize=1504x1128&vertical=center" alt="Dummy">
             </div>
             <div class="flex gap-[10px] marquee-second-porto mt-[10px]">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/2806801/file/original-600b653931b5241e343a9ea1121fa073.png?resize=1504x1128" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/10877928/file/original-da034e0f1916b8f9c3838c60013e6cd3.png?resize=1200x835" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/13677210/file/original-79c15a1bd11325aca1ee10b699801c52.png?resize=1504x1128&vertical=center" alt="Dummy">
-                <img class="w-[200px] aspect-[3/2] object-cover shadow-lg" src="https://cdn.dribbble.com/userupload/8110442/file/original-8875495c5b7c708c80e6e0e6f629239a.png?resize=1200x900&vertical=center" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/2806801/file/original-600b653931b5241e343a9ea1121fa073.png?resize=1504x1128" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/10877928/file/original-da034e0f1916b8f9c3838c60013e6cd3.png?resize=1200x835" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/13677210/file/original-79c15a1bd11325aca1ee10b699801c52.png?resize=1504x1128&vertical=center" alt="Dummy">
+                <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/8110442/file/original-8875495c5b7c708c80e6e0e6f629239a.png?resize=1200x900&vertical=center" alt="Dummy">
             </div>
 
             <div class="flex justify-center mt-[40px]">
@@ -468,7 +480,7 @@
             <!-- <img class="w-full aspect-[16/9] object-cover" src="img/holographic-sm.webp" alt="Strategy"> -->
             <div class="snap-x flex snap-mandatory overflow-x-auto mt-[50px]">
                 <div class="snap-center flex-shrink-0 w-[270px] bg-black bg-opacity-[40%] py-[50px] px-[20px] me-2">
-                    <h2 class="flex justify-between">
+                    <h2 class="flex justify-between text-violet-400">
                         Strategy 
                         <svg class="w-[35px] aspect-square inline" viewBox="0 0 1024 1024" fill="white" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M272.016 512c-79.394 0-143.992-64.598-143.992-143.992 0-79.392 64.598-143.99 143.992-143.99 79.392 0 143.99 64.598 143.99 143.99 0 79.394-64.598 143.992-143.99 143.992z m0-271.984c-70.574 0-127.992 57.42-127.992 127.992 0 70.574 57.418 127.992 127.992 127.992s127.992-57.418 127.992-127.992c0-70.572-57.418-127.992-127.992-127.992z" fill="" /><path d="M272.016 543.998c-79.394 0-143.992-64.598-143.992-143.992 0-4.42 3.578-7.998 8-7.998s8 3.578 8 7.998c0 70.574 57.418 127.994 127.992 127.994s127.992-57.42 127.992-127.994a7.994 7.994 0 0 1 8-7.998 7.994 7.994 0 0 1 7.998 7.998c0 79.394-64.598 143.992-143.99 143.992z" fill="" /><path d="M136.024 408.006c-4.422 0-8-3.578-8-8v-31.998c0-4.42 3.578-7.998 8-7.998s8 3.578 8 7.998v31.998c0 4.422-3.578 8-8 8zM408.008 408.006c-4.422 0-8-3.578-8-8v-31.998a7.994 7.994 0 0 1 8-7.998 7.994 7.994 0 0 1 7.998 7.998v31.998c0 4.422-3.578 8-7.998 8zM272.016 432.004c-35.288 0-63.996-28.708-63.996-63.996s28.708-63.996 63.996-63.996 63.996 28.708 63.996 63.996-28.71 63.996-63.996 63.996z m0-111.992c-26.466 0-47.998 21.53-47.998 47.996 0 26.468 21.532 47.998 47.998 47.998s47.996-21.53 47.996-47.998c0-26.466-21.53-47.996-47.996-47.996z" fill="" /><path d="M325.7 392.008a8.008 8.008 0 0 1-7.672-5.718c-5.998-20.188-24.92-34.28-46.012-34.28s-40.014 14.092-46.014 34.28a7.994 7.994 0 0 1-9.952 5.39 8.012 8.012 0 0 1-5.39-9.954c8.008-26.912 33.232-45.716 61.356-45.716s53.348 18.804 61.356 45.716a8.012 8.012 0 0 1-5.39 9.954 8.348 8.348 0 0 1-2.282 0.328zM231.94 335.932a7.976 7.976 0 0 1-5.656-2.344l-56.074-56.074a8 8 0 0 1 11.312-11.31l56.074 56.074a7.996 7.996 0 0 1-5.656 13.654zM272.016 512c-4.422 0-8-3.578-8-8v-79.994c0-4.422 3.578-8 8-8s8 3.578 8 8V504c0 4.422-3.578 8-8 8zM528 96.026h-31.998c-4.422 0-8-3.578-8-8V56.028c0-4.422 3.578-8 8-8H528c4.422 0 8 3.578 8 8v31.998c0 4.422-3.578 8-8 8z m-23.998-16H520v-15.998h-15.998v15.998z" fill="" /><path d="M983.972 767.984H40.03c-4.422 0-8-3.578-8-8V152.022c0-4.422 3.578-8 8-8h943.944c4.422 0 8 3.578 8 8v607.962a8 8 0 0 1-8.002 8z m-935.942-16h927.944V160.022H48.03v591.962z" fill="" /><path d="M1015.97 160.022H8.032c-4.422 0-8-3.578-8-8V88.026c0-4.422 3.578-8 8-8h1007.94a7.994 7.994 0 0 1 7.998 8v63.996a7.998 7.998 0 0 1-8 8z m-999.938-16h991.94V96.026H16.032v47.996z" fill="" /><path d="M967.972 128.024H56.03c-4.422 0-8-3.578-8-8s3.578-8 8-8h911.944c4.422 0 8 3.578 8 8s-3.58 8-8.002 8zM727.988 975.972a8.08 8.08 0 0 1-3.578-0.844l-215.988-107.994c-3.952-1.968-5.552-6.782-3.576-10.734s6.788-5.53 10.732-3.578l215.988 107.994a8 8 0 1 1-3.578 15.156zM791.984 975.972a8.08 8.08 0 0 1-3.578-0.844l-279.984-139.992c-3.952-1.968-5.552-6.782-3.576-10.734s6.788-5.546 10.732-3.578l279.984 139.992a8 8 0 1 1-3.578 15.156z" fill="" /><path d="M791.984 975.972h-63.996c-4.422 0-8-3.578-8-8s3.578-8 8-8h63.996c4.422 0 8 3.578 8 8s-3.578 8-8 8zM296.022 975.972a8.012 8.012 0 0 1-7.164-4.422 7.996 7.996 0 0 1 3.578-10.734l215.986-107.994a8.02 8.02 0 0 1 10.734 3.578 7.996 7.996 0 0 1-3.578 10.734l-215.986 107.994a8.096 8.096 0 0 1-3.57 0.844zM232.026 975.972a8.012 8.012 0 0 1-7.164-4.422 7.996 7.996 0 0 1 3.578-10.734l279.982-139.992a8.006 8.006 0 0 1 10.734 3.578 7.996 7.996 0 0 1-3.578 10.734l-279.982 139.992a8.096 8.096 0 0 1-3.57 0.844z" fill="" /><path d="M296.014 975.972h-63.996c-4.422 0-8-3.578-8-8s3.578-8 8-8h63.996c4.422 0 8 3.578 8 8s-3.578 8-8 8zM496.002 843.98c-4.422 0-8-3.578-8-8v-75.996c0-4.422 3.578-8 8-8s8 3.578 8 8v75.996c0 4.422-3.578 8-8 8zM528 843.98c-4.422 0-8-3.578-8-8v-75.996c0-4.422 3.578-8 8-8s8 3.578 8 8v75.996c0 4.422-3.578 8-8 8zM528 975.972c-4.422 0-8-3.578-8-8v-99.994c0-4.422 3.578-8 8-8s8 3.578 8 8v99.994c0 4.422-3.578 8-8 8z" fill="" /><path d="M528 975.972h-31.998c-4.422 0-8-3.578-8-8s3.578-8 8-8H528c4.422 0 8 3.578 8 8s-3.578 8-8 8z" fill="" /><path d="M496.002 975.972c-4.422 0-8-3.578-8-8v-99.994c0-4.422 3.578-8 8-8s8 3.578 8 8v99.994c0 4.422-3.578 8-8 8zM512 719.988a7.994 7.994 0 0 1-7.998-8V200.02c0-4.422 3.578-8 7.998-8 4.422 0 8 3.578 8 8v511.968c0 4.422-3.578 8-8 8zM599.996 528c-4.422 0-8-3.578-8-8V248.016c0-4.422 3.578-8 8-8s8 3.578 8 8V520c0 4.422-3.578 8-8 8z" fill="" /><path d="M903.976 528h-303.98c-4.422 0-8-3.578-8-8s3.578-8 8-8h303.98c4.422 0 8 3.578 8 8s-3.578 8-8 8z" fill="" /><path d="M903.976 607.994h-303.98c-4.422 0-8-3.578-8-8a7.994 7.994 0 0 1 8-7.998h303.98c4.422 0 8 3.578 8 7.998 0 4.422-3.578 8-8 8z" fill="" /><path d="M871.978 639.992H631.994c-4.422 0-8-3.578-8-8s3.578-8 8-8h239.984c4.422 0 8 3.578 8 8s-3.578 8-8 8z" fill="" /><path d="M823.982 671.99h-143.992a7.994 7.994 0 0 1-7.998-8 7.994 7.994 0 0 1 7.998-7.998h143.992a7.994 7.994 0 0 1 7.998 7.998c0 4.422-3.578 8-7.998 8z" fill="" /><path d="M424.006 607.994H120.026c-4.422 0-8-3.578-8-8a7.994 7.994 0 0 1 8-7.998h303.98c4.422 0 8 3.578 8 7.998 0 4.422-3.578 8-8 8z" fill="" /><path d="M392.008 639.992H152.024c-4.422 0-8-3.578-8-8s3.578-8 8-8h239.984c4.422 0 8 3.578 8 8s-3.578 8-8 8z" fill="" /><path d="M344.012 671.99H200.02c-4.422 0-8-3.578-8-8a7.994 7.994 0 0 1 8-7.998h143.992a7.994 7.994 0 0 1 7.998 7.998c0 4.422-3.578 8-7.998 8z" fill="" /><path d="M631.994 464.002a7.996 7.996 0 0 1-5.656-13.654l95.994-95.994a8 8 0 0 1 11.312 11.31l-95.996 95.994a7.968 7.968 0 0 1-5.654 2.344z" fill="" /><path d="M775.984 416.006a7.976 7.976 0 0 1-5.656-2.344l-47.996-47.998a8 8 0 0 1 11.312-11.31l47.996 47.996a8 8 0 0 1-5.656 13.656z" fill="" /><path d="M775.984 416.006a8 8 0 0 1-5.656-13.656l127.992-127.992a8 8 0 1 1 11.312 11.312l-127.992 127.992a7.974 7.974 0 0 1-5.656 2.344z" fill="" /><path d="M903.976 320.012c-4.422 0-8-3.578-8-8v-31.998c0-4.422 3.578-8 8-8s8 3.578 8 8v31.998c0 4.422-3.578 8-8 8z" fill="" /><path d="M903.976 288.014h-31.998c-4.42 0-7.998-3.578-7.998-8s3.578-8 7.998-8h31.998c4.422 0 8 3.578 8 8s-3.578 8-8 8z" fill="" /></svg>
                     </h2>
@@ -477,7 +489,7 @@
                     </p>
                 </div>
                 <div class="snap-center flex-shrink-0 w-[270px] bg-black bg-opacity-[40%] py-[50px] px-[20px] mx-2">
-                    <h2 class="flex justify-between">
+                    <h2 class="flex justify-between text-violet-400">
                         Interface
                         <svg class="w-[35px] aspect-square inline" viewBox="0 0 1024 1024" fill="white" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M40.628 184.1c-4.42 0-8.076-3.576-8.076-7.996 0-4.422 3.498-7.998 7.904-7.998h0.172a8.002 8.002 0 0 1 7.998 7.998 8 8 0 0 1-7.998 7.996zM72.62 184.1c-4.42 0-8.076-3.576-8.076-7.996 0-4.422 3.498-7.998 7.904-7.998h0.172a8.002 8.002 0 0 1 7.998 7.998 8.004 8.004 0 0 1-7.998 7.996zM104.61 184.1c-4.42 0-8.076-3.576-8.076-7.996 0-4.422 3.498-7.998 7.904-7.998h0.172a8.002 8.002 0 0 1 7.998 7.998 8.004 8.004 0 0 1-7.998 7.996z" fill="" /><path d="M1015.848 200.096H8.156a7.994 7.994 0 0 1-7.998-7.998v-15.994c0-13.23 10.762-23.994 23.992-23.994h975.702c13.23 0 23.992 10.764 23.992 23.994v15.994a7.994 7.994 0 0 1-7.996 7.998zM16.152 184.1h991.696v-7.996a8.008 8.008 0 0 0-7.996-7.998H24.15c-4.342 0-7.998 3.662-7.998 7.998v7.996z" fill="" /><path d="M1015.848 871.89H8.156a7.994 7.994 0 0 1-7.998-7.998V192.098a7.994 7.994 0 0 1 7.998-7.998h1007.692a7.994 7.994 0 0 1 7.996 7.998v671.794a7.994 7.994 0 0 1-7.996 7.998zM16.152 855.894h991.696V200.096H16.152v655.798z" fill="" /><path d="M967.86 823.904H56.14a7.994 7.994 0 0 1-7.998-7.998v-95.968a7.994 7.994 0 0 1 7.998-7.998h911.72c4.422 0 8 3.576 8 7.998v95.968a7.994 7.994 0 0 1-8 7.998z m-903.722-15.994h895.726v-79.976H64.138v79.976zM967.86 695.944H56.14a7.994 7.994 0 0 1-7.998-7.998v-95.968a7.994 7.994 0 0 1 7.998-7.998h911.72c4.422 0 8 3.576 8 7.998v95.968a7.994 7.994 0 0 1-8 7.998z m-903.722-15.994h895.726v-79.976H64.138v79.976zM967.86 567.982H56.14a7.982 7.982 0 0 1-7.998-7.998V240.092a7.994 7.994 0 0 1 7.998-7.998h911.72c4.422 0 8 3.576 8 7.998v319.892a7.984 7.984 0 0 1-8 7.998z m-903.722-15.994h895.726v-303.9H64.138v303.9z" fill="" /><path d="M184.1 392.038a8.036 8.036 0 0 1-3.578-0.844l-30.304-15.152H104.124a7.992 7.992 0 0 1-7.998-7.996v-79.976a7.994 7.994 0 0 1 7.998-7.998h95.97a7.994 7.994 0 0 1 7.998 7.998v79.976a7.992 7.992 0 0 1-7.998 7.996h-7.998v7.998a8 8 0 0 1-7.996 7.998z m-71.978-31.992h39.988c1.234 0 2.468 0.29 3.578 0.844l20.416 10.208v-3.052a7.994 7.994 0 0 1 7.998-7.998h7.998v-63.98H112.122v63.978zM919.876 312.06h-655.8a7.992 7.992 0 0 1-7.998-7.996 7.992 7.992 0 0 1 7.998-7.998h655.798a7.99 7.99 0 0 1 7.996 7.998 7.988 7.988 0 0 1-7.994 7.996zM919.876 360.046h-655.8c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h655.798c4.422 0 7.996 3.578 7.996 7.998s-3.574 7.998-7.994 7.998zM919.876 408.032h-655.8a7.992 7.992 0 0 1-7.998-7.996 7.992 7.992 0 0 1 7.998-7.998h655.798a7.99 7.99 0 0 1 7.996 7.998 7.988 7.988 0 0 1-7.994 7.996zM583.976 456.018h-319.9c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h319.9c4.422 0 8 3.578 8 7.998s-3.578 7.998-8 7.998zM919.876 647.958h-655.8c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h655.798c4.422 0 7.996 3.578 7.996 7.998s-3.574 7.998-7.994 7.998zM919.876 775.918h-655.8a7.992 7.992 0 0 1-7.998-7.996 7.992 7.992 0 0 1 7.998-7.998h655.798a7.99 7.99 0 0 1 7.996 7.998 7.988 7.988 0 0 1-7.994 7.996zM360.046 519.998h-95.97c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h95.97c4.42 0 7.998 3.578 7.998 7.998s-3.576 7.998-7.998 7.998zM919.876 519.998h-95.968c-4.422 0-8-3.578-8-7.998s3.578-7.998 8-7.998h95.968c4.422 0 7.996 3.578 7.996 7.998s-3.576 7.998-7.996 7.998z" fill="" /><path d="M120.12 663.954a7.972 7.972 0 0 1-5.654-2.344l-31.99-31.988a7.996 7.996 0 1 1 11.308-11.31l31.99 31.99a7.994 7.994 0 0 1-5.654 13.652z" fill="" /><path d="M120.12 663.954a7.994 7.994 0 0 1-5.654-13.652l31.99-31.99a7.996 7.996 0 1 1 11.308 11.31l-31.99 31.988a7.972 7.972 0 0 1-5.654 2.344z" fill="" /><path d="M120.12 791.914a7.972 7.972 0 0 1-5.654-2.344l-31.99-31.988a7.996 7.996 0 1 1 11.308-11.31l31.99 31.99a7.994 7.994 0 0 1-5.654 13.652z" fill="" /><path d="M120.12 791.914a7.994 7.994 0 0 1-5.654-13.652l31.99-31.99a7.996 7.996 0 1 1 11.308 11.31l-31.99 31.988a7.972 7.972 0 0 1-5.654 2.344z" fill="" /></svg>
                      </h2>
@@ -486,7 +498,7 @@
                      </p>
                 </div>
                 <div class="snap-center flex-shrink-0 w-[270px] bg-black bg-opacity-[40%] py-[50px] px-[20px] mx-2">
-                    <h2 class="flex justify-between">
+                    <h2 class="flex justify-between text-violet-400">
                         Tech
                         <svg class="w-[35px] aspect-square inline" viewBox="0 0 1024 1024" fill="white" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M1015.848 687.82H8.156a7.992 7.992 0 0 1-7.998-7.996 7.994 7.994 0 0 1 7.998-7.998h1007.692a7.992 7.992 0 0 1 7.996 7.998 7.992 7.992 0 0 1-7.996 7.996zM512 767.766c-17.636 0-31.99-14.34-31.99-31.99s14.354-31.99 31.99-31.99 31.992 14.34 31.992 31.99-14.356 31.99-31.992 31.99z m0-47.984c-8.81 0-15.996 7.184-15.996 15.994s7.186 15.994 15.996 15.994c8.824 0 15.996-7.184 15.996-15.994s-7.172-15.994-15.996-15.994zM376.152 975.732a8.01 8.01 0 0 1-7.826-9.73l31.99-143.956c0.968-4.296 5.294-6.954 9.544-6.078a8.014 8.014 0 0 1 6.078 9.544l-31.99 143.956a8 8 0 0 1-7.796 6.264zM647.864 975.732a8 8 0 0 1-7.808-6.264l-31.988-143.956a8.01 8.01 0 0 1 6.074-9.544 7.99 7.99 0 0 1 9.542 6.078l31.992 143.956a8.008 8.008 0 0 1-7.812 9.73z" fill="" /><path d="M671.954 975.732H352.05a7.992 7.992 0 0 1-7.998-7.998 7.992 7.992 0 0 1 7.998-7.996h319.904a7.992 7.992 0 0 1 7.996 7.996 7.992 7.992 0 0 1-7.996 7.998zM967.86 640.086H56.14a7.994 7.994 0 0 1-7.998-7.998V104.25a7.994 7.994 0 0 1 7.998-7.998h911.72c4.422 0 8 3.578 8 7.998v527.838a7.994 7.994 0 0 1-8 7.998z m-903.722-15.996h895.726V112.248H64.138v511.842z" fill="" /><path d="M967.86 800.038H56.14c-30.866 0-55.982-25.118-55.982-55.982V104.25c0-30.866 25.118-55.982 55.982-55.982h911.72c30.868 0 55.984 25.118 55.984 55.982v639.804c0 30.866-25.118 55.984-55.984 55.984zM56.14 64.262c-22.04 0-39.988 17.94-39.988 39.988v639.804c0 22.054 17.948 39.986 39.988 39.986h911.72c22.058 0 39.988-17.932 39.988-39.986V104.25c0-22.048-17.93-39.988-39.988-39.988H56.14z" fill="" /><path d="M967.86 831.778H56.14c-31.38 0-55.982-24.586-55.982-55.982v-31.99a7.994 7.994 0 0 1 7.998-7.998 7.994 7.994 0 0 1 7.998 7.998v31.99c0 22.43 17.574 39.986 39.988 39.986h911.72c22.434 0 39.988-17.556 39.988-39.986v-31.74a7.994 7.994 0 0 1 8-7.998 7.992 7.992 0 0 1 7.996 7.998v31.74c-0.002 31.396-24.588 55.982-55.986 55.982zM88.13 640.086a7.994 7.994 0 0 1-7.998-7.998V104.25a7.994 7.994 0 0 1 7.998-7.998 7.994 7.994 0 0 1 7.998 7.998v527.838a7.994 7.994 0 0 1-7.998 7.998z" fill="" /><path d="M72.136 160.232H56.14c-4.42 0-7.998-3.576-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.576 7.998 7.998s-3.578 7.998-7.998 7.998zM72.136 208.218H56.14c-4.42 0-7.998-3.578-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.578 7.998 7.998s-3.578 7.998-7.998 7.998zM72.136 256.204H56.14c-4.42 0-7.998-3.576-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.576 7.998 7.998s-3.578 7.998-7.998 7.998zM72.136 304.19H56.14c-4.42 0-7.998-3.578-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.578 7.998 7.998s-3.578 7.998-7.998 7.998z" fill="" /><path d="M72.136 352.174H56.14c-4.42 0-7.998-3.576-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.576 7.998 7.998s-3.578 7.998-7.998 7.998z" fill="" /><path d="M72.136 400.16H56.14a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h15.996a7.994 7.994 0 0 1 7.998 7.998 7.996 7.996 0 0 1-7.998 7.998z" fill="" /><path d="M72.136 448.144H56.14a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h15.996a7.994 7.994 0 0 1 7.998 7.998 7.994 7.994 0 0 1-7.998 7.998z" fill="" /><path d="M72.136 496.13H56.14a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h15.996a7.994 7.994 0 0 1 7.998 7.998 7.996 7.996 0 0 1-7.998 7.998z" fill="" /><path d="M72.136 544.116H56.14a7.994 7.994 0 0 1-7.998-7.998 7.992 7.992 0 0 1 7.998-7.996h15.996a7.992 7.992 0 0 1 7.998 7.996 7.994 7.994 0 0 1-7.998 7.998z" fill="" /><path d="M72.136 592.102H56.14c-4.42 0-7.998-3.578-7.998-7.998s3.578-7.998 7.998-7.998h15.996c4.42 0 7.998 3.578 7.998 7.998s-3.578 7.998-7.998 7.998z" fill="" /><path d="M200.096 160.232h-63.98c-4.42 0-7.998-3.576-7.998-7.998s3.576-7.998 7.998-7.998h63.98c4.42 0 7.998 3.576 7.998 7.998s-3.578 7.998-7.998 7.998zM488.006 208.218H264.076c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h223.93c4.422 0 7.998 3.578 7.998 7.998s-3.576 7.998-7.998 7.998zM232.086 208.218H152.11c-4.42 0-7.998-3.578-7.998-7.998s3.578-7.998 7.998-7.998h79.976c4.42 0 7.998 3.578 7.998 7.998s-3.578 7.998-7.998 7.998zM679.95 256.204H472.012c-4.42 0-7.998-3.576-7.998-7.998s3.578-7.998 7.998-7.998h207.936c4.422 0 7.996 3.576 7.996 7.998s-3.572 7.998-7.994 7.998zM775.918 256.204h-63.98c-4.418 0-7.996-3.576-7.996-7.998s3.578-7.998 7.996-7.998h63.98c4.422 0 8 3.576 8 7.998s-3.578 7.998-8 7.998zM440.022 256.204H168.106c-4.42 0-7.998-3.576-7.998-7.998s3.576-7.998 7.998-7.998h271.916c4.42 0 7.998 3.576 7.998 7.998s-3.578 7.998-7.998 7.998zM216.09 352.174H168.106c-4.42 0-7.998-3.576-7.998-7.998s3.576-7.998 7.998-7.998h47.986c4.42 0 7.998 3.576 7.998 7.998s-3.58 7.998-8 7.998zM485.508 352.174H248.082c-4.42 0-7.998-3.576-7.998-7.998s3.578-7.998 7.998-7.998h237.428c4.42 0 7.998 3.576 7.998 7.998s-3.58 7.998-8 7.998zM551.988 304.19H184.1c-4.42 0-7.998-3.578-7.998-7.998s3.578-7.998 7.998-7.998h367.888c4.422 0 7.996 3.578 7.996 7.998s-3.574 7.998-7.996 7.998zM535.992 400.16h-143.956a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h143.956c4.422 0 8 3.578 8 7.998a7.994 7.994 0 0 1-8 7.998zM424.028 448.144H152.11a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h271.916a7.994 7.994 0 0 1 7.998 7.998 7.992 7.992 0 0 1-7.996 7.998zM280.072 544.116h-127.96a7.994 7.994 0 0 1-7.998-7.998 7.992 7.992 0 0 1 7.998-7.996h127.96a7.992 7.992 0 0 1 7.998 7.996 7.994 7.994 0 0 1-7.998 7.998zM599.972 496.13H376.042a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h223.93c4.422 0 8 3.578 8 7.998a7.994 7.994 0 0 1-8 7.998zM647.958 496.13h-15.992c-4.422 0-8-3.578-8-7.998a7.994 7.994 0 0 1 8-7.998h15.992c4.422 0 8 3.578 8 7.998s-3.58 7.998-8 7.998zM344.052 496.13H168.106a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h175.946a7.994 7.994 0 0 1 7.998 7.998 7.994 7.994 0 0 1-7.998 7.998zM200.096 592.102h-63.98c-4.42 0-7.998-3.578-7.998-7.998s3.576-7.998 7.998-7.998h63.98c4.42 0 7.998 3.578 7.998 7.998s-3.578 7.998-7.998 7.998zM551.988 448.144h-95.972a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h95.972a7.992 7.992 0 0 1 7.996 7.998 7.99 7.99 0 0 1-7.996 7.998zM679.95 400.16h-111.964c-4.422 0-8-3.578-8-7.998a7.994 7.994 0 0 1 8-7.998h111.964a7.992 7.992 0 0 1 7.996 7.998 7.992 7.992 0 0 1-7.996 7.998zM360.046 400.16h-191.94a7.994 7.994 0 0 1-7.998-7.998 7.994 7.994 0 0 1 7.998-7.998h191.942a7.994 7.994 0 0 1 7.998 7.998 7.996 7.996 0 0 1-8 7.998z" fill="" /></svg>
                     </h2>
@@ -522,6 +534,9 @@
         const triggerForHiddenNavbarFixed = document.getElementById('trigger-for-hidden-navbar-fixed');
         const wrapAbout = document.getElementById('wrap-about');
         const wrapPhoto1 = document.getElementById('wrap-photo-1');
+        const wrapPhoto2 = document.getElementById('wrap-photo-2');
+        const wrapPhoto3 = document.getElementById('wrap-photo-3');
+        const wrapPhoto4 = document.getElementById('wrap-photo-4');
         const counterElement = document.getElementById('counter');
         const counterProjectElement = document.getElementById('counter-project');
 
@@ -616,6 +631,9 @@
         observer.observe(triggerForHiddenNavbarFixed);
         observer.observe(wrapAbout);
         observer.observe(wrapPhoto1);
+        observer.observe(wrapPhoto2);
+        observer.observe(wrapPhoto3);
+        observer.observe(wrapPhoto4);
         observer.observe(counterElement);
         observer.observe(counterProjectElement);
 
