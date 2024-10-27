@@ -180,6 +180,19 @@
             transition: all 0.1s ease;
         }
 
+        .rotation {
+            animation: rotateLeft 20s infinite linear;
+        }
+
+        @keyframes rotateLeft {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
     </style>
 
     <!-- <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#161715] top-0 z-30 left-0 w-screen h-screen">
@@ -188,10 +201,10 @@
      -->
     
     <div class="relative z-[20] overflow-hidden">
-            <div class="bg-gradient-to-bl from-white to-[#FFF9EA] top-0 px-[4%] text-center">
+            <div class="bg-gradient-to-bl from-white to-[#FEF8EA] top-0 px-[4%] text-center">
 
                 <nav class="flex justify-between items-center pt-[20px]">
-                    <p translate="no" class="text-[14px] font-bold leading-[110%]">
+                    <p translate="no" class="text-[14px] text-start font-bold leading-[110%]">
                         MOCH
                         <br>
                         KHOIRUR
@@ -220,7 +233,7 @@
                             <svg class="absolute left-[4%] top-[15%] arrow animate-bounce w-[30px] aspect-square" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
                                 <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
                             </svg>
-                        <p class="absolute right-[3%] top-[15%] info border-b-[0.5px] border-black pb-[5px]">Since 2023</p>
+                        <p class="absolute right-[3%] top-[15%] info">Since 2023</p>
 
                         <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
                             <h1 translate="no" class="text-background flex text-[150px] leading-[100%] w-[2800px]">
@@ -233,12 +246,12 @@
             </div>
 
             <!-- bg-[#F7F7F7] abu abu -->
-            <div id="about" class="bg-white pt-[110px] pb-[70px] px-[4%] relative">
+            <div id="about" class="bg-white pt-[95px] pb-[80px] px-[4%] relative">
                 <p class="absolute w-full left-0 top-0 p-[4%] flex justify-between">
-                    <span class="info border-b-[0.5px] border-black pb-[5px]">
+                    <span class="info ">
                         Javanese
                     </span>
-                    <span class="info border-b-[0.5px] border-black pb-[5px]">
+                    <span class="info ">
                         Indonesia
                     </span>
                 </p>
@@ -292,22 +305,24 @@
         
     </div>
 
-    <div id="porto" class="relative z-[20] px-[4%] bg-gradient-to-bl from-white to-[#EAFEF1] pt-[75px] overflow-hidden">
+    <div id="porto" class="relative z-[20] bg-[#effff5] pt-[80px]">
         <nav id="navbar-fixed" class="navbar-fixed">
             <div class="navbar-fixed-field relative rounded-full bg-[#161715] w-[70px] aspect-square"></div>
         </nav>
 
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-start px-[4%] overflow-hidden">
             <h2 class="w-[60%]">
-                Recent Projects
+                Some Projects
                 <!-- <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>             -->
             </h2>
-            <svg class="w-[30%] aspect-square" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800"><g fill="none" stroke-width="3" stroke="hsl(105, 69%, 30%)" stroke-linecap="round"><line x1="47.5" y1="400" x2="752.5" y2="400" transform="rotate(0, 400, 400)" opacity="0.50"></line><line x1="149" y1="400" x2="651" y2="400" transform="rotate(4, 400, 400)" opacity="0.35"></line><line x1="403" y1="400" x2="397" y2="400" transform="rotate(8, 400, 400)" opacity="0.18"></line><line x1="639" y1="400" x2="161" y2="400" transform="rotate(12, 400, 400)" opacity="0.24"></line><line x1="680.5" y1="400" x2="119.5" y2="400" transform="rotate(16, 400, 400)" opacity="0.78"></line><line x1="68.5" y1="400" x2="731.5" y2="400" transform="rotate(20, 400, 400)" opacity="0.08"></line><line x1="712.5" y1="400" x2="87.5" y2="400" transform="rotate(24, 400, 400)" opacity="0.35"></line><line x1="336" y1="400" x2="464" y2="400" transform="rotate(28, 400, 400)" opacity="0.46"></line><line x1="293.5" y1="400" x2="506.5" y2="400" transform="rotate(32, 400, 400)" opacity="0.53"></line><line x1="155.5" y1="400" x2="644.5" y2="400" transform="rotate(36, 400, 400)" opacity="0.52"></line><line x1="710" y1="400" x2="90" y2="400" transform="rotate(40, 400, 400)" opacity="0.36"></line><line x1="392.5" y1="400" x2="407.5" y2="400" transform="rotate(44, 400, 400)" opacity="0.14"></line><line x1="739.5" y1="400" x2="60.5" y2="400" transform="rotate(48, 400, 400)" opacity="0.72"></line><line x1="535" y1="400" x2="265" y2="400" transform="rotate(52, 400, 400)" opacity="0.47"></line><line x1="443" y1="400" x2="357" y2="400" transform="rotate(56, 400, 400)" opacity="0.14"></line><line x1="362" y1="400" x2="438" y2="400" transform="rotate(60, 400, 400)" opacity="0.29"></line><line x1="54" y1="400" x2="746" y2="400" transform="rotate(64, 400, 400)" opacity="0.36"></line><line x1="160" y1="400" x2="640" y2="400" transform="rotate(68, 400, 400)" opacity="0.26"></line><line x1="743.5" y1="400" x2="56.5" y2="400" transform="rotate(72, 400, 400)" opacity="0.65"></line><line x1="578" y1="400" x2="222" y2="400" transform="rotate(76, 400, 400)" opacity="0.53"></line><line x1="735.5" y1="400" x2="64.5" y2="400" transform="rotate(80, 400, 400)" opacity="0.88"></line><line x1="239" y1="400" x2="561" y2="400" transform="rotate(84, 400, 400)" opacity="0.19"></line><line x1="36" y1="400" x2="764" y2="400" transform="rotate(88, 400, 400)" opacity="0.97"></line><line x1="264" y1="400" x2="536" y2="400" transform="rotate(92, 400, 400)" opacity="0.82"></line><line x1="460.5" y1="400" x2="339.5" y2="400" transform="rotate(96, 400, 400)" opacity="0.23"></line><line x1="116.5" y1="400" x2="683.5" y2="400" transform="rotate(100, 400, 400)" opacity="0.38"></line><line x1="105" y1="400" x2="695" y2="400" transform="rotate(104, 400, 400)" opacity="0.34"></line><line x1="287.5" y1="400" x2="512.5" y2="400" transform="rotate(108, 400, 400)" opacity="0.19"></line><line x1="654" y1="400" x2="146" y2="400" transform="rotate(112, 400, 400)" opacity="0.62"></line><line x1="585.5" y1="400" x2="214.5" y2="400" transform="rotate(116, 400, 400)" opacity="0.51"></line><line x1="269.5" y1="400" x2="530.5" y2="400" transform="rotate(120, 400, 400)" opacity="0.96"></line><line x1="624" y1="400" x2="176" y2="400" transform="rotate(124, 400, 400)" opacity="0.30"></line><line x1="573.5" y1="400" x2="226.5" y2="400" transform="rotate(128, 400, 400)" opacity="0.33"></line><line x1="237.5" y1="400" x2="562.5" y2="400" transform="rotate(132, 400, 400)" opacity="0.48"></line><line x1="113" y1="400" x2="687" y2="400" transform="rotate(136, 400, 400)" opacity="1.00"></line><line x1="427" y1="400" x2="373" y2="400" transform="rotate(140, 400, 400)" opacity="0.44"></line><line x1="665.5" y1="400" x2="134.5" y2="400" transform="rotate(144, 400, 400)" opacity="0.49"></line><line x1="337.5" y1="400" x2="462.5" y2="400" transform="rotate(148, 400, 400)" opacity="0.93"></line><line x1="438.5" y1="400" x2="361.5" y2="400" transform="rotate(152, 400, 400)" opacity="0.93"></line><line x1="359" y1="400" x2="441" y2="400" transform="rotate(156, 400, 400)" opacity="0.08"></line><line x1="169" y1="400" x2="631" y2="400" transform="rotate(160, 400, 400)" opacity="0.32"></line><line x1="669.5" y1="400" x2="130.5" y2="400" transform="rotate(164, 400, 400)" opacity="0.31"></line><line x1="536" y1="400" x2="264" y2="400" transform="rotate(168, 400, 400)" opacity="0.16"></line><line x1="564.5" y1="400" x2="235.5" y2="400" transform="rotate(172, 400, 400)" opacity="0.44"></line><line x1="453.5" y1="400" x2="346.5" y2="400" transform="rotate(176, 400, 400)" opacity="0.59"></line><line x1="42" y1="400" x2="758" y2="400" transform="rotate(180, 400, 400)" opacity="0.34"></line><line x1="250" y1="400" x2="550" y2="400" transform="rotate(184, 400, 400)" opacity="0.83"></line><line x1="509.5" y1="400" x2="290.5" y2="400" transform="rotate(188, 400, 400)" opacity="0.43"></line><line x1="495" y1="400" x2="305" y2="400" transform="rotate(192, 400, 400)" opacity="0.22"></line><line x1="155" y1="400" x2="645" y2="400" transform="rotate(196, 400, 400)" opacity="0.43"></line><line x1="142" y1="400" x2="658" y2="400" transform="rotate(200, 400, 400)" opacity="0.69"></line><line x1="679" y1="400" x2="121" y2="400" transform="rotate(204, 400, 400)" opacity="0.25"></line><line x1="26" y1="400" x2="774" y2="400" transform="rotate(208, 400, 400)" opacity="0.39"></line><line x1="579.5" y1="400" x2="220.5" y2="400" transform="rotate(212, 400, 400)" opacity="0.55"></line><line x1="363" y1="400" x2="437" y2="400" transform="rotate(216, 400, 400)" opacity="0.10"></line><line x1="358" y1="400" x2="442" y2="400" transform="rotate(220, 400, 400)" opacity="0.94"></line><line x1="698" y1="400" x2="102" y2="400" transform="rotate(224, 400, 400)" opacity="0.44"></line><line x1="37" y1="400" x2="763" y2="400" transform="rotate(228, 400, 400)" opacity="0.78"></line><line x1="190" y1="400" x2="610" y2="400" transform="rotate(232, 400, 400)" opacity="0.94"></line><line x1="449.5" y1="400" x2="350.5" y2="400" transform="rotate(236, 400, 400)" opacity="0.64"></line><line x1="560" y1="400" x2="240" y2="400" transform="rotate(240, 400, 400)" opacity="0.51"></line><line x1="196.5" y1="400" x2="603.5" y2="400" transform="rotate(244, 400, 400)" opacity="0.14"></line><line x1="739.5" y1="400" x2="60.5" y2="400" transform="rotate(248, 400, 400)" opacity="0.86"></line><line x1="673" y1="400" x2="127" y2="400" transform="rotate(252, 400, 400)" opacity="0.77"></line><line x1="708" y1="400" x2="92" y2="400" transform="rotate(256, 400, 400)" opacity="0.70"></line><line x1="706" y1="400" x2="94" y2="400" transform="rotate(260, 400, 400)" opacity="0.19"></line><line x1="490" y1="400" x2="310" y2="400" transform="rotate(264, 400, 400)" opacity="0.62"></line><line x1="62.5" y1="400" x2="737.5" y2="400" transform="rotate(268, 400, 400)" opacity="0.95"></line><line x1="594" y1="400" x2="206" y2="400" transform="rotate(272, 400, 400)" opacity="0.65"></line><line x1="471.5" y1="400" x2="328.5" y2="400" transform="rotate(276, 400, 400)" opacity="0.59"></line><line x1="65" y1="400" x2="735" y2="400" transform="rotate(280, 400, 400)" opacity="0.69"></line><line x1="702" y1="400" x2="98" y2="400" transform="rotate(284, 400, 400)" opacity="0.52"></line><line x1="297" y1="400" x2="503" y2="400" transform="rotate(288, 400, 400)" opacity="0.64"></line><line x1="702" y1="400" x2="98" y2="400" transform="rotate(292, 400, 400)" opacity="0.57"></line><line x1="296" y1="400" x2="504" y2="400" transform="rotate(296, 400, 400)" opacity="0.43"></line><line x1="699" y1="400" x2="101" y2="400" transform="rotate(300, 400, 400)" opacity="0.12"></line><line x1="337" y1="400" x2="463" y2="400" transform="rotate(304, 400, 400)" opacity="0.36"></line><line x1="196" y1="400" x2="604" y2="400" transform="rotate(308, 400, 400)" opacity="0.49"></line><line x1="693.5" y1="400" x2="106.5" y2="400" transform="rotate(312, 400, 400)" opacity="0.33"></line><line x1="329" y1="400" x2="471" y2="400" transform="rotate(316, 400, 400)" opacity="0.16"></line><line x1="462.5" y1="400" x2="337.5" y2="400" transform="rotate(320, 400, 400)" opacity="0.87"></line><line x1="133" y1="400" x2="667" y2="400" transform="rotate(324, 400, 400)" opacity="0.23"></line><line x1="49.5" y1="400" x2="750.5" y2="400" transform="rotate(328, 400, 400)" opacity="0.08"></line><line x1="315" y1="400" x2="485" y2="400" transform="rotate(332, 400, 400)" opacity="0.71"></line><line x1="128.5" y1="400" x2="671.5" y2="400" transform="rotate(336, 400, 400)" opacity="0.72"></line><line x1="442.5" y1="400" x2="357.5" y2="400" transform="rotate(340, 400, 400)" opacity="0.20"></line><line x1="668" y1="400" x2="132" y2="400" transform="rotate(344, 400, 400)" opacity="0.30"></line><line x1="573" y1="400" x2="227" y2="400" transform="rotate(348, 400, 400)" opacity="0.41"></line></g></svg>
+            <svg class="rotation w-[70px] aspect-square ms-[5px] inline" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet"><path d="M29.293 26.032c-.125-.507-1.486 1.719-1.102 2.051c.386.333 1.617.035 1.102-2.051" fill="#000000"></path><path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m-1.771 30.793c0 .554-1.046-.223-1.321.332c-.275.554-.439-1.938-.549-2.771c-.112-.83-.552 2.272-.937 2.161c-.388-.11-2.315-.222-2.7-.887c-.385-.664-.55-1.772 0-1.772c.552 0 2.589-1.939 3.085-2.771c.495-.831.991-1.054.771-2.105c-.219-1.053 1.127-2.245 1.103-1.385c-.057 1.884 1.267 1.385 1.762 2.881c.496 1.495-.825 2.549-.882 1.994c-.055-.554-.716-.332-2.037.389c-1.322.72.33.221.66 1.163c.331.942.716.554 1.873.886c1.155.333.552-.941.944-1.329c.395-.388.323 1.718.842 1.163c.518-.554 2.179.332 2.179.332c1.212.555 2.919.752 2.919.752c1.598.474 2.313 1.853 3.085 2.661c.771.81-.111 1.021-1.321 0c-1.212-1.019-1.267-.643-1.652-.152c-.387.489-1.212-.379-1.984-.047c-.77.333.331-1.218-.385-1.772s-2.478-1.053-2.422-.442c.055.608-1.379.275-2.425-.247c-1.048-.524-.608.411-.608.966m8.702 15.348c.772.11 1.016-.6 1.048 0c.04.792-.221 2.049-.717 1.883c-.495-.167-1.102-1.995-.331-1.883m11.566.827c-.661.273-.937.669-1.267 1.61c-.331.941-1.268 1.439-1.873.941c-.604-.498.33-1.385.937-1.48c.605-.096.826-1.179 1.597-1.898c.772-.721-.646-2.007 0-2.549c.331-.277.718.997 1.212.942c.497-.057 1.213.442.606.913c-.606.47-.551 1.247-1.212 1.521M42.272 8.39c.312-.558.448-1.422.503-2.238c.381.159.756.328 1.128.503c-1.06 1.739-2.171 2.699-1.631 1.735m-4.625-3.326c.33.749.33 3.657.33 5.235c0 1.58 2.396-.747 3.635-.83c1.238-.083-3.965 3.075-3.965 4.903s-2.149 1.828-3.471 2.742s-1.321 1.163-1.321 0s1.982-1.994 3.14-2.41c1.155-.415.742-3.573 1.11-4.487c.367-.913.136-6.07.542-5.153M33.92 35.177c.771-.166 1.762.22 1.598.664c-.166.443-.442.775 0 .996c.439.222 1.376 1.33 1.588.832c.209-.499-.078-3.043.559-2.492c.387.333 1.103 2.658 2.7 4.099c1.597 1.44 1.982 3.38 1.706 4.045c-.275.665-.991 1.551-1.101 2.825c-.111 1.274-1.708 1.44-2.369 1.219s-1.816.222-1.816-.332c0-.555-.111-1.274-.882-1.298s-1.267-.475-1.707-1.307c-.441-.831-3.03-.11-3.415.333c-.385.442-1.762.276-2.698.831c-.937.554-1.433-.61-1.157-1.718c.275-1.108-.991-2.271-.991-3.713c0-1.44 3.028-1.163 3.249-1.605c.222-.444.44-.666.991-1.274c.552-.61 1.047-1.22 1.826-.815c.779.406.544-.127.842-.736c.298-.612.304-.389 1.077-.554M32 4c1.239 0 2.457.089 3.654.245c-.061.432.156.732.588.653c.908-.166.908 1.33.578 3.241c-.331 1.912-1.652 3.822-2.808 3.906c-1.157.084-1.654 1.746-1.405 2.493c.248.748-.66 2.493-1.24 2.493c-.577 0-.494-1.412-.577-2.992c-.083-1.578-1.322-.831-2.478 0c-1.157.831 1.733.831 1.238 1.163c-.496.333-.413 1.081 0 2.161c.414 1.08-1.321 3.325-2.065 4.072c-.743.748-2.229 0-3.8.997c-1.569.997.909 3.241.743 3.906c-.164.666-1.487.499-2.726-.499c-1.239-.997-.661 1.247.247 2.494c.91 1.246.91 2.575 1.404 3.491c.497.915 3.471.913 4.792 1.578s4.873.166 4.873.166c1.57-.083-2.478 2.077-3.965 1.33c-1.486-.749-7.104-2.078-8.591-3.906c-1.487-1.828-3.47-6.731-2.313-5.153c1.155 1.579 3.552 4.156 3.221 3.491c-.33-.665-1.485-2.41-1.404-3.657c.083-1.246-.578-1.662-1.072-1.246c-.497.415-.331-1.413-.91-2.41c-.578-.997-2.478 1.247-3.799 1.604c-1.323.357-1.321 3.216-2.065 3.715c-.744.497-1.982-3.407-1.901-5.153c.083-1.745-.991.581-1.899-1.163c-.335-.645-.952-.947-1.597-1.075C11.229 10.517 20.855 4 32 4" fill="#000000"></path></svg>
         </div>
 
 
-            <img class="w-full aspect-[3/3.8] object-cover object-top mt-[40px]" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
-            <div class="flex justify-between mt-[20px]">
+    <div>
+        <div class="sticky top-0 pt-[40px] bg-gradient-to-t from-white to-[#effff5] min-h-screen px-[4%]">
+            <img class="w-[80vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
+            <div class="flex justify-between mt-[30px]">
                 <h3 translate="no">
                     Arkhe
                 </h3>
@@ -315,21 +330,48 @@
                     2024
                 </h3>
             </div>
-            <div class="flex justify-between items-center mt-[20px] border-t-[0.5px] pt-[30px] border-black">
-                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[31%] aspect-square rounded-full shadow-lg" href="/about-me">
+            <div class="flex justify-between items-start mt-[25px] border-t pt-[30px] border-gray-300">
+                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[34%] aspect-square rounded-full shadow-lg" href="/about-me">
                     Visit
+                    <svg class="w-[16px] ms-[5px] inline" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.197 3.35462C16.8703 1.67483 19.4476 1.53865 20.9536 3.05046C22.4596 4.56228 22.3239 7.14956 20.6506 8.82935L18.2268 11.2626M10.0464 14C8.54044 12.4882 8.67609 9.90087 10.3494 8.22108L12.5 6.06212" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M13.9536 10C15.4596 11.5118 15.3239 14.0991 13.6506 15.7789L11.2268 18.2121L8.80299 20.6454C7.12969 22.3252 4.55237 22.4613 3.0464 20.9495C1.54043 19.4377 1.67609 16.8504 3.34939 15.1706L5.77323 12.7373" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <p class="w-[58%]">
+                    A website platform for hiking travel services, built with HTML, Tailwind, and JavaScript.
+                </p>
+            </div>            
+        </div>
+
+
+        <div class="sticky top-0 pt-[40px] bg-gradient-to-t from-white to-[#eaf4ff] min-h-screen px-[4%] mt-[20vh]">
+            <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
+            <div class="flex justify-between mt-[30px]">
+                <h3 translate="no">
+                    Kopi Kopi
+                </h3>
+                <h3 translate="no">
+                    2024
+                </h3>
+            </div>
+            <div class="flex justify-between items-start mt-[25px] border-t pt-[30px] border-gray-300">
+                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[34%] aspect-square rounded-full shadow-lg" href="/about-me">
+                    Info
                     <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
                         <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
                     </svg>
                 </a>
-                <p class="w-[60%]">
-                    A hiking travel service platform, built with HTML, Tailwind CSS and Js            
+                <p class="w-[58%]">
+                    A comprehensive POS app tailored for coffee shop operations, built with React Native, Express, and MongoDB                 
                 </p>
             </div>
+        </div>
 
 
-            <img class="w-full aspect-[3/3.8] object-cover object-top mt-[90px]" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
-            <div class="flex justify-between mt-[20px]">
+        <div class="sticky top-0 pt-[40px] bg-gradient-to-t from-white to-[#eff1ff] min-h-screen px-[4%] mt-[20vh]">
+            <img class="w-[55vh] h-[50vh] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/7060356/file/original-936445555f328c80c798936d64243a93.png?resize=1200x4910&vertical=center" alt="Strategy">
+            <div class="flex justify-between mt-[30px]">
                 <h3 translate="no">
                     Arkhe
                 </h3>
@@ -337,44 +379,26 @@
                     2024
                 </h3>
             </div>
-            <div class="flex justify-between items-center mt-[20px] border-t-[0.5px] pt-[30px] border-black">
-                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[31%] aspect-square rounded-full shadow-lg" href="/about-me">
+            <div class="flex justify-between items-center mt-[25px] border-t pt-[30px] border-gray-300">
+                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[34%] aspect-square rounded-full shadow-lg" href="/about-me">
                     Visit
-                    <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                        <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
+                    <svg class="w-[16px] ms-[5px] inline" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.197 3.35462C16.8703 1.67483 19.4476 1.53865 20.9536 3.05046C22.4596 4.56228 22.3239 7.14956 20.6506 8.82935L18.2268 11.2626M10.0464 14C8.54044 12.4882 8.67609 9.90087 10.3494 8.22108L12.5 6.06212" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M13.9536 10C15.4596 11.5118 15.3239 14.0991 13.6506 15.7789L11.2268 18.2121L8.80299 20.6454C7.12969 22.3252 4.55237 22.4613 3.0464 20.9495C1.54043 19.4377 1.67609 16.8504 3.34939 15.1706L5.77323 12.7373" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                 </a>
-                <p class="w-[60%]">
+                <p class="w-[58%]">
                     A hiking travel service platform built with HTML, Tailwind CSS and Js            
                 </p>
             </div>
-
-
-            <img class="w-full aspect-[3/3.8] object-cover object-top mt-[90px]" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">
-            <div class="flex justify-between mt-[20px]">
-                <h3 translate="no">
-                    Arkhe
-                </h3>
-                <h3 translate="no">
-                    2024
-                </h3>
-            </div>
-            <div class="flex justify-between items-center mt-[20px] border-t-[0.5px] pt-[30px] border-black">
-                <a translate="no" class="text-[16px] text-white bg-[#161715] flex justify-center items-center w-[31%] aspect-square rounded-full shadow-lg" href="/about-me">
-                    Visit
-                    <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                        <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                    </svg>
-                </a>
-                <p class="w-[60%]">
-                    A hiking travel service platform built with HTML, Tailwind CSS and Js            
-                </p>
-            </div>
+        </div>
+    </div>
             
 
             
 
-            <h1 class="text-center mt-[100px]">
+    <div class="bg-white">
+            <h1 class="text-center pt-[80px]">
                 Building Steps
                 <!-- <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>             -->
             </h1>
@@ -398,34 +422,9 @@
             <p>
                 By embracing the latest innovations, I integrate emerging technologies to enhance user experiences.            
             </p>
+        </div>
             
 
-            <!-- <div class="h-[300vh] mt-[30px] bg-yellow-500"></div> -->
-
-            <div id="service-1" class="service flex flex-wrap justify-center shadow-lg mt-[60px]">
-                <img class="w-[95%] aspect-[16/11] border-[10px] border-black rounded-t-[5px] object-cover" src="./img/moc-pc-compress.webp" alt="Laptop">
-                <!-- <div class="w-[90%]">
-                    <p class="font-bold italic mt-[15px]">responsiveness</p>
-                    <p class="mt-[10px]">Creating responsive, minimalist, bold, modern, fun, or custom themes tailored to your brand identity.</p>
-                </div> -->
-                <div class="w-full h-[15px] bg-gradient-to-b from-gray-400 to-gray-800 rounded-b-[25px]"></div>
-            </div>
-
-            <div id="service-2" class="service mt-[20px]">
-                <div class="flex flex-wrap justify-between items-end">
-                    <div class="w-[65%]">
-                        <div class="w-full">
-                            <p>Responsiveness</p>
-                            <p>Performance</p>
-                            <!-- <p class="mt-[10px]">Ensuring fast and efficient data access and manipulation customized to enhance user experience.</p> -->
-                        </div>
-                        <img class="w-full aspect-[4.1/3] mt-[20px] border-[10px] border-black rounded-[10px] shadow-lg object-cover" src="./img/moc-tab-compress.webp" alt="Tablet">
-                    </div>
-                    <img class="w-[30%] aspect-[9/19] border-[5px] border-black rounded-[10px] shadow-lg object-cover" src="./img/moc-sm-compress.webp" alt="SMartPhone">
-                </div>
-            </div>
-    
-            <p class="info mt-[70px] pb-[10px]">Some Projects</p>
     </div>
 
     <!-- <div>
