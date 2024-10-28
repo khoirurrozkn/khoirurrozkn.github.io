@@ -26,11 +26,11 @@
     }
     
     h1{
-        @apply text-[62px] leading-[90%];
+        @apply text-[60px] leading-[90%];
     }
 
     h2{
-        @apply text-[40px] leading-[110%];
+        @apply text-[35px] leading-[110%];
     }
 
     h3{
@@ -42,7 +42,7 @@
     } 
 
     .text-hero{
-        @apply text-[19px];
+        @apply text-[18px];
     }
 
     .text-background {
