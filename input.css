@@ -22,15 +22,15 @@
     }
 
     p{
-        @apply text-[17px] leading-[130%];
+        @apply text-[17px] leading-[145%] text-black text-opacity-[80%];
     }
     
     h1{
-        @apply text-[60px] leading-[90%];
+        @apply text-[60px] leading-[105%];
     }
 
     h2{
-        @apply text-[35px] leading-[110%];
+        @apply text-[35px] leading-[125%];
     }
 
     h3{
@@ -39,10 +39,6 @@
 
     .info{
         @apply text-[15px];
-    } 
-
-    .text-hero{
-        @apply text-[18px];
     }
 
     .text-background {
