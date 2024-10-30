@@ -26,7 +26,7 @@
     }
     
     h1{
-        @apply text-[60px] leading-[105%];
+        @apply text-[65px] leading-[100%];
     }
 
     h2{
