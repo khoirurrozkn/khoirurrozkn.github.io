@@ -18,15 +18,15 @@
 
     * {
         font-family: "nimbus-dv", sans-serif;
-        @apply tracking-[0.8px];
+        @apply tracking-[0.3px];
     }
 
     p{
-        @apply text-[17px] leading-[145%] text-black text-opacity-[80%];
+        @apply text-[17px] leading-[145%] text-black text-opacity-[85%];
     }
     
     h1{
-        @apply text-[65px] leading-[100%];
+        @apply text-[63px] leading-[100%];
     }
 
     h2{
