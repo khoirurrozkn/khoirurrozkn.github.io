@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moch Khoirur Rozikin - Software Developer</title>
+    <title>Khoirur roziqin - Software developer</title>
     
     <!-- Description -->
     <meta name="description" content="Welcome to the official website of Moch Khoirur Rozikin, a software developer focused on developing digital solutions and modern applications. Discover my portfolio, about me, and how to contact me.">
@@ -24,571 +24,148 @@
 </head>
 <body>
     <style>
-            .box-preloader {
-                animation: box-preloader 1s cubic-bezier(1, 0, 0.4, 1) forwards;
-                animation-delay: 1s;
-            }
-
-            @keyframes box-preloader {
-                0% {
-                    transform: translateY(0) translateX(0);
-                }
-                100% {
-                    transform: translateY(-100%) translateX(100%);
-                    border-radius: 100%;
-                    /* scale: 0.8; */
-                }
-            }
-
-        .navbar::before, 
-        .navbar-fixed-field::before {
-            content: "";
-            position: absolute;
-            transform: translateX(-50%) translateY(50%);
-            top: 43%;
-            left: 50%;
-            width: 45%;
-            height: 1px;
-            background-color: white;
-        }
-        .navbar::after, 
-        .navbar-fixed-field::after {
-            content: "";
-            position: absolute;
-            transform: translateX(-50%) translateY(50%);
-            top: 54%;
-            left: 50%;
-            width: 45%;
-            height: 1px;
-            background-color: white;
+        @font-face {
+            font-family: "hk-grotesk";
+            src: url('./hanken_grotesk/fonts/otf/HankenGrotesk-Regular.otf');
         }
 
-        .navbar-fixed {
-            content: "";
-            position: fixed;
-            right: 0;
-            top: 0;
-            z-index: 100;
-            scale: 0;
-            transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
+        @font-face {
+            font-family: "oblivion-future";
+            src: url('./oblivion_future/OblivionFutureFree.ttf');
         }
 
-        .navbar-fixed.show-button {
-            transition: all 1s cubic-bezier(1, 0, 0.4, 1);
-            scale: 1;
-            transform: translateY(15px) translateX(-13px);
+        .font-title {
+            font-family: 'oblivion-future', 'sans-serif';
         }
 
-        .marquee-moch-khoirur-rozikin h1{
-            animation: scroll-left-moch-khoirur-rozikin 40s linear infinite;
-        }
-            
-        @keyframes scroll-left-moch-khoirur-rozikin {
-            0% {
-                transform: translateX(0px);
-            }
-            50% {
-                transform: translateX(-1300px);
-            }
-            100% {
-                transform: translateX(0px);
-            }
+        p {
+            font-family: 'hk-grotek', 'sans-serif';
         }
 
-        .marquee-first-porto {
-            animation: scroll-left-first-porto 25s linear infinite;
+        .text-very-big {
+            font-size: 50px;
+            line-height: 110%;
         }
 
-        @keyframes scroll-left-first-porto {
-            0% {
-                transform: translateX(0px);
-            }
-            50% {
-                transform: translateX(-460px);
-            }
-            100% {
-                transform: translateX(0px);
-            }
+        .text-big {
+            font-size: 30px;
+            line-height: 105%;
         }
 
-        .marquee-second-porto {
-            animation: scroll-right-first-porto 25s linear infinite;
-        }
-
-        @keyframes scroll-right-first-porto {
-            0% {
-                transform: translateX(-460px);
-            }
-            50% {
-                transform: translateX(0px);
-            }
-            100% {
-                transform: translateX(-460px);
-            }
-        }
-
-        .text-landing-page {
-            animation: landing-text 1s cubic-bezier(1, 0, 0.4, 1) 1.4s;
-        }
-
-        @keyframes landing-text {
-            0% {
-                transform: translateY(20%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0%);
-                opacity: 1;
-            }
+        .text-normal {
+            font-size: 24px;
+            line-height: 130%;
         }
         
-        .service {
-            transform: translateY(20%);
-            opacity: 0;
-            transition: transform 1.3s cubic-bezier(1, 0, 0.4, 1);
+        .text-small {
+            font-size: 18px;
+            line-height: 135%;
+        }
+        
+        .text-very-small {
+            font-size: 16px;
+            line-height: 145%;
+        }
+        
+        .text-info {
+            font-size: 15px;
+            line-height: 140%;
         }
 
-        .service.show {
-            transform: translateY(0%);
-            opacity: 1;
+        .nav-button {
+            box-shadow: 0 0 6px #3EFCA4;
         }
 
-        .diriku {
-            background-image: url("./img/diriku-compress-3x.webp");
-            background-position: center;
-            background-size: cover;
+        .logo {
+            text-shadow: 0 0 5px #3EFCA4;
         }
 
-        .wrap-about::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            /* background-color: #F7F7F7; */
-            background-color: white;
-            transition: transform 1.3s ease-out; 
-        }   
-
-        .wrap-about.show::before {
-            transform: translatey(-100%);
+        body{
+            background-color: #080808;
+            color: white;
         }
 
-        .wrap-photo::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 105%;
-            left: 0;
-            top: 0;
-            background-color: white;
-            z-index: 10;
-            transition: transform 1s cubic-bezier(1, 0, 0.4, 1);
-        }   
-
-        .wrap-photo-porto::before {
-            background-color: white;
-        }
-
-        .wrap-photo.show::before {
-            transform: translatex(100%);
-        }
-
-        .parallax {
-            transition: all 0.1s ease;
-        }
-
-        .rotation {
-            animation: rotateLeft 20s infinite linear;
-        }
-
-        @keyframes rotateLeft {
-            0% {
-                transform: rotate(0deg);
+            .perspective-container {
+                /* perspective: 5px; */
+                animation: a 1s cubic-bezier(1, 0, 0.4, 1) forwards;
             }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
 
-        .steps {
-            background: url("https://images.unsplash.com/photo-1518976024611-28bf4b48222e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbm5pbmclMjBwcm9qZWN0fGVufDB8fDB8fHww");
-            /* background-position: top;
-            background-size: cover; */
-            background-attachment: fixed;
-        }
+            @keyframes a {
+                0% {
+                    perspective: 15px;
+                }
+                100% {
+                    perspective: 3px;
+                }
+            }
+
+            .perspective-front-div {
+                transform: translate(-50%, -50%) translateZ(-1px);
+                top: 50%;
+                left: 50%;
+            }
+
+
+            .perspective-top-div {
+                width: 100%;
+                height: 13%;
+                /* background-color: green; */
+                transform: rotatex(-114deg);
+                margin-bottom: -6%;
+            }
+
+            .perspective-right-div {
+                width: 10%;
+                height: 80%;
+                /* background-color: red; */
+                transform: rotateY(-60deg);
+            }
+            .perspective-left-div {
+                width: 10%;
+                height: 80%;
+                /* background-color: red; */
+                transform: rotateY(60deg);
+            }
+
+            .perspective-bottom-div {
+                width: 100%;
+                height: 13%;
+                /* background-color: blue; */
+                transform: rotatex(114deg);
+                margin-top: -6%;
+            }
 
     </style>
 
-    <div id="box-preloader" class="box-preloader fixed flex justify-center items-center bg-[#161715] top-0 z-30 left-0 w-screen h-screen">
-        <p class="text-[35px] text-white mb-[15vh]">Khoirurrozkn</p>
-    </div>
-    
-    
-    <div class="relative z-[20] overflow-hidden">
-            <div class="bg-gradient-to-bl from-gray-100 to-gray-300 top-0 px-[4%] text-center">
+    <nav class="fixed z-[99] top-0 backdrop-blur left-0 w-screen rounded-b-[15px] py-[15px] px-[4%] flex items-center justify-between">
+        <p class="logo text-[#3EFCA4] text-[18px] font-title">M.K.R</p>
+        <button class="nav-button w-[90px] h-[35px] rounded-bl-[20px] rounded-[5px] bg-[#3EFCA4] relative">
+            <p class="text-black ms-[5px] mb-[2px]">menu</p>
+        </button>
+    </nav>
 
-                <nav class="flex justify-between items-center pt-[20px]">
-                    <!-- <p translate="no" class="text-[14px] font-bold leading-[110%]">
-                        MOCH
-                        <br>
-                        KHOIRUR
-                        <br>
-                        ROZIKIN
-                    </p> -->
-                    <div class="border border-black rounded-full w-[60px] aspect-square">
-
-                    </div>
-                    <div class="hidden xl:block">
-                        <a href="">Home</a>
-                        <a href="">Portofolio</a>
-                        <a href="">Contact</a>
-                    </div>
-                    <button translate="no" class="navbar relative rounded-full bg-[#161715] w-[65px] aspect-square shadow-lg">    
-                    </button>
-                </nav>
-
-                    <div id="text-landing-page" class="text-landing-page pt-[60px]">
-                        <h1 translate="no">
-                            Software Developer
-                        </h1>
-                        <p id="trigger-for-hidden-navbar-fixed" class="text-[19px] mt-[15px] px-[25px]">
-                            Empowering Your Brand for Greater Impact.        
-                        </p>
-                    </div>
-    
-                    <div class="relative mt-[45px] flex justify-center items-end">
-                                <svg style="rotate: 180deg;" class="animate-bounce absolute left-[8%] top-[15%] w-[40px] mt-[-15px] aspect-square" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 8L12 14L18 8" stroke="black" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6 12L12 18L18 12" stroke="black" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                        <p class="absolute right-[2%] top-[15%] info">
-                            Since 2023
-                        </p>
-
-                        <div class="marquee-moch-khoirur-rozikin absolute left-0 bottom-0">
-                            <h1 translate="no" class="text-background flex text-[150px] leading-[100%] w-[2800px]">
-                                Moch Khoirur Rozikin
-                            </h1>
-                        </div>
-                    
-                        <div class="diriku w-[250px] h-[380px]"></div>
-                    </div>
-            </div>
-
-            <!-- bg-[#F7F7F7] abu abu -->
-            <div id="about" class="bg-white pt-[80px] pb-[90px] relative">
-                <div id="wrap-about" class="relative px-[4%] overflow-hidden wrap-about">
-                    <p class="info">01 - Introduction</p>
-                    <h2 class="pe-[/20%] w-[340px] mt-[30px]">
-                        Crafting Meaningful Solutions through New Concepts
-                        <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
-                    </h2>
-                    <div class="flex justify-end">
-                        <p id="trigger-for-navbar-fixed" class="ms-[/10%] mt-[30px] w-[265px]">
-                            I'm Khoirur Rozikin, a passionate developer committed to creating impactful, cutting-edge solutions with a dedication to excellence in software development.                    
-                        </p>
-                    </div>
-                </div>
-                    <div id="wrap-photo-1" class="wrap-photo w-full mt-[60px] aspect-[3/2.8] overflow-hidden relative bg-gray-200">
-                        <img id="parallaxImage" class="parallax w-full h-[120%] brightness-[90%] object-cover absolute top-[-25%] shadow-lg" src="./img/diriku2-compress-3x.webp" alt="T">
-                    </div>
-
-                <div class="flex justify-between px-[4%] items-center mt-[60px]">
-                    <div>
-                        <p class="info">Experience</p>
-                        <h3 id="counter" class="counter mt-[13px]">1 Month</h3>
-
-                        <p class="info mt-[25px]">Case</p>
-                        <h3 id="counter-project" class="counter mt-[13px]">0 Projects</h3>
-                    </div>
-                    <a translate="no" class="info text-white bg-[#161715] flex justify-center items-center w-[130px] aspect-square rounded-full shadow-lg" href="/about-me">
-                        About me
-                        <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                            <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                        </svg>
-                    </a>
-                </div>
-
-            </div>
-
-    </div>
-    
-    <!-- <div class="h-[250vh] my-[-100vh]"> -->
-    <div class="h-[300vh] mt-[-100vh]">
-        <div class="sticky top-0 h-screen z-[10] flex bg-black items-center px-[4%] overflow-hidden">
-            <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover brightness-[25%]">
-                <source src="video/Ngodinggg-low.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="hero overflow-hidden h-screen flex flex-wrap content-between">
+        <div class="flex h-[30%] justify-center items-center mt-[90px]">
+            <h1 class="text-very-big font-title text-center text-[#3EFCA4] txet-shadow">MOCH KHOIRUR ROZIKIN</h1>
         </div>
         
-        
     </div>
 
-    <!-- <div id="porto" class="relative z-[20] bg-[#effff5] pt-[80px]"> -->
-    <div id="porto" class="relative z-[20] mt-[-200vh]">
-
-        <div class="text-white mt-[110px] mb-[120px] px-[4%]">
-            <p class="info text-white text-opacity-[90%]">02 - expertise</p>
-            <h2 class="mt-[30px] pb-[17px] border-b-[0.1px] border-opacity-[60%] flex justify-between">
-                Website App
-                <svg class="w-[30px] rotate-[-125deg] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                    <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                </svg>
-            </h2>
-            <h2 class="mt-[45px] pb-[17px] border-b-[0.1px] border-opacity-[60%] flex justify-between">
-                Website
-                <svg class="w-[30px] rotate-[-125deg] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                    <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                </svg>
-            </h2>
+    <!-- <div class="relative bg-[#080808] text-white"> -->
+        <div class="about h-screen py-[100px] px-[4%]">
+            <h1 class="text-very-big font-title">INI ADALAH JUDUL</h1>
+            <p class="text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia placeat eveniet accusantium nulla? Nesciunt, neque.</p>
         </div>
+        <div class="expertise h-screen rounded-t-[15px]">
 
-        <div class="bg-white pt-[90px]">
-            <nav id="navbar-fixed" class="navbar-fixed">
-                <div class="navbar-fixed-field relative rounded-full bg-[#161715] w-[70px] aspect-square"></div>
-            </nav>
-            
-            <div class="px-[4%]">
-                <p class="info">03 - Some Projects</p>
-                <div class="flex justify-center">
-                    <h2 class="mt-[30px] w-[300px] text-center">
-                        Innovation Grows in Every Project I Create
-                        <svg class="w-[40px] ms-[-10px] inline" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 2000 2000"><g><g fill="black" id="star" transform="matrix(-0.7193398003386512,0.6946583704589971,-0.6946583704589971,-0.7193398003386512,2425.565642346092,1037.3970281637307)"><path d="M 391.76120726947556 390.6142974264926 C 1000 1000 1000 1000 1861.036281631254 113.7006193520856 C 1000 1000 1000 1000 1617.609047862837 1579.5487748864368 C 1000 1000 1000 1000 165.59503778505996 1853.6884140240784 C 1000 1000 1000 1000 391.76120726947556 390.6142974264926" stroke-linecap="round" stroke-linejoin="round"></path></g></g></svg>            
-                    </h2>
-                </div>
-
-
-                    <p class="mt-[50px] text-end info">
-                        Click the image to check info
-                    </p>
-                <img id="wrap-photo-2" class="wrap-photo wrap-photo-porto w-full aspect-[3/2] mt-[10px] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">    
-                    <div class="flex justify-between items-end mt-[20px]">
-                        <div class="flex items-end gap-[10px]">
-                            <div class="bg-black w-[30px] aspect-square rounded-full"></div>
-                            <h3>
-                                Arkhe
-                            </h3>
-                        </div>
-                        <p>Web app</p>
-                </div>
-
-                <img class="w-full aspect-[3/2] mt-[60px] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">    
-                    <div class="flex justify-between items-end mt-[20px]">
-                        <div class="flex items-end gap-[10px]">
-                            <div class="bg-black w-[30px] aspect-square rounded-full"></div>
-                            <h3>
-                                Arkhe
-                            </h3>
-                        </div>
-                        <p>Web app</p>
-                </div>
-
-                <img class="w-full aspect-[3/2] mt-[60px] shadow-lg object-cover object-top" src="https://cdn.dribbble.com/userupload/11312242/file/original-846b158e5daba97b41122e4d723e803f.png?resize=1504x6949&vertical=center" alt="Strategy">    
-                    <div class="flex justify-between items-end mt-[20px]">
-                        <div class="flex items-end gap-[10px]">
-                            <div class="bg-black w-[30px] aspect-square rounded-full"></div>
-                            <h3>
-                                Arkhe
-                            </h3>
-                        </div>
-                        <p>Web app</p>
-                </div>
-            </div>
-
-
-                <div class="mt-[80px] pb-[90px] relative overflow-hidden">
-                    <div class="flex gap-[10px] marquee-first-porto">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/14089995/file/original-7c8994505c6228ecb3212b79b2e15a34.png?resize=1504x1128" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/14438017/file/original-ded1ae989ac4b3192d42dcce3623e880.png?resize=1504x1128" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/9374150/file/original-30fdea0aba9b21af69542a667021564f.png?resize=1200x900&vertical=center" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/10095896/file/original-9d0571a4ae1f50de528268e4d7e4f446.png?resize=1504x1128&vertical=center" alt="Dummy">
-                    </div>
-                    <div class="flex gap-[10px] marquee-second-porto mt-[10px]">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/2806801/file/original-600b653931b5241e343a9ea1121fa073.png?resize=1504x1128" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/10877928/file/original-da034e0f1916b8f9c3838c60013e6cd3.png?resize=1200x835" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/13677210/file/original-79c15a1bd11325aca1ee10b699801c52.png?resize=1504x1128&vertical=center" alt="Dummy">
-                        <img class="w-[200px] aspect-[3/2] object-cover object-top shadow-lg" src="https://cdn.dribbble.com/userupload/8110442/file/original-8875495c5b7c708c80e6e0e6f629239a.png?resize=1200x900&vertical=center" alt="Dummy">
-                    </div>
-                    <div class="flex justify-center mt-[40px]">
-                        <a translate="no" class="flex justify-center items-center rounded-full bg-[#161715] w-[135px] aspect-square text-white info shadow-lg" href="">
-                            All Projects
-                            <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                                <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
         </div>
+        <div class="recent-projects h-screen">
 
-    </div>
+        </div>
+        <div class="recognition h-screen bg-[#F5DB42]">
 
-    <div class="sticky bottom-0 z-[5] bg-[#161715] pt-[15vh] text-center text-white px-[4%]">
-            <h1 translate="no" class="w-full">Let's work together</h1>
-            <div class="flex justify-center mt-[13vh]">
-                <a translate="no" class="flex justify-center items-center rounded-full bg-violet-500 w-[130px] aspect-square info shadow-lg" href="">
-                    Chat me
-                    <svg class="w-[16px] rotate-[-125deg] ms-[5px] inline" fill="white" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
-                        <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
-                    </svg>
-                </a>
-            </div>
-            <!-- <div class="flex flex-wrap justify-between items-start mt-[10vh]"> -->
-                <!-- <div class="w-[40%]">
-                    <h3 translate="no" class="text-white text-opacity-[60%]">COLLAB</h3>
-                    <a translate="no" class="mt-[17px] info inline-block" href="">Upwork</a>
-                    <br>
-                    <a translate="no" class="mt-[10px] info inline-block" href="">Sribulancer</a>
-                </div>
-                <div class="w-[40%]">
-                    <h3 translate="no" class="text-white text-opacity-[60%]">SOCIALS</h3>
-                    <a translate="no" class="mt-[17px] info inline-block" href="">Instagram</a>
-                    <br>
-                    <a translate="no" class="mt-[10px] info inline-block" href="">whatsapp</a>
-                </div> -->
-                <div class="w-full mt-[15vh]">
-                    <h3 translate="no" class="text-white text-opacity-[60%]">Pages</h3>
-                    <div class="flex justify-between mt-[30px]">
-                        <a class="info" href="">Home</a>
-                        <a class="info" href="">About</a>
-                        <a class="info" href="">Projects</a>
-                        <a class="info" href="">Contact</a>
-                    </div>
-                </div>
-            <!-- </div> -->
-             <div class="flex justify-between items-center mt-[25px] py-[25px] border-t-[0.1px] border-white border-opacity-[60%]">
-                <p translate="no" class="text-[14px] text-white text-opacity-[60%]">&copy; Khoirurrozkn 2024</p>
-                <div class="flex gap-[35px]">
-                    <a class="info" href="">Wa</a>
-                    <a class="info" href="">Ig</a>
-                </div>
-             </div>
-    </div>
-    
-    <script>
-
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('box-preloader');
-            
-            setTimeout(() => {
-                document.body.classList.add('show')
-            }, 2000);
-
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 4000);
-        });
-
-        const navbarFixed = document.getElementById('navbar-fixed');
-        const triggerForNavbarFixed = document.getElementById('trigger-for-navbar-fixed');
-        const triggerForHiddenNavbarFixed = document.getElementById('trigger-for-hidden-navbar-fixed');
-        const wrapAbout = document.getElementById('wrap-about');
-        const wrapPhoto1 = document.getElementById('wrap-photo-1');
-        const wrapPhoto2 = document.getElementById('wrap-photo-2');
-        const counterElement = document.getElementById('counter');
-        const counterProjectElement = document.getElementById('counter-project');
-
-        const parallaxImage = document.getElementById('parallaxImage');
-
-        function easeOutQuad(t) {
-            return t * (2 - t);
-        }
-
-
-        function animateCounterSmooth(start, end, duration, element, unit) {
-            let startTime = null;
-
-            function updateCounter(currentTime) {
-                if (!startTime) startTime = currentTime;
-
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
-
-                const easedProgress = easeOutQuad(progress);
-                const currentValue = Math.floor(start + (end - start) * easedProgress);
-
-                if (element === counterElement) {
-                    if (currentValue < 13) {
-                        element.textContent = `${currentValue} ${unit}`;
-                    } else {
-                        element.textContent = '1+ Year';
-                    }
-                } else if (element === counterProjectElement) {
-                    if (currentValue < 10) {
-                        element.textContent = `${currentValue} ${unit}`;
-                    } else {
-                        element.textContent = '9+ Projects';
-                    }
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                }
-            }
-
-            requestAnimationFrame(updateCounter);
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-
-                    if (entry.target === triggerForNavbarFixed) {
-                        navbarFixed.classList.add('show-button');
-                    }
-
-                    if (entry.target === parallaxImage) {
-                        window.addEventListener('scroll', () => parallaxEffect(parallaxImage));
-                    }
-
-                    if (entry.target === triggerForHiddenNavbarFixed) {
-                        navbarFixed.classList.remove('show-button');
-                    }
-
-                    if (entry.target === counterElement) {
-                        animateCounterSmooth(1, 13, 2000, counterElement, 'Month');
-                    }
-
-                    if (entry.target === counterProjectElement) {
-                        animateCounterSmooth(0, 10, 2000, counterProjectElement, 'Projects');
-                    }
-
-                }else {
-                    entry.target.classList.remove('show');
-                }
-            });
-        }, {
-            threshold: 0
-        });
-
-        observer.observe(parallaxImage);
-
-        function parallaxEffect(element) {
-            const scrollPosition = window.scrollY;
-            const imageOffset = element.offsetTop;
-
-            if (scrollPosition >= imageOffset - window.innerHeight) {
-                const move = (scrollPosition - imageOffset) * 0.05;
-                element.style.transform = `translateY(${move}px)`;
-            }
-        }
-
-
-        observer.observe(triggerForNavbarFixed);
-        observer.observe(triggerForHiddenNavbarFixed);
-        observer.observe(wrapAbout);
-        observer.observe(wrapPhoto1);
-        observer.observe(wrapPhoto2);
-        observer.observe(counterElement);
-        observer.observe(counterProjectElement);
-
-        navbarFixed.addEventListener('click', () => {
-            
-        });
-    </script>
+        </div>
+    <!-- </div> -->
 
 </body>
 </html>
