@@ -13,15 +13,4 @@
         @apply w-0;
     }
 
-    * {
-        /* font-family: "Manrope", sans-serif; */
-        font-weight: 400;
-    }
-
-    @media (min-width: 820px) {
-        *{
-            /* @apply text-[18px]; */
-        }
-    }
-
 }
