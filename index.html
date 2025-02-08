@@ -25,147 +25,69 @@
 <body>
     <style>
         @font-face {
-            font-family: "hk-grotesk";
-            src: url('./hanken_grotesk/fonts/otf/HankenGrotesk-Regular.otf');
+            font-family: "neue-montreal";
+            src: url('./neue-montreal/NeueMontreal-Medium.otf');
         }
 
         @font-face {
-            font-family: "oblivion-future";
-            src: url('./oblivion_future/OblivionFutureFree.ttf');
+            font-family: "neue-montreal-b";
+            src: url('./neue-montreal/NeueMontreal-Bold.otf');
         }
 
-        .font-title {
-            font-family: 'oblivion-future', 'sans-serif';
+        * {
+            font-family: 'neue-montreal', 'sans-serif';
         }
 
-        p {
-            font-family: 'hk-grotek', 'sans-serif';
-        }
-
-        .text-very-big {
-            font-size: 50px;
-            line-height: 110%;
-        }
-
-        .text-big {
-            font-size: 30px;
-            line-height: 105%;
-        }
-
-        .text-normal {
-            font-size: 24px;
-            line-height: 130%;
-        }
-        
-        .text-small {
+        body {
+            background: #D9D9D9;
+            /* height: 300vh; */
             font-size: 18px;
-            line-height: 135%;
-        }
-        
-        .text-very-small {
-            font-size: 16px;
-            line-height: 145%;
-        }
-        
-        .text-info {
-            font-size: 15px;
-            line-height: 140%;
         }
 
-        .nav-button {
-            box-shadow: 0 0 6px #3EFCA4;
+        .marquee-moch-khoirur-rozikin h1{
+            font-family: 'neue-montreal-b', 'sans-serif';
+            animation: scroll-left-moch-khoirur-rozikin 40s linear infinite;
         }
-
-        .logo {
-            text-shadow: 0 0 5px #3EFCA4;
+            
+        @keyframes scroll-left-moch-khoirur-rozikin {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(-1200px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
         }
-
-        body{
-            background-color: #080808;
-            color: white;
-        }
-
-            .perspective-container {
-                /* perspective: 5px; */
-                animation: a 1s cubic-bezier(1, 0, 0.4, 1) forwards;
-            }
-
-            @keyframes a {
-                0% {
-                    perspective: 15px;
-                }
-                100% {
-                    perspective: 3px;
-                }
-            }
-
-            .perspective-front-div {
-                transform: translate(-50%, -50%) translateZ(-1px);
-                top: 50%;
-                left: 50%;
-            }
-
-
-            .perspective-top-div {
-                width: 100%;
-                height: 13%;
-                /* background-color: green; */
-                transform: rotatex(-114deg);
-                margin-bottom: -6%;
-            }
-
-            .perspective-right-div {
-                width: 10%;
-                height: 80%;
-                /* background-color: red; */
-                transform: rotateY(-60deg);
-            }
-            .perspective-left-div {
-                width: 10%;
-                height: 80%;
-                /* background-color: red; */
-                transform: rotateY(60deg);
-            }
-
-            .perspective-bottom-div {
-                width: 100%;
-                height: 13%;
-                /* background-color: blue; */
-                transform: rotatex(114deg);
-                margin-top: -6%;
-            }
 
     </style>
 
-    <nav class="fixed z-[99] top-0 backdrop-blur left-0 w-screen rounded-b-[15px] py-[15px] px-[4%] flex items-center justify-between">
-        <p class="logo text-[#3EFCA4] text-[18px] font-title">M.K.R</p>
-        <button class="nav-button w-[90px] h-[35px] rounded-bl-[20px] rounded-[5px] bg-[#3EFCA4] relative">
-            <p class="text-black ms-[5px] mb-[2px]">menu</p>
-        </button>
-    </nav>
+    <div class="relative h-[300vh]">
+        <div class="hero h-screen sticky top-0 z-[0] text-white flex flex-wrap bg-gradient-to-bl from-transparent via-[#A6A6A9] to-[#727274]">
+            <div class="wrap-top px-[4%] w-full border border-green-500 flex items-center justify-between">
+                <div class="bg-white border-black border-[10px] w-[50px] aspect-[1/1]  rounded-full">
 
-    <div class="hero overflow-hidden h-screen flex flex-wrap content-between">
-        <div class="flex h-[30%] justify-center items-center mt-[90px]">
-            <h1 class="text-very-big font-title text-center text-[#3EFCA4] txet-shadow">MOCH KHOIRUR ROZIKIN</h1>
+                </div>
+                <a href="/" class="text-black" target="_self">Home</a>
+            </div>
+            <div class="wrap-bottom mt-auto border h-[80vh] w-full border-red-500 relative overflow-hidden">
+                <div class="marquee-moch-khoirur-rozikin absolute left-0 top-[16%]">
+                    <h1 translate="no" class="text-black flex text-[150px] leading-[100%] w-[2800px]">
+                        MOCH KHOIRUR ROZIKIN
+                    </h1>
+                </div>
+                <div class="relative h-full overflow-hidden">
+                    <img src="./img/robot.png" class="h-full absolute left-[-5%] top-[10%] object-cover" alt="">
+                </div>
+            </div>
         </div>
-        
+
+
+        <div class="content relative h-screen z-[10] bg-[#101010] rounded-[25px] rounded-b-[0px]">
+
+        </div>
+
     </div>
-
-    <!-- <div class="relative bg-[#080808] text-white"> -->
-        <div class="about h-screen py-[100px] px-[4%]">
-            <h1 class="text-very-big font-title">INI ADALAH JUDUL</h1>
-            <p class="text-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia placeat eveniet accusantium nulla? Nesciunt, neque.</p>
-        </div>
-        <div class="expertise h-screen rounded-t-[15px]">
-
-        </div>
-        <div class="recent-projects h-screen">
-
-        </div>
-        <div class="recognition h-screen bg-[#F5DB42]">
-
-        </div>
-    <!-- </div> -->
-
 </body>
 </html>
